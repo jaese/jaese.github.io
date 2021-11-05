@@ -1,0 +1,21 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "JO Jaeyoung | 조재영",
+  "home_page_url": "https://jaese.github.io/",
+  "feed_url": "https://jaese.github.io/feed.json",
+
+
+  "items": [
+    
+  
+  
+    {
+      "id": "https://jaese.github.io/posts/hello/",
+      "title": "Hello",
+      "content_text": "My first post.",
+      "url": "https://jaese.github.io/posts/hello/",
+      "date_published": "2021-11-05 10:58:03 +0900 KST"
+    }
+  
+  ]
+}
