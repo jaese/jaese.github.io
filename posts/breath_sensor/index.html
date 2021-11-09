@@ -60,7 +60,7 @@
 <p>Also, I&rsquo;d just use a library.</p>
 <p>At first, I was concerned that I&rsquo;d have to use C or low-level instructions to control the hardware ports on RPi, but it turned out Linux provides a neat set of ioctl commands for that use, at least for the I2C ports. So no need to leave Go.</p>
 <p>I grabbed <a href="https://gist.github.com/tetsu-koba/33b339d26ac9c730fb09773acf39eac5">this code</a> by this Japanese dude, for controlling I2C ports, and the rest was the <a href="https://cdn.sparkfun.com/assets/2/c/c/6/5/CN04-2019_attachment_CCS811_Datasheet_v1-06.pdf">data</a>-<a href="https://www.sparkfun.com/datasheets/LCD/HD44780.pdf">sheets</a>.</p>
-<h3 id="ccs811-control-procedures">CCS811 control procedures</h3>
+<h3 id="ccs811-control-routines">CCS811 control routines</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
@@ -367,7 +367,7 @@
 }</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="hd44780-control-procedures">HD44780 control procedures</h3>
+<h3 id="hd44780-control-routines">HD44780 control routines</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
