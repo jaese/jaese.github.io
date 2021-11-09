@@ -6,14 +6,14 @@
     <description>Recent content on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Nov 2021 11:18:29 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Nov 2021 18:58:21 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My Blog</title>
-      <link>https://jaese.github.io/projects/my-blog/</link>
-      <pubDate>Fri, 05 Nov 2021 11:18:29 +0900</pubDate>
+      <title>Controlling CO2 sensor with Raspberry Pi and Go</title>
+      <link>https://jaese.github.io/posts/breath_sensor/</link>
+      <pubDate>Tue, 09 Nov 2021 18:58:21 +0900</pubDate>
       
-      <guid>https://jaese.github.io/projects/my-blog/</guid>
-      <description>This.</description>
+      <guid>https://jaese.github.io/posts/breath_sensor/</guid>
+      <description>This is a digital gas sensor (CCS811) and an LCD display (HD44780), controlled by Raspberry Pi, that I wired together back in 2019. The CS811 sensor reports two values: &amp;lsquo;equivalent carbon dioxide&amp;rsquo; (eCO2), and &amp;lsquo;Volatile Organic Compounds&amp;rsquo; (VOC), PPM. I am not too sure what those terms mean, not strong on chemistry, but nonetheless I wired it to display the reported values on LCD display continuously. I assume high values mean bad.</description>
     </item>
     
     <item>
