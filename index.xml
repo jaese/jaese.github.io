@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>My Blog</title>
+      <link>https://jaese.github.io/projects/my-blog/</link>
+      <pubDate>Fri, 05 Nov 2021 11:18:29 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/projects/my-blog/</guid>
+      <description>This.</description>
+    </item>
+    
+    <item>
       <title>Hello</title>
       <link>https://jaese.github.io/posts/hello/</link>
       <pubDate>Fri, 05 Nov 2021 10:58:03 +0900</pubDate>
