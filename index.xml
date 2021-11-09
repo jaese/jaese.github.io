@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Nov 2021 18:58:21 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Controlling CO2 sensor with Raspberry Pi and Go</title>
+      <title>Controlling CO2 sensor and HD44780 LCD display with Raspberry Pi and Go</title>
       <link>https://jaese.github.io/posts/breath_sensor/</link>
       <pubDate>Tue, 09 Nov 2021 18:58:21 +0900</pubDate>
       
