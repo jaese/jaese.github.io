@@ -10,6 +10,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/breath-sensor/",
+      "title": "Controlling CO2 sensor and HD44780 LCD display with Raspberry Pi and Go",
+      "content_text": "This is a digital gas sensor (CCS811) and an LCD display (HD44780), controlled by Raspberry Pi, that I wired together back in 2019. The CS811 sensor reports two values: \u0026lsquo;equivalent carbon dioxide\u0026rsquo; (eCO2), and \u0026lsquo;Volatile Organic Compounds\u0026rsquo; (VOC), PPM. I am not too sure what those terms mean, not strong on chemistry, but nonetheless I wired it to display the reported values on LCD display continuously. I assume high values mean bad.",
+      "url": "https://jaese.github.io/posts/breath-sensor/",
+      "date_published": "2021-11-09T18:58:21+09:00"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/hello/",
       "title": "Hello",
       "content_text": "My first post.",
