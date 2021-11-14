@@ -136,10 +136,9 @@
     <span style="color:#66d9ef">const</span> vs_p <span style="color:#f92672">=</span> mat.denseStackOf(vs_p_arr, mat.Zeros{ .r <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, .c <span style="color:#f92672">=</span> vs.rows() }, vs.transpose());
 
     <span style="color:#75715e">// x_p = (m_inv.T @ (m @ x_p))
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> scratch <span style="color:#f92672">=</span> allocator.alloc(<span style="color:#66d9ef">f32</span>, <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">unreachable</span>;
-    <span style="color:#66d9ef">defer</span> allocator.free(scratch);
-    vs_p.mulLeft(scratch, m);
-    vs_p.mulLeft(scratch, m_inv.transpose());
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> scratch<span style="color:#f92672">:</span> [<span style="color:#ae81ff">4</span>]<span style="color:#66d9ef">f32</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+    vs_p.mulLeft(<span style="color:#f92672">&amp;</span>scratch, m);
+    vs_p.mulLeft(<span style="color:#f92672">&amp;</span>scratch, m_inv.transpose());
 
     <span style="color:#75715e">// return x_p[1:, :].T
 </span><span style="color:#75715e"></span>    dst.copy(vs_p.slice(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, vs_p.cols()).transpose());
