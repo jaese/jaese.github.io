@@ -6,7 +6,16 @@
     <description>Recent content in Posts on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Nov 2021 18:58:21 +0900</lastBuildDate><atom:link href="https://jaese.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Nov 2021 02:34:44 +0900</lastBuildDate><atom:link href="https://jaese.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WASM-4 and Zig</title>
+      <link>https://jaese.github.io/posts/wasm4/</link>
+      <pubDate>Mon, 15 Nov 2021 02:34:44 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/wasm4/</guid>
+      <description>WASM-4 binaries running on browser   *Fancy* graphics    Press R to reset     #wasm4-container { padding-top: 16px; display: flex; flex-direction: row; justify-content: center; gap: 16px; } #rotating_cube { width: 320px; height: 320px; } #rotating_cube canvas { width: 100%; height: 100%; image-rendering: pixelated; image-rendering: crisp-edges; } #snake { width: 320px; height: 320px; } #snake canvas { width: 100%; height: 100%; image-rendering: pixelated; image-rendering: crisp-edges; }  import { run } from &#34;</description>
+    </item>
+    
     <item>
       <title>Controlling CO2 sensor and HD44780 LCD display with Raspberry Pi and Go</title>
       <link>https://jaese.github.io/posts/breath-sensor/</link>
