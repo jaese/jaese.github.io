@@ -109,7 +109,7 @@
 <p>Concurrently, I started learning <a href="https://ziglang.org/">the Zig language</a>, because I wanted to write wasm codes in Zig. Rust seemed like a natural choice as it was most well supported, but a few lines of Rust code are enough to bankrupt my brain capacity, so no Rust. Also, I do not like C, it is a work language, not a hobby language. So learning another new niche language it is then, and it was worth it. Zig is a very well designed language, and especially I was blown away by its Comptime feature. Even though it is still in development phase, using it was without much difficulty, at least for my purposes.</p>
 <p>And this weekend the two came together and I made those wasm thingies that can be seen on this page, written in Zig. A wasm binary by itself is just functions and it needs a host platform to do I/O, but I was too lazy to hook up APIs together myself. So I used the WebAssembly-based fantasy console called <a href="https://wasm4.org/">WASM-4</a> to make it display prettily on web.</p>
 <p>The Zig code for the WASM-4 snake is here: <a href="https://github.com/jaese/wasm4-snake-zig">https://github.com/jaese/wasm4-snake-zig</a></p>
-<p>I wrote a set of rudimentary matrix routines in Zig to make the rotating cube. I adapted the style of <a href="https://pkg.go.dev/gonum.org/v1/gonum/mat">https://pkg.go.dev/gonum.org/v1/gonum/mat</a> and I think it works OK in Zig. Here is the part that rotates, using the matrix routines (note: I don&rsquo;t have how math):</p>
+<p>I wrote a set of rudimentary matrix routines in Zig to make the rotating cube. I adapted the style of <a href="https://pkg.go.dev/gonum.org/v1/gonum/mat">https://pkg.go.dev/gonum.org/v1/gonum/mat</a> and I think it works OK in Zig. Here is the part that rotates, using the matrix routines (note: I don&rsquo;t know how math):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zig" data-lang="zig"><span style="color:#75715e">// Params:
 </span><span style="color:#75715e">//  vs: (None, 3) Matrix - vertices
 </span><span style="color:#75715e">//  theta: radians - rotation
@@ -144,7 +144,8 @@
     <span style="color:#75715e">// return x_p[1:, :].T
 </span><span style="color:#75715e"></span>    dst.copy(vs_p.slice(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, vs_p.cols()).transpose());
 }
-</code></pre></div><section class="footnotes" role="doc-endnotes">
+</code></pre></div><p>End.</p>
+<section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
@@ -155,6 +156,20 @@
 
     </div>
   </article>
+  <div id="disqus_thread"></div>
+  <script>
+      
+
+      
+
+      (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jaese.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </main>
 
     </div>
