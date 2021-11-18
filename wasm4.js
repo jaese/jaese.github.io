@@ -817,8 +817,8 @@ class Runtime {
     }
     print(str) {
         console.log(str);
-        if (websocket != null && websocket.readyState == 1) {
-            websocket.send(str);
+        if (null != null && null.readyState == 1) {
+            null.send(str);
         }
     }
     trace(cstrPtr) {
