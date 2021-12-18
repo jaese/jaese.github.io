@@ -10,6 +10,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/ray-tracing-in-one-week/",
+      "title": "Ray Tracing in One Week on WebAssembly",
+      "content_text": "samples: \n  div.raytracing-content { } canvas { width: 800px; height: 356px; image-rendering: pixelated; image-rendering: crisp-edges; }  import { instantiate } from '/wasm.js'; const width = 320; const height = 180; const samplesElem = document.querySelector('.samples'); console.log(samplesElem); (async function start() { const memory = new WebAssembly.Memory({initial: 40, maximum: 40}) const importObject = { 'env': { 'memory': memory, }, }; const { instance, module } = await instantiate('/raytracing.wasm', importObject); const exports = instance.",
+      "url": "https://jaese.github.io/posts/ray-tracing-in-one-week/",
+      "date_published": "2021-12-18T23:01:01+09:00"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/wasm4/",
       "title": "WASM-4 and Zig",
       "content_text": "WASM-4 binaries running on browser  *Fancy* graphics   Press R to reset     .wasm4 { padding: 10px; box-sizing: border-box; } #rotating_cube { width: 320px; height: 320px; } #rotating_cube canvas { width: 100%; height: 100%; image-rendering: pixelated; image-rendering: crisp-edges; } #snake { width: 320px; height: 320px; } #snake canvas { width: 100%; height: 100%; image-rendering: pixelated; image-rendering: crisp-edges; }  import { run } from \"",

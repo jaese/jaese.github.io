@@ -6,7 +6,17 @@
     <description>Recent content in Posts on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Nov 2021 02:34:44 +0900</lastBuildDate><atom:link href="https://jaese.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Dec 2021 23:01:01 +0900</lastBuildDate><atom:link href="https://jaese.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ray Tracing in One Week on WebAssembly</title>
+      <link>https://jaese.github.io/posts/ray-tracing-in-one-week/</link>
+      <pubDate>Sat, 18 Dec 2021 23:01:01 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/ray-tracing-in-one-week/</guid>
+      <description>samples: 
+  div.raytracing-content { } canvas { width: 800px; height: 356px; image-rendering: pixelated; image-rendering: crisp-edges; }  import { instantiate } from &#39;/wasm.js&#39;; const width = 320; const height = 180; const samplesElem = document.querySelector(&#39;.samples&#39;); console.log(samplesElem); (async function start() { const memory = new WebAssembly.Memory({initial: 40, maximum: 40}) const importObject = { &#39;env&#39;: { &#39;memory&#39;: memory, }, }; const { instance, module } = await instantiate(&#39;/raytracing.wasm&#39;, importObject); const exports = instance.</description>
+    </item>
+    
     <item>
       <title>WASM-4 and Zig</title>
       <link>https://jaese.github.io/posts/wasm4/</link>

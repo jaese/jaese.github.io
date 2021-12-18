@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ray Tracing in One Week on WebAssembly</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+
+  <script src="https://kit.fontawesome.com/b038bb8731.js" crossorigin="anonymous"></script>
+
+  <link rel="alternate" title="JO Jaeyoung" type="application/feed+json" href="https://jaese.github.io/feed.json" />
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+    }
+
+     
+  </style>
+
+  <div class="wrap pure-g">
+    <nav class="profile pure-u-1 pure-u-md-1-4">
+      <h3><a href="/">JO Jaeyoung<br>조재영</a></h3>
+      <img class="pure-img" style="width:60%" src="/profile.png" />
+
+      <ul>
+        <li><a href="https://jaese.github.io/feed.json"><i class="fas fa-rss-square"></i> JSON Feed</a></li>
+        <li><a href="https://github.com/jaese"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://www.kaggle.com/jaeyoungse"><i class="fab fa-kaggle"></i> Kaggle</a></li>
+        <li><a href="https://www.linkedin.com/in/jaeyoung-jo-64b2a6148/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/jaeyoung.se/"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="mailto:jojaeyoung.se@gmail.com"><i class="fas fa-envelope-square"></i> Email</a></li>
+
+      </ul>
+
+      <p>
+        My role model is Iron Man.
+      </p>
+    </nav>
+    <div class="content pure-u-1 pure-u-md-3-4">
+      
+<main>
+  <article>
+    <h1>Ray Tracing in One Week on WebAssembly</h1>
+    <div>
+      <time datetime="2021-12-18T23:01:01">2021-12-18T23:01:01</time>
+    </div>
+    <div>
+      <div class="raytracing-content">
+  <canvas width="400" height="178"></canvas>
+  <p>samples: <span class="samples"></span></p>
+</div>
+
+<style>
+  div.raytracing-content {
+     
+     
+  }
+
+  canvas {
+     
+    width: 800px;
+    height: 356px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+</style>
+
+<script type="module">
+  import { instantiate } from '/wasm.js';
+  const width = 320;
+  const height = 180;
+
+  const samplesElem = document.querySelector('.samples');
+  console.log(samplesElem);
+
+  (async function start() {
+    const memory = new WebAssembly.Memory({initial: 40, maximum: 40})
+
+    const importObject = {
+      'env': {
+        'memory': memory,
+      },
+    };
+    const { instance, module } = await instantiate('/raytracing.wasm', importObject);
+    const exports = instance.exports;
+    const buffer = memory.buffer;
+    const canvasData = new Uint8Array(buffer, 0x0, width * height * 4);
+
+    const canvas = document.querySelector('canvas');
+    const context = canvas.getContext('2d');
+    const imageData = context.createImageData(width, height);
+
+    let i = 0;
+    const samples = 5;
+
+    const update = () => {
+      exports.renderCanvas(width, height, 5, samples, i);
+      i += samples;
+      imageData.data.set(canvasData);
+      context.putImageData(imageData, 0, 0);
+      
+      samplesElem.textContent = `${i}`;
+      if (i < 200) {
+        requestAnimationFrame(update);
+      }
+    }
+    update();
+  })();
+</script>
+
+<p>A partial <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing in One Weekend</a> running on the browser with WebAssembly, built by Zig.</p>
+<h2 id="fat-pointer-interfaces-in-zig">Fat pointer interfaces in Zig</h2>
+<p>It is possible to implement the Go style interface values in Zig with the help of <code>c_void</code> pointers.
+Implementing interface pattern is much wordier than in other languages (Go, Python, Rust, &hellip;), but it is refreshing to see the mechanism that is hidden in other languages laid bare when writing in Zig.</p>
+<p>Following is an example of different material types implementing the Material interface type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zig" data-lang="zig"><span style="color:#75715e">// Interface type
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> Material <span style="color:#f92672">=</span> <span style="color:#66d9ef">struct</span> {
+    ptr<span style="color:#f92672">:</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> c_void,
+    vtable<span style="color:#f92672">:</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> VTable,
+
+    <span style="color:#66d9ef">const</span> VTable <span style="color:#f92672">=</span> <span style="color:#66d9ef">struct</span> {
+        scatter<span style="color:#f92672">:</span> <span style="color:#66d9ef">fn</span> (<span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> c_void, <span style="color:#f92672">*</span>Vec3, <span style="color:#f92672">*</span>Ray, Ray, HitRecord) <span style="color:#66d9ef">bool</span>,
+    };
+
+    <span style="color:#66d9ef">fn</span> scatter(self<span style="color:#f92672">:</span> @This(), out_attenuation<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>Vec3, out_scattered<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>Ray, in_ray<span style="color:#f92672">:</span> Ray, rec<span style="color:#f92672">:</span> HitRecord) <span style="color:#66d9ef">bool</span> {
+        <span style="color:#66d9ef">return</span> self.vtable.scatter(self.ptr, out_attenuation, out_scattered, in_ray, rec);
+    }
+};
+
+<span style="color:#75715e">// Implementations
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> Lambertian <span style="color:#f92672">=</span> <span style="color:#66d9ef">struct</span> {
+    albedo<span style="color:#f92672">:</span> Vec3,
+
+    <span style="color:#66d9ef">const</span> vtable <span style="color:#f92672">=</span> Material.VTable{
+        .scatter <span style="color:#f92672">=</span> scatter,
+    };
+
+    <span style="color:#66d9ef">fn</span> material(self<span style="color:#f92672">:</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> @This()) Material {
+        <span style="color:#66d9ef">return</span> Material{
+            .ptr <span style="color:#f92672">=</span> self,
+            .vtable <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>vtable,
+        };
+    }
+
+    <span style="color:#66d9ef">fn</span> scatter(
+        ptr<span style="color:#f92672">:</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> c_void,
+        out_attenuation<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>Vec3,
+        out_scattered<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>Ray,
+        in_ray<span style="color:#f92672">:</span> Ray,
+        rec<span style="color:#f92672">:</span> HitRecord,
+    ) <span style="color:#66d9ef">bool</span> {
+        _ <span style="color:#f92672">=</span> in_ray;
+
+        <span style="color:#66d9ef">const</span> self <span style="color:#f92672">=</span> @ptrCast(<span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> Lambertian, @alignCast(@alignOf(Lambertian), ptr));
+
+        <span style="color:#66d9ef">var</span> scatter_direction <span style="color:#f92672">=</span> vec3Add(rec.surface_normal, randomOnUnitSphere());
+        <span style="color:#66d9ef">if</span> (vec3NearZero(scatter_direction)) {
+            scatter_direction <span style="color:#f92672">=</span> rec.surface_normal;
+        }
+
+        out_scattered.<span style="color:#f92672">*</span> <span style="color:#f92672">=</span> Ray{ .origin <span style="color:#f92672">=</span> rec.p, .dir <span style="color:#f92672">=</span> scatter_direction };
+        out_attenuation.<span style="color:#f92672">*</span> <span style="color:#f92672">=</span> self.albedo;
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+    }
+};
+
+<span style="color:#66d9ef">const</span> Metal <span style="color:#f92672">=</span> <span style="color:#66d9ef">struct</span> {
+    albedo<span style="color:#f92672">:</span> Vec3,
+
+    <span style="color:#66d9ef">const</span> vtable <span style="color:#f92672">=</span> Material.VTable{
+        .scatter <span style="color:#f92672">=</span> scatter,
+    };
+
+    <span style="color:#66d9ef">fn</span> material(self<span style="color:#f92672">:</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> @This()) Material {
+        <span style="color:#66d9ef">return</span> Material{
+            .ptr <span style="color:#f92672">=</span> self,
+            .vtable <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>vtable,
+        };
+    }
+
+    <span style="color:#66d9ef">fn</span> scatter(
+        ptr<span style="color:#f92672">:</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> c_void,
+        out_attenuation<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>Vec3,
+        out_scattered<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>Ray,
+        in_ray<span style="color:#f92672">:</span> Ray,
+        rec<span style="color:#f92672">:</span> HitRecord,
+    ) <span style="color:#66d9ef">bool</span> {
+        <span style="color:#66d9ef">const</span> self <span style="color:#f92672">=</span> @ptrCast(<span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> Metal, @alignCast(@alignOf(Metal), ptr));
+
+        <span style="color:#66d9ef">const</span> reflected <span style="color:#f92672">=</span> vec3Reflect(vec3Normalize(in_ray.dir), rec.surface_normal);
+        out_scattered.<span style="color:#f92672">*</span> <span style="color:#f92672">=</span> Ray{ .origin <span style="color:#f92672">=</span> rec.p, .dir <span style="color:#f92672">=</span> reflected };
+        out_attenuation.<span style="color:#f92672">*</span> <span style="color:#f92672">=</span> self.albedo;
+        <span style="color:#66d9ef">return</span> vec3Dot(out_scattered.dir, rec.surface_normal) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
+    }
+};
+
+</code></pre></div>
+    </div>
+  </article>
+  
+</main>
+
+    </div>
+  </div>
+  <style>
+    nav.profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 200px;
+      margin-right: 15px;
+       
+
+      box-sizing: border-box;
+    }
+
+    nav.profile ul {
+      list-style: none;
+      width: 100%;
+    }
+
+    nav.profile li {
+      line-height: 20px;
+    }
+    nav.profile .fab, .fas {
+      width: 15px;
+    }
+    nav.profile a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    div.content {
+      max-width: 800px;
+       
+
+      box-sizing: border-box;
+    }
+  </style>
+</body>
+
+</html>
