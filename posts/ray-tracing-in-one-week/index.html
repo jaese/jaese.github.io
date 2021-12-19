@@ -52,7 +52,7 @@
     </div>
     <div>
       <div class="raytracing-content">
-  <canvas width="400" height="178"></canvas>
+  <canvas class="raytracing" width="400" height="178"></canvas>
   <p>samples: <span class="samples"></span></p>
 </div>
 
@@ -92,7 +92,7 @@
     const buffer = memory.buffer;
     const canvasData = new Uint8Array(buffer, 0x0, width * height * 4);
 
-    const canvas = document.querySelector('canvas');
+    const canvas = document.querySelector('canvas.raytracing');
     const context = canvas.getContext('2d');
     const imageData = context.createImageData(width, height);
 
@@ -106,7 +106,7 @@
       context.putImageData(imageData, 0, 0);
       
       samplesElem.textContent = `${i}`;
-      if (i < 200) {
+      if (i < 100) {
         requestAnimationFrame(update);
       }
     }
