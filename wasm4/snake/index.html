@@ -40,6 +40,7 @@
       <p>
         My role model is Iron Man.
       </p>
+      <a href="https://fabiensanglard.net/gebbdoom/"><canvas class="doom-fire" width="50" height="50"></canvas></a>
     </nav>
     <div class="content pure-u-1 pure-u-md-3-4">
       
@@ -115,7 +116,21 @@
 
       box-sizing: border-box;
     }
+
+    canvas.doom-fire {
+      object-fit: contain;
+      width: 100px;
+      height: 100px;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
   </style>
+
+  <script type="module">
+    import { renderCanvas } from '/wasm.js';
+
+    renderCanvas('canvas.doom-fire', '/doom_fire.wasm', 50, 50);
+  </script>
 </body>
 
 </html>
