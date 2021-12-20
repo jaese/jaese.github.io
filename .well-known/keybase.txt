@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jaese
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jaese.github.io
+  * I am jaese (https://keybase.io/jaese) on keybase.
+  * I have a public key ASBbN16IUD9VZM9Q2JITEphKZk6hBgHsVelAFb4ggg_XeQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204e9c31450933e1318ad098d7580fef2550723d63eb547c2ccee9a123d710f3900a",
+      "host": "keybase.io",
+      "kid": "01205b375e88503f5564cf50d8921312984a664ea10601ec55e94015be20820fd7790a",
+      "uid": "08d98d462f25f50f594ff743ef38b919",
+      "username": "jaese"
+    },
+    "merkle_root": {
+      "ctime": 1639981052,
+      "hash": "801fb3129389bcf8b7cac9421c709138886567d2b35416f7a988cebf1b1d8f81426a2cbfeda119b206fdf19006800d8faf20e209f9a249ff9fa6cef42dd136be",
+      "hash_meta": "175d33e6af06c906ce0e3de40eb66fc0dc61fa9bdfa31603728e80148317d986",
+      "seqno": 21468897
+    },
+    "service": {
+      "entropy": "8PyGfZz0vgaFSJPGoGrYMnlm",
+      "hostname": "jaese.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.9.0"
+  },
+  "ctime": 1639981059,
+  "expire_in": 504576000,
+  "prev": "a1a54bd03f8b2fadc815bf046f5094c7aee011e4d8fcc6e975c8e9ba88b67b9b",
+  "seqno": 17,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgWzdeiFA/VWTPUNiSExKYSmZOoQYB7FXpQBW+IIIP13kKp3BheWxvYWTESpcCEcQgoaVL0D+LL63IFb8Eb1CUx67gEeTY/Mbpdcjpuoi2e5vEIEwIcj+qZwjA16iL+oQoJxyXokUVYi0ELcpGRWKnZNDJAgHCo3NpZ8RASrU3F2ALeOM7DlZD82HRzYlB0NmyPCIO2UZbAwYfRGjBmRh/tvWqVshwUxBonDYCp8V1vMaLmCYJETq07qpeCKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPVt8DwpYwET8PGWyxnTRDba1/VGYOESNVgVMp01ZPCjo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jaese
+
+==================================================================
