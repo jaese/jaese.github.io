@@ -14,7 +14,7 @@
       
       <guid>https://jaese.github.io/wasm4/bifurcation_diagram/</guid>
       <description>#game { width: 480px; height: 480px; } #game canvas { width: 100%; height: 100%; image-rendering: pixelated; image-rendering: crisp-edges; }  import { run } from &#34;/wasm4.js&#34;; run(&#34;game&#34;, &#34;\/bifurcation_diagram.wasm&#34;, true);  Controls: arrow keys to pan, X/Z to zoom
-catridge</description>
+cartridge</description>
     </item>
     
     <item>

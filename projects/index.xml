@@ -6,7 +6,16 @@
     <description>Recent content in Projects on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Nov 2021 11:18:29 +0900</lastBuildDate><atom:link href="https://jaese.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Dec 2021 18:43:12 +0900</lastBuildDate><atom:link href="https://jaese.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(WIP) Dashboard</title>
+      <link>https://jaese.github.io/projects/dashboard/</link>
+      <pubDate>Wed, 22 Dec 2021 18:43:12 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/projects/dashboard/</guid>
+      <description>     const main = async () = { const res = await fetch(&#34;https://weather-adlpwp4faq-du.a.run.app/&#34;); const data = await res.json(); const spec = { &#34;config&#34;: {&#34;view&#34;: {&#34;continuousWidth&#34;: 500, &#34;continuousHeight&#34;: 300}}, &#34;data&#34;: {&#34;name&#34;: &#34;data&#34;}, &#34;mark&#34;: &#34;line&#34;, &#34;encoding&#34;: { &#34;x&#34;: { &#34;type&#34;: &#34;temporal&#34;, &#34;field&#34;: &#34;dt&#34;, }, &#34;y&#34;: {&#34;type&#34;: &#34;quantitative&#34;, &#34;field&#34;: &#34;aqi&#34;}, }, &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v4.8.1.json&#34;, &#34;datasets&#34;: { &#34;data&#34;: data, }, }; vegaEmbed(&#34;#vega-view&#34;, spec); }; main();  </description>
+    </item>
+    
     <item>
       <title>My Blog</title>
       <link>https://jaese.github.io/projects/my-blog/</link>
