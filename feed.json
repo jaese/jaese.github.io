@@ -10,6 +10,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/hello-ebiten/",
+      "title": "Hello Ebiten",
+      "content_text": " ",
+      "url": "https://jaese.github.io/posts/hello-ebiten/",
+      "date_published": "2021-12-25T00:41:28+09:00"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/ray-tracing-in-one-week/",
       "title": "Ray Tracing in One Weekend on WebAssembly",
       "content_text": "samples: \n  div.raytracing-content { } canvas { width: 800px; height: 356px; image-rendering: pixelated; image-rendering: crisp-edges; }  import { instantiate } from '/wasm.js'; const width = 320; const height = 180; const samplesElem = document.querySelector('.samples'); console.log(samplesElem); (async function start() { const memory = new WebAssembly.Memory({initial: 40, maximum: 40}) const importObject = { 'env': { 'memory': memory, }, }; const { instance, module } = await instantiate('/raytracing.wasm', importObject); const exports = instance.",

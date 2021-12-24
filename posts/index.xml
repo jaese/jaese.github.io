@@ -6,7 +6,16 @@
     <description>Recent content in Posts on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Dec 2021 23:01:01 +0900</lastBuildDate><atom:link href="https://jaese.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Dec 2021 00:41:28 +0900</lastBuildDate><atom:link href="https://jaese.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello Ebiten</title>
+      <link>https://jaese.github.io/posts/hello-ebiten/</link>
+      <pubDate>Sat, 25 Dec 2021 00:41:28 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/hello-ebiten/</guid>
+      <description> </description>
+    </item>
+    
     <item>
       <title>Ray Tracing in One Weekend on WebAssembly</title>
       <link>https://jaese.github.io/posts/ray-tracing-in-one-week/</link>
