@@ -61,7 +61,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-<div id="vega-view"></div>
+<div>
+  <h2>Air Quality Index History (Seoul)</h2>
+  <p>서울시 공기질지수</p>
+  <p>Air Quality Index. Possible values: 1, 2, 3, 4, 5. Where 1 = Good, 2 = Fair, 3 = Moderate, 4 = Poor, 5 = Very Poor.</p>
+  <div id="vega-view"></div>
+  <p><a href="https://openweathermap.org/api/air-pollution">OpenWeatherMap Air Pollution API</a></p>
+</div>
 <script type="module">
   const main = async () => {
     const res = await fetch("https://weather-adlpwp4faq-du.a.run.app/");

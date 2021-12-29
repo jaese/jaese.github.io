@@ -13,7 +13,10 @@
       <pubDate>Wed, 22 Dec 2021 18:43:12 +0900</pubDate>
       
       <guid>https://jaese.github.io/projects/dashboard/</guid>
-      <description>     const main = async () = { const res = await fetch(&#34;https://weather-adlpwp4faq-du.a.run.app/&#34;); const data = await res.json(); const spec = { &#34;config&#34;: {&#34;view&#34;: {&#34;continuousWidth&#34;: 500, &#34;continuousHeight&#34;: 300}}, &#34;data&#34;: {&#34;name&#34;: &#34;data&#34;}, &#34;mark&#34;: &#34;line&#34;, &#34;encoding&#34;: { &#34;x&#34;: { &#34;type&#34;: &#34;temporal&#34;, &#34;field&#34;: &#34;dt&#34;, }, &#34;y&#34;: {&#34;type&#34;: &#34;quantitative&#34;, &#34;field&#34;: &#34;aqi&#34;}, }, &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v4.8.1.json&#34;, &#34;datasets&#34;: { &#34;data&#34;: data, }, }; vegaEmbed(&#34;#vega-view&#34;, spec); }; main();  </description>
+      <description>Air Quality Index History (Seoul) 서울시 공기질지수
+Air Quality Index. Possible values: 1, 2, 3, 4, 5. Where 1 = Good, 2 = Fair, 3 = Moderate, 4 = Poor, 5 = Very Poor.
+ OpenWeatherMap Air Pollution API
+ const main = async () = { const res = await fetch(&#34;https://weather-adlpwp4faq-du.a.run.app/&#34;); const data = await res.json(); const spec = { &#34;config&#34;: {&#34;view&#34;: {&#34;continuousWidth&#34;: 500, &#34;</description>
     </item>
     
     <item>
