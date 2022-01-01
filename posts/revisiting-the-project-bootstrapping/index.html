@@ -62,12 +62,12 @@
       
       <p>Did you know that <a href="https://en.wikipedia.org/wiki/AVR_microcontrollers">AVR</a> is one microcontroller family that can be programmed by <strong>bit banging by hand</strong>? No computers or USB interfacing required, just plain physical, electrical on-and-offs.</p>
 <p>It&rsquo;s true.
-The in-system programming (ISP) interface of AVR is concise enough that you can write to its flash memory an upwards of 10 to 20 instructions <em>one bit at a time</em>, with a reasonable amount of patience. In comparison, <a href="https://www.allaboutcircuits.com/technical-articles/jtag-test-access-port-tap-state-machine/">the JTAG type interface</a> used by ARM and MIPS chips is too fiddly to program by hand, I discovered. Another big factor is that it is an 8-bit architecture so the instructions are only 16-bit wide.</p>
+The in-system programming (ISP) interface of AVR is concise enough that you can write to its flash memory an upwards of 10 to 20 instructions <em>one bit at a time</em>, with a reasonable amount of patience. In comparison, <a href="https://www.allaboutcircuits.com/technical-articles/jtag-test-access-port-tap-state-machine/">the JTAG type interface</a> used by ARM and MIPS chips is too fiddly to program by hand, I discovered. Another big factor is that AVR is an 8-bit architecture so the instructions are only 16-bit wide.</p>
 <p><img src="attiny85_product.webp" alt="ATtiny85">
 <em>ATtiny85 8-bit microcontroller</em></p>
-<p>Why would that be useful? It is a mystical tale I tell time to time of when I <a href="https://en.wikipedia.org/wiki/Bootstrapping"><em>bootstrapped</em></a> a rudimentary DOS-like operating system 5 years ago over 9 months, starting with a handful of ATtiny85s.</p>
+<p>Why would that be useful? It is a mythical tale I tell time to time of when I <a href="https://en.wikipedia.org/wiki/Bootstrapping"><em>bootstrapped</em></a> a rudimentary DOS-like operating system 5 years ago over 9 months, starting with a handful of ATtiny85s.</p>
 <p>&lsquo;Bootstrapped&rsquo; meaning I did not use existing software stack to program it.</p>
-<p>&lsquo;Mystical&rsquo; because I did not leave any tangible records of it. The anectodes on this post are all there is of it.</p>
+<p>&lsquo;Mythical&rsquo; because I did not leave any tangible records of it. The anectodes on this post are all there is of it.</p>
 <h2 id="the-project-bootstrapping">The Project Bootstrapping</h2>
 <p>It was an exercise that I believed could be described as retracing the history of the development of modern software stack, from assembler to operating systems.
 When one starts programming, the existence of a suite of software toolchain and programming environment is taken for granted. But, how was <em>that</em> toolchain made?, it was to be explored.</p>
