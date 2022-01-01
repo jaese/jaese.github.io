@@ -6,7 +6,17 @@
     <description>Recent content on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Dec 2021 19:31:47 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Jan 2022 06:47:45 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Revisiting The Project Bootstrapping</title>
+      <link>https://jaese.github.io/posts/revisiting-the-project-bootstrapping/</link>
+      <pubDate>Sat, 01 Jan 2022 06:47:45 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/revisiting-the-project-bootstrapping/</guid>
+      <description>Did you know that AVR is one microcontroller family that can be programmed by bit banging by hand? No computers or USB interfacing required, just plain physical, electrical on-and-offs.
+It&amp;rsquo;s true. The in-system programming (ISP) interface of AVR is concise enough that you can write to its flash memory an upwards of 10 to 20 instructions one bit at a time, with a reasonable amount of patience. In comparison, the JTAG type interface used by ARM and MIPS chips is too fiddly to program by hand, I discovered.</description>
+    </item>
+    
     <item>
       <title>Publishing a Jupyter Notebook</title>
       <link>https://jaese.github.io/posts/publishing-jupyter-notebook/</link>
