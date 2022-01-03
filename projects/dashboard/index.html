@@ -75,14 +75,16 @@
     const data = await res.json();
 
     const spec = {
-      "config": {"view": {"continuousWidth": 500, "continuousHeight": 300}},
+      "config": {
+        "view": {"continuousWidth": 640, "continuousHeight": 300},
+      },
       "data": {"name": "data"},
       "mark": "line",
       "encoding": {
         "x": {
           "type": "temporal",
-          "field": "dt",
-      },
+          "field": "dt"
+        },
         "y": {"type": "quantitative", "field": "aqi"},
       },
       "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
@@ -90,7 +92,19 @@
         "data": data,
       },
     };
-    vegaEmbed("#vega-view", spec);
+    const opt = {
+      "timeFormatLocale": {
+        "dateTime": "%a %e %b %X %Y",
+        "date": "%d/%m/%Y",
+        "time": "%H:%M:%S",
+        "periods": ["AM", "PM"],
+        "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      }
+    };
+    vegaEmbed("#vega-view", spec, opt);
   };
   main();
 </script>
