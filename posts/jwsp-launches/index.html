@@ -44,6 +44,16 @@
       <p>
         My role model is Iron Man.
       </p>
+
+      <p class="time">
+        UTC - TAI =<br><a href="https://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat">-37 s</a>
+        <br>
+        <br>
+        TIME_TAI = <span class="time-tai">?</span>
+        <br>
+        (based on browser time)
+      </p>
+
       <a href="https://fabiensanglard.net/gebbdoom/"><canvas class="doom-fire" width="50" height="50"></canvas></a>
     </nav>
     <div class="content pure-u-1 pure-u-md-3-4">
@@ -108,6 +118,13 @@
       text-decoration: none;
     }
 
+    .time {
+      text-align: center;
+    }
+    .time a {
+      font-weight: bold;
+    }
+
     div.content {
       max-width: 800px;
        
@@ -128,6 +145,26 @@
     import { renderCanvas } from '/wasm.js';
 
     renderCanvas('canvas.doom-fire', '/doom_fire.wasm', 50, 50);
+  </script>
+
+  <script type="module">
+    const timeTAIElement = document.querySelector('.time-tai');
+    const utcTAIOffset = -37;
+
+    const updateTime = () => {
+      const local = new Date();
+      const utc = new Date(local.getTime() + local.getTimezoneOffset() * 60 * 1000);
+      const tai = utc.getTime() - (utcTAIOffset * 1000);
+      timeTAIElement.textContent = Math.round(tai / 1000);
+
+      let ms = local.getTime() % 1000;
+      if (ms > 500) {
+        ms -= 1000;
+      };
+      setTimeout(updateTime, 1000 - ms);
+    };
+    updateTime();
+
   </script>
 </body>
 
