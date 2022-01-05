@@ -3,7 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Posts</title>
+  <title>FreeBSD on RPi 4</title>
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
@@ -49,52 +49,55 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       
 <main>
-  
-  <div>
-    <h1>Posts</h1>
-    
-  </div>
-  
+  <article>
+    <h1>FreeBSD on RPi 4</h1>
+    <div>
+      <time datetime="2022-01-04T21:11:23">2022-01-04T21:11:23</time>
+    </div>
+    <div>
+      
+        
+        
+        <img src="https://jaese.github.io/posts/freebsd-on-rpi4/neofetch_hu3738a4acf32e64b4768a2254e43d72f1_104432_480x0_resize_box_3.png">
+      
+      <p>As of now, the prebuilt SD card image for RPI (3/4) of FreeBSD 13.0 doesn&rsquo;t run out of the box on RPi 4 due to <a href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=255080">an issue with the bootloader</a> and requires replacing the bootloader binary on the SD card. If you have a Raspberry PI OS installation and want to try FreeBSD on RPi 4, you can follow these steps:</p>
+<ol>
+<li>
+<p>Download and flash <a href="https://download.freebsd.org/ftp/releases/arm64/aarch64/ISO-IMAGES/13.0/">FreeBSD-13.0-RELEASE-arm64-aarch64-RPI.img.xz</a> to an SD card.</p>
+</li>
+<li>
+<p>Build U-Boot from recent checkout. <a href="https://u-boot.readthedocs.io/en/latest/build/index.html">Ref</a></p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Install prerequisite packages</span>
+sudo apt-get install <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  gcc <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  gcc-aarch64-linux-gnu <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  bc bison build-essential <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  device-tree-compiler <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  dfu-util <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  efitools <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  flex
 
-  <ul>
+git clone https://source.denx.de/u-boot/u-boot.git
+cd u-boot
+git checkout v2021.04
+make rpi_arm64_defconfig
+CROSS_COMPILE<span style="color:#f92672">=</span>aarch64-linux-gnu- make -j4
+</code></pre></div><ol start="3">
+<li>Mount the boot partition of the SD card and copy u-boot.bin built from previous step.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo mount /dev/sda1 /mnt
+sudo cp u-boot.bin /mnt/u-boot.bin
+sudo umount /mnt
+</code></pre></div><p>Refs.</p>
+<ul>
+<li><a href="https://lists.freebsd.org/pipermail/freebsd-arm/2020-August/022162.html">current best practice to start FreeBSD / Raspberry Pi 4</a></li>
+</ul>
+
+    </div>
+  </article>
   
-    <li>
-      <a href="https://jaese.github.io/posts/freebsd-on-rpi4/">FreeBSD on RPi 4</a>
-    </li>
-  
-    <li>
-      <a href="https://jaese.github.io/posts/revisiting-the-project-bootstrapping/">Revisiting The Project Bootstrapping</a>
-    </li>
-  
-    <li>
-      <a href="https://jaese.github.io/posts/publishing-jupyter-notebook/">Publishing a Jupyter Notebook</a>
-    </li>
-  
-    <li>
-      <a href="https://jaese.github.io/posts/jwsp-launches/">JWST Launches</a>
-    </li>
-  
-    <li>
-      <a href="https://jaese.github.io/posts/hello-ebiten/">Hello Ebiten</a>
-    </li>
-  
-    <li>
-      <a href="https://jaese.github.io/posts/ray-tracing-in-one-week/">Ray Tracing in One Weekend on WebAssembly</a>
-    </li>
-  
-    <li>
-      <a href="https://jaese.github.io/posts/wasm4/">WASM-4 and Zig</a>
-    </li>
-  
-    <li>
-      <a href="https://jaese.github.io/posts/breath-sensor/">Controlling CO2 sensor and HD44780 LCD display with Raspberry Pi and Go</a>
-    </li>
-  
-    <li>
-      <a href="https://jaese.github.io/posts/hello/">Hello</a>
-    </li>
-  
-  </ul>
 </main>
 
     </div>
