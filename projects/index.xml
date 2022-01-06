@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Dec 2021 18:43:12 +0900</lastBuildDate><atom:link href="https://jaese.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>(WIP) Dashboard</title>
-      <link>https://jaese.github.io/projects/dashboard/</link>
+      <title>Personal Dashboard</title>
+      <link>https://jaese.github.io/projects/personal-dashboard/</link>
       <pubDate>Wed, 22 Dec 2021 18:43:12 +0900</pubDate>
       
-      <guid>https://jaese.github.io/projects/dashboard/</guid>
+      <guid>https://jaese.github.io/projects/personal-dashboard/</guid>
       <description>Air Quality Index History (Seoul) 서울시 공기질지수
 Air Quality Index. Possible values: 1, 2, 3, 4, 5. Where 1 = Good, 2 = Fair, 3 = Moderate, 4 = Poor, 5 = Very Poor.
  OpenWeatherMap Air Pollution API
