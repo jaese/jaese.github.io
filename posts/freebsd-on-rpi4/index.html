@@ -92,7 +92,7 @@ sudo apt-get install <span style="color:#ae81ff">\
 git clone https://source.denx.de/u-boot/u-boot.git
 cd u-boot
 git checkout v2021.04
-make rpi_arm64_defconfig
+make rpi_4_defconfig
 CROSS_COMPILE<span style="color:#f92672">=</span>aarch64-linux-gnu- make -j4
 </code></pre></div><ol start="3">
 <li>Mount the boot partition of the SD card and copy u-boot.bin built from previous step.</li>
