@@ -10,6 +10,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/trying-polars/",
+      "title": "Trying polars, a fast DataFrame library",
+      "content_text": "pandas is the de facto standard DataFrame manipulation tool in Python.\nNatually, I want to be comfortable using it but, I think the sheer girth of its API is proving to be a major obstacle. I can\u0026rsquo;t go for long before I have to search usages on Stackoverflow for what should be routine tasks. I don\u0026rsquo;t think I can ever grok its date time API.\nSo, I searched for simpler alternative libraries and found polars.",
+      "url": "https://jaese.github.io/posts/trying-polars/",
+      "date_published": "2022-01-11T10:43:31+09:00"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/freebsd-on-rpi4/",
       "title": "FreeBSD on RPi 4",
       "content_text": "As of now, the prebuilt SD card image for RPI (3/4) of FreeBSD 13.0 doesn\u0026rsquo;t run out of the box on RPi 4 due to an issue with the bootloader and requires replacing the bootloader binary on the SD card. If you have a Raspberry PI OS installation and want to try FreeBSD on RPi 4, you can follow these steps:\n  Download and flash FreeBSD-13.0-RELEASE-arm64-aarch64-RPI.img.xz to an SD card.",

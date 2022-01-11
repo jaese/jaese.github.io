@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jaese.github.io/posts/freebsd-on-rpi4/</loc>
-    <lastmod>2022-01-04T21:11:23+09:00</lastmod>
-  </url><url>
     <loc>https://jaese.github.io/</loc>
-    <lastmod>2022-01-04T21:11:23+09:00</lastmod>
+    <lastmod>2022-01-11T10:43:31+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/</loc>
+    <lastmod>2022-01-11T10:43:31+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/posts/trying-polars/</loc>
+    <lastmod>2022-01-11T10:43:31+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/posts/freebsd-on-rpi4/</loc>
     <lastmod>2022-01-04T21:11:23+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/revisiting-the-project-bootstrapping/</loc>

@@ -2,9 +2,8 @@
 <html>
 
 <head>
-	<meta name="generator" content="Hugo 0.89.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JO Jaeyoung | 조재영</title>
+  <title>Trying polars, a fast DataFrame library</title>
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
@@ -60,40 +59,25 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       
 <main>
-  <h1>Posts</h1>
-  <ul>
-  
-    <li>2022-01-11 - <a href="https://jaese.github.io/posts/trying-polars/">Trying polars, a fast DataFrame library</a></li>
-  
-    <li>2022-01-04 - <a href="https://jaese.github.io/posts/freebsd-on-rpi4/">FreeBSD on RPi 4</a></li>
-  
-    <li>2022-01-01 - <a href="https://jaese.github.io/posts/revisiting-the-project-bootstrapping/">Revisiting The Project Bootstrapping</a></li>
-  
-    <li>2021-12-28 - <a href="https://jaese.github.io/posts/publishing-jupyter-notebook/">Publishing a Jupyter Notebook</a></li>
-  
-    <li>2021-12-26 - <a href="https://jaese.github.io/posts/jwsp-launches/">JWST Launches</a></li>
-  
-    <li>2021-12-25 - <a href="https://jaese.github.io/posts/hello-ebiten/">Hello Ebiten</a></li>
-  
-    <li>2021-12-18 - <a href="https://jaese.github.io/posts/ray-tracing-in-one-week/">Ray Tracing in One Weekend on WebAssembly</a></li>
-  
-    <li>2021-11-15 - <a href="https://jaese.github.io/posts/wasm4/">WASM-4 and Zig</a></li>
-  
-    <li>2021-11-09 - <a href="https://jaese.github.io/posts/breath-sensor/">Controlling CO2 sensor and HD44780 LCD display with Raspberry Pi and Go</a></li>
-  
-    <li>2021-11-05 - <a href="https://jaese.github.io/posts/hello/">Hello</a></li>
-  
-  </ul>
+  <article>
+    <h1>Trying polars, a fast DataFrame library</h1>
+    <div>
+      <time datetime="2022-01-11T10:43:31">2022-01-11T10:43:31</time>
+    </div>
+    <div>
+      
+      <p><a href="https://pandas.pydata.org">pandas</a> is the de facto standard DataFrame manipulation tool in Python.</p>
+<p>Natually, I want to be comfortable using it but, I think the sheer girth of its API is proving to be a major obstacle. I can&rsquo;t go for long before I have to search usages on Stackoverflow for what should be routine tasks. I don&rsquo;t think I can ever grok its date time API.</p>
+<p>So, I searched for simpler alternative libraries and found <a href="https://github.com/pola-rs/polars">polars</a>. It is written in Rust and uses the Arrow format for memory model. Its performance benchmarks are impressive, so apparently the newfangled technology stack is pulling its weight.</p>
+<p>The API seems still in development and the features are miniscule compared to pandas&rsquo;s, but I appreciate its simplicity.
+Following is a notebook of me trying to use polars for one of the tutorials on <a href="https://www.kaggle.com/learn">Kaggle Courses</a>.</p>
+<iframe src="/posts/article.html" width="950" height="480"></iframe>
 
-  <h1>Meanderings</h1>
-  <ul>
-    <li><a href="/wasm4">WASM-4 "games"</a></li>
+<p><a href="/posts/article.html">Full page</a></p>
+
+    </div>
+  </article>
   
-    <li><a href="https://jaese.github.io/projects/personal-dashboard/">Personal Dashboard</a></li>
-  
-    <li><a href="https://jaese.github.io/projects/my-blog/">My Blog</a></li>
-  
-  </ul>
 </main>
 
     </div>

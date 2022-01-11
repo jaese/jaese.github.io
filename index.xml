@@ -6,7 +6,18 @@
     <description>Recent content on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jan 2022 21:11:23 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jan 2022 10:43:31 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trying polars, a fast DataFrame library</title>
+      <link>https://jaese.github.io/posts/trying-polars/</link>
+      <pubDate>Tue, 11 Jan 2022 10:43:31 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/trying-polars/</guid>
+      <description>pandas is the de facto standard DataFrame manipulation tool in Python.
+Natually, I want to be comfortable using it but, I think the sheer girth of its API is proving to be a major obstacle. I can&amp;rsquo;t go for long before I have to search usages on Stackoverflow for what should be routine tasks. I don&amp;rsquo;t think I can ever grok its date time API.
+So, I searched for simpler alternative libraries and found polars.</description>
+    </item>
+    
     <item>
       <title>FreeBSD on RPi 4</title>
       <link>https://jaese.github.io/posts/freebsd-on-rpi4/</link>
