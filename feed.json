@@ -10,6 +10,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/cartoons/",
+      "title": "A comic strip",
+      "content_text": "",
+      "url": "https://jaese.github.io/posts/cartoons/",
+      "date_published": "2022-01-12T08:25:37+09:00"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/trying-polars/",
       "title": "Trying polars, a fast DataFrame library",
       "content_text": "pandas is the de facto standard DataFrame manipulation tool in Python.\nNatually, I want to be comfortable using it but, I think the sheer girth of its API is proving to be a major obstacle. I can\u0026rsquo;t go for long before I have to search usages on Stackoverflow for what should be routine tasks. I don\u0026rsquo;t think I can ever grok its date time API.\nSo, I searched for simpler alternative libraries and found polars.",
@@ -87,15 +96,6 @@
       "content_text": "This is a digital gas sensor (CCS811) and an LCD display (HD44780), controlled by Raspberry Pi, that I wired together back in 2019. The CS811 sensor reports two values: \u0026lsquo;equivalent carbon dioxide\u0026rsquo; (eCO2), and \u0026lsquo;Volatile Organic Compounds\u0026rsquo; (VOC), PPM. I am not too sure what those terms mean, not strong on chemistry, but nonetheless I wired it to display the reported values on LCD display continuously. I assume high values mean bad.",
       "url": "https://jaese.github.io/posts/breath-sensor/",
       "date_published": "2021-11-09T18:58:21+09:00"
-    }
-  
-  , 
-    {
-      "id": "https://jaese.github.io/posts/hello/",
-      "title": "Hello",
-      "content_text": "My first post.",
-      "url": "https://jaese.github.io/posts/hello/",
-      "date_published": "2021-11-05T10:58:03+09:00"
     }
   
   ]

@@ -6,7 +6,16 @@
     <description>Recent content on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jan 2022 10:43:31 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jan 2022 08:25:37 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A comic strip</title>
+      <link>https://jaese.github.io/posts/cartoons/</link>
+      <pubDate>Wed, 12 Jan 2022 08:25:37 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/cartoons/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Trying polars, a fast DataFrame library</title>
       <link>https://jaese.github.io/posts/trying-polars/</link>
