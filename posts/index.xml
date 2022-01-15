@@ -6,7 +6,18 @@
     <description>Recent content in Posts on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jan 2022 08:25:37 +0900</lastBuildDate><atom:link href="https://jaese.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Jan 2022 15:15:59 +0900</lastBuildDate><atom:link href="https://jaese.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Home network v1</title>
+      <link>https://jaese.github.io/posts/home-network-v1/</link>
+      <pubDate>Sat, 15 Jan 2022 15:15:59 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/home-network-v1/</guid>
+      <description>Don&amp;rsquo;t mind the mess
+  It was long overdue I learned the basics of IP networking, and there wouldn&amp;rsquo;t be a better way than to learn it hands-on by setting up my own home network.
+Before then, I&amp;rsquo;d been using the same WiFi hub installed by the ISP when I moved in. (By the way, if you are using the WiFi hub installed by D&amp;rsquo;Live, be aware that it exposes the configuration UI on port 8080 to the Internet.</description>
+    </item>
+    
     <item>
       <title>A comic strip</title>
       <link>https://jaese.github.io/posts/cartoons/</link>
