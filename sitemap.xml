@@ -2,17 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jaese.github.io/tags/freebsd/</loc>
+    <lastmod>2022-01-15T15:15:59+09:00</lastmod>
+  </url><url>
     <loc>https://jaese.github.io/posts/home-network-v1/</loc>
     <lastmod>2022-01-15T15:15:59+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/</loc>
     <lastmod>2022-01-15T15:15:59+09:00</lastmod>
   </url><url>
+    <loc>https://jaese.github.io/tags/networking/</loc>
+    <lastmod>2022-01-15T15:15:59+09:00</lastmod>
+  </url><url>
     <loc>https://jaese.github.io/posts/</loc>
+    <lastmod>2022-01-15T15:15:59+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/raspberrypi/</loc>
+    <lastmod>2022-01-15T15:15:59+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/</loc>
     <lastmod>2022-01-15T15:15:59+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/cartoons/</loc>
     <lastmod>2022-01-12T08:25:37+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/comic/</loc>
+    <lastmod>2022-01-12T08:25:37+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/polars/</loc>
+    <lastmod>2022-01-11T10:43:31+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/python/</loc>
+    <lastmod>2022-01-11T10:43:31+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/trying-polars/</loc>
     <lastmod>2022-01-11T10:43:31+09:00</lastmod>
@@ -20,14 +41,35 @@
     <loc>https://jaese.github.io/posts/freebsd-on-rpi4/</loc>
     <lastmod>2022-01-04T21:11:23+09:00</lastmod>
   </url><url>
+    <loc>https://jaese.github.io/tags/hardware/</loc>
+    <lastmod>2022-01-01T06:47:45+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/microcontroller/</loc>
+    <lastmod>2022-01-01T06:47:45+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/rambling/</loc>
+    <lastmod>2022-01-01T06:47:45+09:00</lastmod>
+  </url><url>
     <loc>https://jaese.github.io/posts/revisiting-the-project-bootstrapping/</loc>
     <lastmod>2022-01-01T06:47:45+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/jupyter/</loc>
+    <lastmod>2021-12-28T19:31:47+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/publishing-jupyter-notebook/</loc>
     <lastmod>2021-12-28T19:31:47+09:00</lastmod>
   </url><url>
+    <loc>https://jaese.github.io/tags/jwst/</loc>
+    <lastmod>2021-12-26T13:42:41+09:00</lastmod>
+  </url><url>
     <loc>https://jaese.github.io/posts/jwsp-launches/</loc>
     <lastmod>2021-12-26T13:42:41+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/space/</loc>
+    <lastmod>2021-12-26T13:42:41+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/ebiten/</loc>
+    <lastmod>2021-12-25T00:41:28+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/hello-ebiten/</loc>
     <lastmod>2021-12-25T00:41:28+09:00</lastmod>
@@ -39,6 +81,12 @@
     <lastmod>2021-12-22T18:43:12+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/ray-tracing-in-one-week/</loc>
+    <lastmod>2021-12-18T23:01:01+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/webassembly/</loc>
+    <lastmod>2021-12-18T23:01:01+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/zig/</loc>
     <lastmod>2021-12-18T23:01:01+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/wasm4/bifurcation_diagram/</loc>
@@ -59,6 +107,9 @@
     <loc>https://jaese.github.io/wasm4/mandelbrot-set/</loc>
     <lastmod>2021-11-17T17:29:58+09:00</lastmod>
   </url><url>
+    <loc>https://jaese.github.io/tags/wasm-4/</loc>
+    <lastmod>2021-11-15T02:34:44+09:00</lastmod>
+  </url><url>
     <loc>https://jaese.github.io/posts/wasm4/</loc>
     <lastmod>2021-11-15T02:34:44+09:00</lastmod>
   </url><url>
@@ -74,7 +125,5 @@
     <loc>https://jaese.github.io/feed.json</loc>
   </url><url>
     <loc>https://jaese.github.io/categories/</loc>
-  </url><url>
-    <loc>https://jaese.github.io/tags/</loc>
   </url>
 </urlset>

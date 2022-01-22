@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raspberrypi on JO Jaeyoung | 조재영</title>
+    <link>https://jaese.github.io/tags/raspberrypi/</link>
+    <description>Recent content in raspberrypi on JO Jaeyoung | 조재영</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Jan 2022 15:15:59 +0900</lastBuildDate><atom:link href="https://jaese.github.io/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Home network v1</title>
+      <link>https://jaese.github.io/posts/home-network-v1/</link>
+      <pubDate>Sat, 15 Jan 2022 15:15:59 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/home-network-v1/</guid>
+      <description>It was long overdue I learned the basics of IP networking, and there wouldn&amp;rsquo;t be a better way than to learn it hands-on by setting up my own home network.
+Before then, I&amp;rsquo;d been using the same WiFi hub installed by the ISP when I moved in. (By the way, if you are using the WiFi hub installed by D&amp;rsquo;Live, be aware that it exposes the configuration UI on port 8080 to the Internet.</description>
+    </item>
+    
+    <item>
+      <title>FreeBSD on RPi 4</title>
+      <link>https://jaese.github.io/posts/freebsd-on-rpi4/</link>
+      <pubDate>Tue, 04 Jan 2022 21:11:23 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/freebsd-on-rpi4/</guid>
+      <description>As of now, the prebuilt SD card image for RPI (3/4) of FreeBSD 13.0 doesn&amp;rsquo;t run out of the box on RPi 4 due to an issue with the bootloader and requires replacing the bootloader binary on the SD card. If you have a Raspberry PI OS installation and want to try FreeBSD on RPi 4, you can follow these steps:
+  Download and flash FreeBSD-13.0-RELEASE-arm64-aarch64-RPI.img.xz to an SD card.</description>
+    </item>
+    
+  </channel>
+</rss>

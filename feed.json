@@ -4,6 +4,10 @@
   "home_page_url": "https://jaese.github.io/",
   "feed_url": "https://jaese.github.io/feed.json",
 
+"description": "jaese's personal blog",
+
+
+"author": { "name": "jaese" },
 
   "items": [
     
@@ -12,7 +16,7 @@
     {
       "id": "https://jaese.github.io/posts/home-network-v1/",
       "title": "Home network v1",
-      "content_text": "Don\u0026rsquo;t mind the mess\n  It was long overdue I learned the basics of IP networking, and there wouldn\u0026rsquo;t be a better way than to learn it hands-on by setting up my own home network.\nBefore then, I\u0026rsquo;d been using the same WiFi hub installed by the ISP when I moved in. (By the way, if you are using the WiFi hub installed by D\u0026rsquo;Live, be aware that it exposes the configuration UI on port 8080 to the Internet.",
+      "content_text": "It was long overdue I learned the basics of IP networking, and there wouldn\u0026rsquo;t be a better way than to learn it hands-on by setting up my own home network.\nBefore then, I\u0026rsquo;d been using the same WiFi hub installed by the ISP when I moved in. (By the way, if you are using the WiFi hub installed by D\u0026rsquo;Live, be aware that it exposes the configuration UI on port 8080 to the Internet.",
       "url": "https://jaese.github.io/posts/home-network-v1/",
       "date_published": "2022-01-15T15:15:59+09:00"
     }

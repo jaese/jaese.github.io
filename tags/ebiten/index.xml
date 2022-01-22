@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ebiten on JO Jaeyoung | 조재영</title>
+    <link>https://jaese.github.io/tags/ebiten/</link>
+    <description>Recent content in ebiten on JO Jaeyoung | 조재영</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Dec 2021 00:41:28 +0900</lastBuildDate><atom:link href="https://jaese.github.io/tags/ebiten/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello Ebiten</title>
+      <link>https://jaese.github.io/posts/hello-ebiten/</link>
+      <pubDate>Sat, 25 Dec 2021 00:41:28 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/hello-ebiten/</guid>
+      <description>https://ebiten.org</description>
+    </item>
+    
+  </channel>
+</rss>

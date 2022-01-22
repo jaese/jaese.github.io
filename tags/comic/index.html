@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>comic</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+
+  <script src="https://kit.fontawesome.com/b038bb8731.js" crossorigin="anonymous"></script>
+
+  <link rel="alternate" title="JO Jaeyoung" type="application/feed+json" href="https://jaese.github.io/feed.json" />
+
+  <script type="application/ld+json">
+
+</script>
+
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+    }
+
+     
+  </style>
+
+  <div class="wrap pure-g">
+    <nav class="profile pure-u-1 pure-u-md-1-4">
+      <h3><a href="/">JO Jaeyoung<br>조재영</a></h3>
+      <img class="pure-img" style="width:60%" src="/profile.png" />
+
+      <ul>
+        <li><a href="https://jaese.github.io/feed.json"><i class="fas fa-rss-square"></i> JSON Feed</a></li>
+        <li><a href="https://github.com/jaese"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://www.kaggle.com/jaeyoungse"><i class="fab fa-kaggle"></i> Kaggle</a></li>
+        <li><a href="https://www.linkedin.com/in/jaeyoung-jo-64b2a6148/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/jaeyoung.se/"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="mailto:jojaeyoung.se@gmail.com"><i class="fas fa-envelope-square"></i> Email</a></li>
+        <li><a href="https://keybase.io/jaese"><i class="fab fa-keybase"></i> Keybase</a></li>
+      </ul>
+
+      <p>
+        My role model is Iron Man.
+      </p>
+
+      <p class="time">
+        UTC - TAI =<br><a href="https://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat">-37 s</a>
+        <br>
+        <br>
+        TIME_TAI = <span class="time-tai">?</span>
+        <br>
+        (based on browser time)
+      </p>
+
+      <a href="https://fabiensanglard.net/gebbdoom/"><canvas class="doom-fire" width="50" height="50"></canvas></a>
+    </nav>
+    <div class="content pure-u-1 pure-u-md-3-4">
+      
+<main>
+  
+  <div>
+    <h1>comic</h1>
+    
+  </div>
+  
+
+  <ul>
+  
+    <li>
+      <a href="https://jaese.github.io/posts/cartoons/">A comic strip</a>
+    </li>
+  
+  </ul>
+</main>
+
+    </div>
+  </div>
+  <style>
+    nav.profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 200px;
+      margin-right: 15px;
+       
+
+      box-sizing: border-box;
+    }
+
+    nav.profile ul {
+      list-style: none;
+      width: 100%;
+    }
+
+    nav.profile li {
+      line-height: 20px;
+    }
+    nav.profile .fab, .fas {
+      width: 15px;
+    }
+    nav.profile a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    .time {
+      text-align: center;
+    }
+    .time a {
+      font-weight: bold;
+    }
+
+    div.content {
+      max-width: 800px;
+       
+
+      box-sizing: border-box;
+    }
+
+    canvas.doom-fire {
+      object-fit: contain;
+      width: 100px;
+      height: 100px;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+  </style>
+
+  <script type="module">
+    import { renderCanvas } from '/wasm.js';
+
+    renderCanvas('canvas.doom-fire', '/doom_fire.wasm', 50, 50);
+  </script>
+
+  <script type="module">
+    const timeTAIElement = document.querySelector('.time-tai');
+    const utcTAIOffset = -37;
+
+    const updateTime = () => {
+      const local = new Date();
+      const utc = new Date(local.getTime() + local.getTimezoneOffset() * 60 * 1000);
+      const tai = utc.getTime() - (utcTAIOffset * 1000);
+      timeTAIElement.textContent = Math.round(tai / 1000);
+
+      let ms = local.getTime() % 1000;
+      if (ms > 500) {
+        ms -= 1000;
+      };
+      setTimeout(updateTime, 1000 - ms);
+    };
+    updateTime();
+
+  </script>
+</body>
+
+</html>

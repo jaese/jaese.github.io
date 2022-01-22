@@ -11,6 +11,37 @@
   <script src="https://kit.fontawesome.com/b038bb8731.js" crossorigin="anonymous"></script>
 
   <link rel="alternate" title="JO Jaeyoung" type="application/feed+json" href="https://jaese.github.io/feed.json" />
+
+  <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ray Tracing in One Weekend on WebAssembly",
+  
+  "datePublished": "2021-12-18T23:01:01+09:00",
+  "dateModified": "2021-12-18T23:01:01+09:00",
+  "author": {
+    "@type": "Person",
+    "url": "https://jaese.github.io/",
+    "name": "jaese"
+  },
+  "mainEntityOfPage": { "@type": "Webpage" },
+  "description": "samples: \n  div.raytracing-content { } canvas { width: 800px; height: 356px; image-rendering: pixelated; image-rendering: crisp-edges; }  import { instantiate } from '/wasm.js'; const width = 320; const height = 180; const samplesElem = document.querySelector('.samples'); console.log(samplesElem); (async function start() { const memory = new WebAssembly.Memory({initial: 40, maximum: 40}) const importObject = { 'env': { 'memory': memory, }, }; const { instance, module } = await instantiate('/raytracing.wasm', importObject); const exports = instance.",
+  "keywords": [
+    
+    
+    "webassembly"
+    
+    ,
+    
+    "zig"
+    
+  ]
+}
+
+</script>
+
 </head>
 
 <body>
