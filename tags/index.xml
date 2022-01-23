@@ -6,7 +6,25 @@
     <description>Recent content in Tags on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Jan 2022 15:15:59 +0900</lastBuildDate><atom:link href="https://jaese.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 14:58:44 +0000</lastBuildDate><atom:link href="https://jaese.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>jax</title>
+      <link>https://jaese.github.io/tags/jax/</link>
+      <pubDate>Sun, 23 Jan 2022 14:58:44 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/tags/jax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://jaese.github.io/tags/python/</link>
+      <pubDate>Sun, 23 Jan 2022 14:58:44 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>freebsd</title>
       <link>https://jaese.github.io/tags/freebsd/</link>
@@ -49,15 +67,6 @@
       <pubDate>Tue, 11 Jan 2022 10:43:31 +0900</pubDate>
       
       <guid>https://jaese.github.io/tags/polars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://jaese.github.io/tags/python/</link>
-      <pubDate>Tue, 11 Jan 2022 10:43:31 +0900</pubDate>
-      
-      <guid>https://jaese.github.io/tags/python/</guid>
       <description></description>
     </item>
     

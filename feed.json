@@ -14,6 +14,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/hello-jax/",
+      "title": "JAX API",
+      "content_text": "Google\u0026rsquo;s JAX autograd library is an example of a neat, composable API. The following is all that is needed to plot the gradient field of a function using JAX\u0026rsquo;s grad and vmap functions.\n ",
+      "url": "https://jaese.github.io/posts/hello-jax/",
+      "date_published": "2022-01-23T14:58:44Z"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/home-network-v1/",
       "title": "Home network v1",
       "content_text": "It was long overdue I learned the basics of IP networking, and there wouldn\u0026rsquo;t be a better way than to learn it hands-on by setting up my own home network.\nBefore then, I\u0026rsquo;d been using the same WiFi hub installed by the ISP when I moved in. (By the way, if you are using the WiFi hub installed by D\u0026rsquo;Live, be aware that it exposes the configuration UI on port 8080 to the Internet.",
@@ -91,15 +100,6 @@
       "content_text": "samples: \n  div.raytracing-content { } canvas { width: 800px; height: 356px; image-rendering: pixelated; image-rendering: crisp-edges; }  import { instantiate } from '/wasm.js'; const width = 320; const height = 180; const samplesElem = document.querySelector('.samples'); console.log(samplesElem); (async function start() { const memory = new WebAssembly.Memory({initial: 40, maximum: 40}) const importObject = { 'env': { 'memory': memory, }, }; const { instance, module } = await instantiate('/raytracing.wasm', importObject); const exports = instance.",
       "url": "https://jaese.github.io/posts/ray-tracing-in-one-week/",
       "date_published": "2021-12-18T23:01:01+09:00"
-    }
-  
-  , 
-    {
-      "id": "https://jaese.github.io/posts/wasm4/",
-      "title": "WASM-4 and Zig",
-      "content_text": "WASM-4 binaries running on browser  *Fancy* graphics   Press R to reset     .wasm4 { padding: 10px; box-sizing: border-box; } #rotating_cube { width: 320px; height: 320px; } #rotating_cube canvas { width: 100%; height: 100%; image-rendering: pixelated; image-rendering: crisp-edges; } #snake { width: 320px; height: 320px; } #snake canvas { width: 100%; height: 100%; image-rendering: pixelated; image-rendering: crisp-edges; }  import { run } from \"",
-      "url": "https://jaese.github.io/posts/wasm4/",
-      "date_published": "2021-11-15T02:34:44+09:00"
     }
   
   ]
