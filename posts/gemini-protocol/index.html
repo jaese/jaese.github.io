@@ -112,7 +112,7 @@
 <h2 id="into-geminispace">Into Geminispace</h2>
 <p>The Gemini web is called Geminispace. Gemini sites are called capsules.</p>
 <p>I am using two Gemini clients using and both are great. I did not bother to try others.</p>
-<p><a href="https://gmi.skyjake.fi/lagrange/">Lagrange desktop GUI client</a> is my go-to client and the experience is comparable to using Firefox. I am taken how polished it is, given the nicheness of the protocol. Initially, Korean texts are not rendered, but there is helpful guide from the browser to install right fonts (Noto). It also supports Gopher.</p>
+<p><a href="https://gmi.skyjake.fi/lagrange/">Lagrange desktop GUI client</a> is my go-to client and the experience is almost comparable to using Firefox. I am taken how polished it is, given the nicheness of the protocol. Initially, Korean texts are not rendered, but there is helpful guide from the browser to install right fonts (Noto). It also supports Gopher.</p>
 <p><a href="https://github.com/makeworld-the-better-one/amfora">Amfora terminal client</a> when I want to browse from terminal for some reason.</p>
 <p>Here are some interesting capsules I found:</p>
 <ul>
@@ -121,6 +121,7 @@
 <li><a href="gemini://astrobotany.mozz.us/public/33d1635da55c4d94b0f5fc6e09f2c4ca">My astro-plant</a></li>
 </ul>
 </li>
+<li><a href="gemini://makeworld.space/">gemini://makeworld.space/</a></li>
 <li><a href="gemini://geddit.glv.one/">gemini://geddit.glv.one/</a> - Like Reddit but in Gemini
 <ul>
 <li>There already are spams in Geminispace..</li>
@@ -134,7 +135,7 @@
 <p><a href="gemini://jaeyoung.se/">gemini://jaeyoung.se/</a></p>
 <p>Here are some notes:</p>
 <h3 id="lack-of-inline-links">Lack of inline links</h3>
-<p>When compared to web, the most striking thing about Gemini is that it has no inline links. Gemtext only lets you put links on a line on their own. I am a person who uses inline links in texts very liberally. Even on Slack messages I plaster them with reference links. I tried to preserve each inline link when converting to Gemtext and the result is acceptable, but a bit awkward (See an example: gemini://jaeyoung.se/posts/home-network-v1/). If a link-heavy site like Wikis is to be converted this way, I imagine it would be too cluttered to be viewable.</p>
+<p>When compared to web, the most striking thing about Gemini is that it has no inline links. Gemtext only lets you put links on a line on their own. I am a person who uses inline links in texts very liberally. Even on Slack messages I plaster them with reference links. I tried to preserve each inline link when converting to Gemtext and the result is acceptable, but a bit awkward. If a link-heavy site like Wikis is to be converted this way, I imagine it would be too cluttered to be viewable.</p>
 <p>I get the simplicity rationale. But because hyperlinks are such an important feature, it is what makes the web a web, I think the links are where the spec can expand more on.</p>
 <h3 id="tls">TLS</h3>
 <p>In Gemini, the use of TLS is mandatory and client session/identity is also handled with TLS certificates. From technical standpoint this is great. But I am worried that this will prove a barrier to adaption because handling TLS certificates is not a general skill, even among programmers. In the company I work, only a fraction of the engineers are familiar with TLS. I considered TLS as an Ops detail.</p>
@@ -145,7 +146,7 @@
 <h2 id="the-future">The Future</h2>
 <p>I think Gemini will establish as a niche but prominent alternative protocol to the web.</p>
 <p>I agree with the points made in <a href="https://taoofmac.com/space/blog/2022/01/17/0800">this blog post</a>. The lack of <code>Content-Length</code> is strange. It is helpful to know how much content you expect to receive from the receiving end, if only to avoid receiving more than you have space for and crashing.</p>
-<p>I may keep maintaining my capsule, because the tech stack is so simple the upkeep is minimal. I may implement dynamic/interactive content that I think is interesting. Viewership-wise it does not matter which protocol it is in, nobody reads my blog anyways.</p>
+<p>I may keep maintaining my capsule, because the tech is so simple the upkeep is minimal. I may implement dynamic/interactive content that I think is interesting. Viewership-wise it does not matter which protocol it is in, nobody reads my blog anyways.</p>
 
     </div>
     <style>
