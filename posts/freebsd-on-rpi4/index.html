@@ -68,6 +68,7 @@
         <li><a href="https://www.instagram.com/jaeyoung.se/"><i class="fab fa-instagram"></i> Instagram</a></li>
         <li><a href="mailto:jojaeyoung.se@gmail.com"><i class="fas fa-envelope-square"></i> Email</a></li>
         <li><a href="https://keybase.io/jaese"><i class="fab fa-keybase"></i> Keybase</a></li>
+        <li><a href="gemini://jaeyoung.se"><i class="fas fa-rocket"></i> Gemini Capsule</a></li>
       </ul>
 
       <p>
@@ -94,11 +95,12 @@
       <time datetime="2022-01-04T21:11:23">2022-01-04T21:11:23</time>
       <p>tags: [freebsd raspberrypi]</p>
     </div>
-    <div>
+    <div class="content">
       
         
         
         <img src="https://jaese.github.io/posts/freebsd-on-rpi4/neofetch_hu3738a4acf32e64b4768a2254e43d72f1_104432_480x0_resize_box_3.png">
+      
       
       <p>As of now, the prebuilt SD card image for RPI (3/4) of FreeBSD 13.0 doesn&rsquo;t run out of the box on RPi 4 due to <a href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=255080">an issue with the bootloader</a> and requires replacing the bootloader binary on the SD card. If you have a Raspberry PI OS installation and want to try FreeBSD on RPi 4, you can follow these steps:</p>
 <ol>
@@ -142,6 +144,11 @@ cp /usr/local/share/u-boot/u-boot-rpi4/u-boot.bin /boot/msdos/u-boot.bin
 </ul>
 
     </div>
+    <style>
+      .content {
+        line-height: 130%;
+      }
+    </style>
   </article>
   
 </main>
