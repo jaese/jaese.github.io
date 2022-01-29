@@ -29,7 +29,7 @@
     "name": "jaese"
   },
   "mainEntityOfPage": { "@type": "Webpage" },
-  "description": "Project Gemini is an early NASA human spacefilght program.\nThe Gemini protocol is a new internet protocol that takes user privacy seriously.\nI came across Gemini when I was distracted and was reading about the Gopher protocol. Gopher was interesting to me because I felt the modern web standards are too complicated. From the app developer\u0026rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders' tastes.",
+  "description": "Project Gemini is an early NASA human spacefilght program.\nThe Gemini protocol is a new internet protocol that takes user privacy seriously.\nI came across Gemini when I got distracted and was reading about the Gopher protocol. Gopher was interesting to me because I felt the modern web standards are too complicated. From the app developer\u0026rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders' tastes.",
   "keywords": [
     
     
@@ -106,7 +106,7 @@
       
       <p>Project Gemini is an early NASA human spacefilght program.</p>
 <p><a href="https://gemini.circumlunar.space">The Gemini protocol</a> is a new internet protocol that takes user privacy seriously.</p>
-<p>I came across Gemini when I was distracted and was reading about <a href="https://en.wikipedia.org/wiki/Gopher_(protocol)">the Gopher protocol</a>. Gopher was interesting to me because I felt the modern web standards are too complicated. From the app developer&rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders' tastes. It is not that the web standards are bad; I believe the complexity is proportional to how powerful the web platform is. But when all I want to do is publish some tidbits on a personal website, all its complexity is simply unwarranted.</p>
+<p>I came across Gemini when I got distracted and was reading about <a href="https://en.wikipedia.org/wiki/Gopher_(protocol)">the Gopher protocol</a>. Gopher was interesting to me because I felt the modern web standards are too complicated. From the app developer&rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders' tastes. It is not that the web standards are bad; I believe the complexity is proportional to how powerful the web platform is. But when all I want to do is publish some tidbits on a personal website, all its complexity is simply unwarranted.</p>
 <p>Years ago I looked at the Gopher protocol. It is quite idiosyncratic, which is understandable for such early technology. The text format is not aesthetically pleasing to my &lsquo;modern&rsquo; senses. So I gave it a passing.</p>
 <p>The Gemini protocol is a modern evolution of Gopher, called &lsquo;Souped-Up Gopher&rsquo;, with aim of user privacy in the age of ubiquitous user tracking. But I am more interested in how obscenely simple <a href="https://gemini.circumlunar.space/docs/specification.gmi">the protocol spec</a> is. A functional Gemini server can be written in about 100 lines of Go code. I am sold.</p>
 <h2 id="into-geminispace">Into Geminispace</h2>
@@ -140,6 +140,8 @@
 <p>In Gemini, the use of TLS is mandatory and client session/identity is also handled with TLS certificates. From technical standpoint this is great. But I am worried that this will prove a barrier to adaption because handling TLS certificates is not a general skill, even among programmers. In the company I work, only a fraction of the engineers are familiar with TLS. I considered TLS as an Ops detail.</p>
 <p>For learning TLS basics, I recommend <a href="https://www.tiltedwindmillpress.com/product/tls/">TLS Mastery by Michael W Lucas</a>. This is the book that got me some TLS literacy after years of blindly copying and pasting openssl commands and being on general state of confusion.</p>
 <p>I am using <a href="https://smallstep.com">Smallstep</a> certificate manager and their tools to generate certificates while writing server. The CLI tool conveniently installs CA root certificates on system keychain.</p>
+<h3 id="jupyter-notebook">Jupyter Notebook</h3>
+<p>Since <a href="https://jupyter.org">The Jupyter Notebook</a> is a web-based technology, I imagine converting notebooks to Gemtext will not be simple. I tried <a href="https://nbconvert.readthedocs.io/en/latest/usage.html#markdown">nbconvert&rsquo;s markdown support</a> to convert one of the notebooks, but the tables outputs are rendered with HTML tags so it is not immediately usable. It will be interesting to see tools to develop on this area.</p>
 <h2 id="the-future">The Future</h2>
 <p>I think Gemini will establish as a niche but prominent alternative protocol to the web.</p>
 <p>I agree with the points made in <a href="https://taoofmac.com/space/blog/2022/01/17/0800">this blog post</a>. The lack of <code>Content-Length</code> is strange. It is helpful to know how much content you expect to receive from the receiving end, if only to avoid receiving more than you have space for and crashing.</p>
