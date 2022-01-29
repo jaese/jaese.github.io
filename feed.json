@@ -14,6 +14,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/gemini-protocol/",
+      "title": "Gemini: new internet protocol",
+      "content_text": "Project Gemini is an early NASA human spacefilght program.\nThe Gemini protocol is a new internet protocol that takes user privacy seriously.\nI came across Gemini when I was distracted and was reading about the Gopher protocol. Gopher was interesting to me because I felt the modern web standards are too complicated. From the app developer\u0026rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders' tastes.",
+      "url": "https://jaese.github.io/posts/gemini-protocol/",
+      "date_published": "2022-01-29T00:00:00Z"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/hello-jax/",
       "title": "JAX API",
       "content_text": "Google\u0026rsquo;s JAX autograd library is an example of a neat, composable API. The following is all that is needed to plot the gradient field of a function using JAX\u0026rsquo;s grad and vmap functions.\n ",
@@ -91,15 +100,6 @@
       "content_text": "https://ebiten.org",
       "url": "https://jaese.github.io/posts/hello-ebiten/",
       "date_published": "2021-12-25T00:41:28+09:00"
-    }
-  
-  , 
-    {
-      "id": "https://jaese.github.io/posts/ray-tracing-in-one-week/",
-      "title": "Ray Tracing in One Weekend on WebAssembly",
-      "content_text": "samples: \n  div.raytracing-content { } canvas { width: 800px; height: 356px; image-rendering: pixelated; image-rendering: crisp-edges; }  import { instantiate } from '/wasm.js'; const width = 320; const height = 180; const samplesElem = document.querySelector('.samples'); console.log(samplesElem); (async function start() { const memory = new WebAssembly.Memory({initial: 40, maximum: 40}) const importObject = { 'env': { 'memory': memory, }, }; const { instance, module } = await instantiate('/raytracing.wasm', importObject); const exports = instance.",
-      "url": "https://jaese.github.io/posts/ray-tracing-in-one-week/",
-      "date_published": "2021-12-18T23:01:01+09:00"
     }
   
   ]

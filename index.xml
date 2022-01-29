@@ -6,7 +6,18 @@
     <description>Recent content on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Jan 2022 14:58:44 +0000</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gemini: new internet protocol</title>
+      <link>https://jaese.github.io/posts/gemini-protocol/</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/posts/gemini-protocol/</guid>
+      <description>Project Gemini is an early NASA human spacefilght program.
+The Gemini protocol is a new internet protocol that takes user privacy seriously.
+I came across Gemini when I was distracted and was reading about the Gopher protocol. Gopher was interesting to me because I felt the modern web standards are too complicated. From the app developer&amp;rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders&#39; tastes.</description>
+    </item>
+    
     <item>
       <title>JAX API</title>
       <link>https://jaese.github.io/posts/hello-jax/</link>
