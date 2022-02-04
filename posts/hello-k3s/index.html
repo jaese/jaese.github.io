@@ -145,7 +145,7 @@ cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/rancher/k3s/registries.yam
 </code></pre></div><p>Ref. <a href="https://rancher.com/docs/k3s/latest/en/installation/private-registry/">https://rancher.com/docs/k3s/latest/en/installation/private-registry/</a></p>
 <h3 id="run-the-harbor-installer">Run the Harbor installer</h3>
 <p>Make changes to harbor.yml to configure the HTTP port and the storage directory, then Harbor can be installed. It installs as several Docker containers.</p>
-<p>One thing I find really neat is that, since Harbor v2 supports manifest lists, if you build images for both linux/amd64 and linux/arm64, the images will work on both platforms transparently. I use <a href="https://github.com/google/ko">ko</a> to build and push multi-platform images in command:</p>
+<p>One thing I find really neat is that, since Harbor v2 supports manifest lists, if you build images for both linux/amd64 and linux/arm64, the images will work on both platforms transparently. I use <a href="https://github.com/google/ko">ko</a> to build and push multi-platform images in one command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">KO_DOCKER_REPO<span style="color:#f92672">=</span>gauss.lab.jaeyoung.se:8443/library ko publish --platform<span style="color:#f92672">=</span>linux/amd64,linux/arm64 -P .
 </code></pre></div><h2 id="the-cluster-is-up-and-running">The cluster is up and running</h2>
 <p>Yay.</p>
