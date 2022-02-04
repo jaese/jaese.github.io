@@ -136,11 +136,12 @@
 sudo update-ca-certificates
 
 mkdir -p /etc/rancher/k3s
-cat &lt;&lt;EOF &gt; /etc/rancher/k3s/registries.yaml
-configs:
-  <span style="color:#e6db74">&#34;gauss.lab.jaeyoung.se:8443&#34;</span>:
-    tls:
-      ca_file: /usr/local/share/ca-certificates/root_ca.crt
+cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/rancher/k3s/registries.yaml
+</span><span style="color:#e6db74">configs:
+</span><span style="color:#e6db74">  &#34;gauss.lab.jaeyoung.se:8443&#34;:
+</span><span style="color:#e6db74">    tls:
+</span><span style="color:#e6db74">      ca_file: /usr/local/share/ca-certificates/root_ca.crt
+</span><span style="color:#e6db74">EOF</span>
 </code></pre></div><p>Ref. <a href="https://rancher.com/docs/k3s/latest/en/installation/private-registry/">https://rancher.com/docs/k3s/latest/en/installation/private-registry/</a></p>
 <h3 id="run-the-harbor-installer">Run the Harbor installer</h3>
 <p>Make changes to harbor.yml to configure the HTTP port and the storage directory, then Harbor can be installed. It installs as several Docker containers.</p>
