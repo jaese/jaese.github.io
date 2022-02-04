@@ -6,7 +6,16 @@
     <description>Recent content in raspberrypi on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Jan 2022 15:15:59 +0900</lastBuildDate><atom:link href="https://jaese.github.io/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jaese.github.io/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up a K3S cluster</title>
+      <link>https://jaese.github.io/posts/hello-k3s/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/posts/hello-k3s/</guid>
+      <description>I wanted to set up a Kubernetes cluster on my networking lab that consists of three RPis and a PC, and run some actual workload. I used K3S, a lightweight Kubernetes distribution, because it seemed to be the one to go to for running Kubernetes on RPis, ex. Jeff Geerling&amp;rsquo;s video on installing K3S. For image registry, I tried Harbor open source registry v2.4.1. The cluster ingress is fronted by a reverse proxy.</description>
+    </item>
+    
     <item>
       <title>Home network v1</title>
       <link>https://jaese.github.io/posts/home-network-v1/</link>

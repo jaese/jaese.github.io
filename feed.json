@@ -14,6 +14,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/hello-k3s/",
+      "title": "Setting up a K3S cluster",
+      "content_text": "I wanted to set up a Kubernetes cluster on my networking lab that consists of three RPis and a PC, and run some actual workload. I used K3S, a lightweight Kubernetes distribution, because it seemed to be the one to go to for running Kubernetes on RPis, ex. Jeff Geerling\u0026rsquo;s video on installing K3S. For image registry, I tried Harbor open source registry v2.4.1. The cluster ingress is fronted by a reverse proxy.",
+      "url": "https://jaese.github.io/posts/hello-k3s/",
+      "date_published": "2022-02-04T00:00:00Z"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/gemini-protocol/",
       "title": "Gemini: new internet protocol",
       "content_text": "Project Gemini is an early NASA human spacefilght program.\nThe Gemini protocol is a new internet protocol that takes user privacy seriously.\nI came across Gemini when I got distracted and was reading about the Gopher protocol. Gopher was interesting to me because I felt the modern web standards are too complicated. From the app developer\u0026rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders' tastes.",
@@ -91,15 +100,6 @@
       "content_text": "James Webb Space Telescope Where is Webb Resources #UnfoldTheUniverse  The successor to the Hubble Space Telescope, the James Webb Space Telescope launched at 2021-12-25T12:20Z from the ESA Launch Facility in French Guiana. It just has finished the starting part of the deployment sequence that spans 6 months, and it is cruising towards L2, 1.5 million km from the earth.\nWebb will see the lights emitted when the first stars were born over 13.",
       "url": "https://jaese.github.io/posts/jwsp-launches/",
       "date_published": "2021-12-26T13:42:41+09:00"
-    }
-  
-  , 
-    {
-      "id": "https://jaese.github.io/posts/hello-ebiten/",
-      "title": "Hello Ebiten",
-      "content_text": "https://ebiten.org",
-      "url": "https://jaese.github.io/posts/hello-ebiten/",
-      "date_published": "2021-12-25T00:41:28+09:00"
     }
   
   ]

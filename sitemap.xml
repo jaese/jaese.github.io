@@ -2,22 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jaese.github.io/tags/harbor/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/k3s/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/kubernetes/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/nginx/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/posts/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/raspberrypi/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/posts/hello-k3s/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://jaese.github.io/tags/gemini/</loc>
     <lastmod>2022-01-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/gemini-protocol/</loc>
     <lastmod>2022-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jaese.github.io/</loc>
-    <lastmod>2022-01-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jaese.github.io/posts/</loc>
-    <lastmod>2022-01-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://jaese.github.io/tags/privacy/</loc>
-    <lastmod>2022-01-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jaese.github.io/tags/</loc>
     <lastmod>2022-01-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/tags/jax/</loc>
@@ -36,9 +54,6 @@
     <lastmod>2022-01-15T15:15:59+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/tags/networking/</loc>
-    <lastmod>2022-01-15T15:15:59+09:00</lastmod>
-  </url><url>
-    <loc>https://jaese.github.io/tags/raspberrypi/</loc>
     <lastmod>2022-01-15T15:15:59+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/cartoons/</loc>

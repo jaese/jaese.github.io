@@ -6,7 +6,52 @@
     <description>Recent content in Tags on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jaese.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jaese.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>harbor</title>
+      <link>https://jaese.github.io/tags/harbor/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/tags/harbor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k3s</title>
+      <link>https://jaese.github.io/tags/k3s/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/tags/k3s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://jaese.github.io/tags/kubernetes/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://jaese.github.io/tags/nginx/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raspberrypi</title>
+      <link>https://jaese.github.io/tags/raspberrypi/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>gemini</title>
       <link>https://jaese.github.io/tags/gemini/</link>
@@ -58,15 +103,6 @@
       <pubDate>Sat, 15 Jan 2022 15:15:59 +0900</pubDate>
       
       <guid>https://jaese.github.io/tags/networking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>raspberrypi</title>
-      <link>https://jaese.github.io/tags/raspberrypi/</link>
-      <pubDate>Sat, 15 Jan 2022 15:15:59 +0900</pubDate>
-      
-      <guid>https://jaese.github.io/tags/raspberrypi/</guid>
       <description></description>
     </item>
     
