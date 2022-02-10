@@ -6,7 +6,17 @@
     <description>Recent content on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Feb 2022 00:38:38 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raytracing in One Weekend on Ebiten</title>
+      <link>https://jaese.github.io/posts/raytracing-ebiten/</link>
+      <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaese.github.io/posts/raytracing-ebiten/</guid>
+      <description> I am going to profile it to figure out why this version is much slower than the Zig version.
+ https://raytracing.github.io/books/RayTracingInOneWeekend.html https://ebiten.org  </description>
+    </item>
+    
     <item>
       <title>Pancho&#39;s Adventures (WIP)</title>
       <link>https://jaese.github.io/projects/pancho/</link>
