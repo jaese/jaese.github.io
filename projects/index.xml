@@ -6,7 +6,16 @@
     <description>Recent content in Projects on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Feb 2022 00:38:38 +0900</lastBuildDate><atom:link href="https://jaese.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Feb 2022 02:41:26 +0900</lastBuildDate><atom:link href="https://jaese.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple Harmonic Oscillator</title>
+      <link>https://jaese.github.io/projects/simple_harmonic_scillator/</link>
+      <pubDate>Mon, 14 Feb 2022 02:41:26 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/projects/simple_harmonic_scillator/</guid>
+      <description> keyboard controls  s : Start/stop toggle left arrow/right arrow : Adjust position up arrow/down arrow : Adjust velocity  </description>
+    </item>
+    
     <item>
       <title>Pancho&#39;s Adventures (WIP)</title>
       <link>https://jaese.github.io/projects/pancho/</link>
