@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ebiten &#34;games&#34; on JO Jaeyoung | 조재영</title>
+    <link>https://jaese.github.io/ebiten/</link>
+    <description>Recent content in Ebiten &#34;games&#34; on JO Jaeyoung | 조재영</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Feb 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://jaese.github.io/ebiten/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Find Shortest Path</title>
+      <link>https://jaese.github.io/ebiten/shortest-path/</link>
+      <pubDate>Mon, 14 Feb 2022 02:41:26 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/ebiten/shortest-path/</guid>
+      <description>Click on empty region with alt/option key to create a node.
+Click two nodes in sequence to create a weighted (distance) edge between the nodes.
+Press &amp;rsquo;s&#39; key to perform shortest path search.</description>
+    </item>
+    
+    <item>
+      <title>Simple Harmonic Oscillator</title>
+      <link>https://jaese.github.io/ebiten/simple-harmonic-oscillator/</link>
+      <pubDate>Mon, 14 Feb 2022 02:41:26 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/ebiten/simple-harmonic-oscillator/</guid>
+      <description> keyboard controls  s : Start/stop toggle left arrow/right arrow : Adjust position up arrow/down arrow : Adjust velocity  </description>
+    </item>
+    
+  </channel>
+</rss>
