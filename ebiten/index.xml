@@ -27,5 +27,15 @@ Press &amp;rsquo;s&#39; key to perform shortest path search.</description>
       <description> keyboard controls  s : Start/stop toggle left arrow/right arrow : Adjust position up arrow/down arrow : Adjust velocity  </description>
     </item>
     
+    <item>
+      <title>Pancho&#39;s Adventures (WIP)</title>
+      <link>https://jaese.github.io/ebiten/pancho/</link>
+      <pubDate>Sun, 06 Feb 2022 00:38:38 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/ebiten/pancho/</guid>
+      <description>Play  Description Pancho&amp;rsquo;s Adventures is an epic high-fantasy game that follows the exploits of the eponymous hero Pancho.
+https://ebiten.org</description>
+    </item>
+    
   </channel>
 </rss>

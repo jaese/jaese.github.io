@@ -35,10 +35,7 @@
     <loc>https://jaese.github.io/tags/game/</loc>
     <lastmod>2022-02-06T00:38:38+09:00</lastmod>
   </url><url>
-    <loc>https://jaese.github.io/projects/pancho/</loc>
-    <lastmod>2022-02-06T00:38:38+09:00</lastmod>
-  </url><url>
-    <loc>https://jaese.github.io/projects/</loc>
+    <loc>https://jaese.github.io/ebiten/pancho/</loc>
     <lastmod>2022-02-06T00:38:38+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/tags/harbor/</loc>
@@ -132,6 +129,9 @@
     <lastmod>2021-12-25T00:41:28+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/projects/personal-dashboard/</loc>
+    <lastmod>2021-12-22T18:43:12+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/projects/</loc>
     <lastmod>2021-12-22T18:43:12+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/ray-tracing-in-one-week/</loc>

@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 06 Feb 2022 00:38:38 +0900</lastBuildDate><atom:link href="https://jaese.github.io/tags/game/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pancho&#39;s Adventures (WIP)</title>
-      <link>https://jaese.github.io/projects/pancho/</link>
+      <link>https://jaese.github.io/ebiten/pancho/</link>
       <pubDate>Sun, 06 Feb 2022 00:38:38 +0900</pubDate>
       
-      <guid>https://jaese.github.io/projects/pancho/</guid>
+      <guid>https://jaese.github.io/ebiten/pancho/</guid>
       <description>Play  Description Pancho&amp;rsquo;s Adventures is an epic high-fantasy game that follows the exploits of the eponymous hero Pancho.
 https://ebiten.org</description>
     </item>
