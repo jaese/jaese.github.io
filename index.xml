@@ -6,7 +6,17 @@
     <description>Recent content on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Mar 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Mar 2022 19:03:30 +0900</lastBuildDate><atom:link href="https://jaese.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thought: Two Reasons Why Software Is Difficult to Use</title>
+      <link>https://jaese.github.io/posts/thought-two-reasons-why-software-is-difficult-to-use/</link>
+      <pubDate>Mon, 07 Mar 2022 19:03:30 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/thought-two-reasons-why-software-is-difficult-to-use/</guid>
+      <description>I don&amp;rsquo;t have much trust in software. If I can help, I avoid using software. I prefer to walk to the bank than to use online banking. Same for doing government paperworks. Software most of the time doesn&amp;rsquo;t work, or at least, doesn&amp;rsquo;t work the way I expect.
+I think the main reasons why using software is confusing, when compared to other domains, are two things: the lack of locality and the lack of observability.</description>
+    </item>
+    
     <item>
       <title>Taylor Series</title>
       <link>https://jaese.github.io/ebiten/taylor-series/</link>

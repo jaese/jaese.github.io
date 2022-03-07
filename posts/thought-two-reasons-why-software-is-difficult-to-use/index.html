@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thought: Two Reasons Why Software Is Difficult to Use</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+
+  <script src="https://kit.fontawesome.com/b038bb8731.js" crossorigin="anonymous"></script>
+
+  <link rel="alternate" title="JO Jaeyoung" type="application/feed+json" href="https://jaese.github.io/feed.json" />
+
+  <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Thought: Two Reasons Why Software Is Difficult to Use",
+  
+  "datePublished": "2022-03-07T19:03:30+09:00",
+  "dateModified": "2022-03-07T19:03:30+09:00",
+  "author": {
+    "@type": "Person",
+    "url": "https://jaese.github.io/",
+    "name": "jaese"
+  },
+  "mainEntityOfPage": { "@type": "Webpage" },
+  "description": "I don\u0026rsquo;t have much trust in software. If I can help, I avoid using software. I prefer to walk to the bank than to use online banking. Same for doing government paperworks. Software most of the time doesn\u0026rsquo;t work, or at least, doesn\u0026rsquo;t work the way I expect.\nI think the main reasons why using software is confusing, when compared to other domains, are two things: the lack of locality and the lack of observability.",
+  "keywords": [
+    
+    
+    "software"
+    
+  ]
+}
+
+</script>
+
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+    }
+
+     
+  </style>
+
+  <div class="wrap pure-g">
+    <nav class="profile pure-u-1 pure-u-md-1-4">
+      <h3><a href="/">JO Jaeyoung<br>조재영</a></h3>
+      <img class="pure-img" style="width:60%" src="/profile.png" />
+
+      <ul>
+        <li><a href="https://jaese.github.io/feed.json"><i class="fas fa-rss-square"></i> JSON Feed</a></li>
+        <li><a href="https://github.com/jaese"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://www.kaggle.com/jaeyoungse"><i class="fab fa-kaggle"></i> Kaggle</a></li>
+        <li><a href="https://www.linkedin.com/in/jaeyoung-jo-64b2a6148/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/jaeyoung.se/"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="mailto:jojaeyoung.se@gmail.com"><i class="fas fa-envelope-square"></i> Email</a></li>
+        <li><a href="https://keybase.io/jaese"><i class="fab fa-keybase"></i> Keybase</a></li>
+        <li><a href="gemini://jaeyoung.se"><i class="fas fa-rocket"></i> Gemini Capsule</a></li>
+      </ul>
+
+      <p>
+        My role model is Iron Man.
+      </p>
+
+      <p class="time">
+        UTC - TAI =<br><a href="https://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat">-37 s</a>
+        <br>
+        <br>
+        TIME_TAI = <span class="time-tai">?</span>
+        <br>
+        (based on browser time)
+      </p>
+
+      <a href="https://fabiensanglard.net/gebbdoom/"><canvas class="doom-fire" width="50" height="50"></canvas></a>
+    </nav>
+    <div class="content pure-u-1 pure-u-md-3-4">
+      
+<main>
+  <article>
+    <h1>Thought: Two Reasons Why Software Is Difficult to Use</h1>
+    <div>
+      <time datetime="2022-03-07T19:03:30">2022-03-07T19:03:30</time>
+      <p>tags: [software]</p>
+    </div>
+    <div class="content">
+      
+      
+      <p>I don&rsquo;t have much trust in software. If I can help, I avoid using software. I prefer to walk to the bank than to use online banking. Same for doing government paperworks. Software most of the time doesn&rsquo;t work, or at least, doesn&rsquo;t work the way I expect.</p>
+<p>I think the main reasons why using software is confusing, when compared to other domains, are two things: the lack of locality and the lack of observability.</p>
+<h2 id="lack-of-locality">Lack of locality</h2>
+<p>Compare: physical objects, and things in general, exhibit locality, and that allows us to make sense of the world. You don&rsquo;t expect to find a shampoo container on a bookshelf in living room. It belongs in the bathroom. Things that share a common aspect are located close to each other. And they can only interact with the other things in proximity. If that were not the case, predictably life would be <em>chaos</em>. Locality applies to social and organizational domains, too. You are not going to find a random social worker in an I.T. department of a company, nor a daycare center in a military base. Thanks to locality, things in the world stay predictable most of the time.</p>
+<p>On the other hand, computers are locality-defying systems. It is just as easy to change a bit on one end of the memory as to change a bit on the other end of the memory. It is just as easy to change a file in one directory as to change a file in a totally unrelated directory in another part of the filesystem hierarchy. Take two similar-looking statements in a code, one could be performing an arithmetic while the other could be communicating with a server on the other side of the globe. How many times have you gone on a troubleshooting wild goose chase the cause of which ended up because one script was reading or writing an unexpected file/variable?</p>
+<h2 id="lack-of-observability">Lack of observability</h2>
+<p>Observability is expected in everyday life. The most things that we interact with in everyday life are visible, as otherwise life would be a very hazardous venture. Boiling water makes boiling sound. A failing engine would start to vibrate differently. Observability is a built-in feature of the physical world. Whenever we glance around the room of multiple people and immediately understand which persons are in what relationship with whom, we are unconsciously performing an amazing feat of observation.</p>
+<p>In software however, observability is usually an additional feature, often an afterthought, or not even present. Systems get increasingly more complex with thousands of components interacting inside the computer at a time, but users do not have much better view of the system than at the time of early PCs. Do you not think that this is why the state of confusion is the norm, not an exception, when dealing with software?</p>
+<p>Computer operating systems have evolved for more than a half century, so it is surprising to me that there still doesn&rsquo;t seem to be much attention to these points. Containers and access control systems help with locality, and sophisticated monitoring and profiling tools are available too, but I think software can be much more understandable if the notions of locality and observability are incorporated at the platforms level, such as the operating system and programming language. I&rsquo;d like to think more about this.</p>
+
+    </div>
+    <style>
+      .content p {
+        line-height: 130%;
+      }
+
+      pre {
+        padding: 1rem;
+      }
+    </style>
+  </article>
+  
+</main>
+
+<script src="https://giscus.app/client.js"
+        data-repo="jaese/jaese.github.io"
+        data-repo-id="R_kgDOGU2PdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOGU2Pdc4CA-sN"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </div>
+  </div>
+  <style>
+    nav.profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 200px;
+      margin-right: 15px;
+       
+
+      box-sizing: border-box;
+    }
+
+    nav.profile ul {
+      list-style: none;
+      width: 100%;
+    }
+
+    nav.profile li {
+      line-height: 20px;
+    }
+    nav.profile .fab, .fas {
+      width: 15px;
+    }
+    nav.profile a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    .time {
+      text-align: center;
+    }
+    .time a {
+      font-weight: bold;
+    }
+
+    div.content {
+      max-width: 800px;
+       
+
+      box-sizing: border-box;
+    }
+
+    canvas.doom-fire {
+      object-fit: contain;
+      width: 100px;
+      height: 100px;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+  </style>
+
+  <script type="module">
+    import { renderCanvas } from '/wasm.js';
+
+    renderCanvas('canvas.doom-fire', '/doom_fire.wasm', 50, 50);
+  </script>
+
+  <script type="module">
+    const timeTAIElement = document.querySelector('.time-tai');
+    const utcTAIOffset = -37;
+
+    const updateTime = () => {
+      const local = new Date();
+      const utc = new Date(local.getTime() + local.getTimezoneOffset() * 60 * 1000);
+      const tai = utc.getTime() - (utcTAIOffset * 1000);
+      timeTAIElement.textContent = Math.round(tai / 1000);
+
+      let ms = local.getTime() % 1000;
+      if (ms > 500) {
+        ms -= 1000;
+      };
+      setTimeout(updateTime, 1000 - ms);
+    };
+    updateTime();
+
+  </script>
+</body>
+
+</html>
