@@ -3,15 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jaese.github.io/</loc>
-    <lastmod>2022-03-07T19:03:30+09:00</lastmod>
+    <lastmod>2022-04-05T11:57:18+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/kubernetes/</loc>
+    <lastmod>2022-04-05T11:57:18+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/networking/</loc>
+    <lastmod>2022-04-05T11:57:18+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/</loc>
-    <lastmod>2022-03-07T19:03:30+09:00</lastmod>
+    <lastmod>2022-04-05T11:57:18+09:00</lastmod>
   </url><url>
-    <loc>https://jaese.github.io/tags/software/</loc>
-    <lastmod>2022-03-07T19:03:30+09:00</lastmod>
+    <loc>https://jaese.github.io/posts/stop-computer-networking/</loc>
+    <lastmod>2022-04-05T11:57:18+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/tags/</loc>
+    <lastmod>2022-04-05T11:57:18+09:00</lastmod>
+  </url><url>
+    <loc>https://jaese.github.io/tags/software/</loc>
     <lastmod>2022-03-07T19:03:30+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/thought-two-reasons-why-software-is-difficult-to-use/</loc>
@@ -62,9 +71,6 @@
     <loc>https://jaese.github.io/tags/k3s/</loc>
     <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jaese.github.io/tags/kubernetes/</loc>
-    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://jaese.github.io/tags/nginx/</loc>
     <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -96,9 +102,6 @@
     <lastmod>2022-01-15T15:15:59+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/home-network-v1/</loc>
-    <lastmod>2022-01-15T15:15:59+09:00</lastmod>
-  </url><url>
-    <loc>https://jaese.github.io/tags/networking/</loc>
     <lastmod>2022-01-15T15:15:59+09:00</lastmod>
   </url><url>
     <loc>https://jaese.github.io/posts/cartoons/</loc>

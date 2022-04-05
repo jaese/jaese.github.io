@@ -14,6 +14,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/stop-computer-networking/",
+      "title": "Stop Computer Networking",
+      "content_text": "While I was following the Kubernetes The Hard Way on the laptop with Vagrant VMs, I was reminded of the conviction that I had been holding: an application generally should not deal with computer networking. That is, it should not concern with host addresses or ports or HTTP protocols or anything. Instead, it should work above a messaging abstraction provided by message brokers like NATS or Kafka or such.\nIf the application requires low network latency such as video streaming, then it would need to deal with networking.",
+      "url": "https://jaese.github.io/posts/stop-computer-networking/",
+      "date_published": "2022-04-05T11:57:18+09:00"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/thought-two-reasons-why-software-is-difficult-to-use/",
       "title": "Thought: Two Reasons Why Software Is Difficult to Use",
       "content_text": "I don\u0026rsquo;t have much trust in software. If I can help, I avoid using software. I prefer to walk to the bank than to use online banking. Same for doing government paperworks. Software most of the time doesn\u0026rsquo;t work, or at least, doesn\u0026rsquo;t work the way I expect.\nI think the main reasons why using software is confusing, when compared to other domains, are two things: the lack of locality and the lack of observability.",
@@ -91,15 +100,6 @@
       "content_text": "As of now, the prebuilt SD card image for RPI (3/4) of FreeBSD 13.0 doesn\u0026rsquo;t run out of the box on RPi 4 due to an issue with the bootloader and requires replacing the bootloader binary on the SD card. If you have a Raspberry PI OS installation and want to try FreeBSD on RPi 4, you can follow these steps:\n  Download and flash FreeBSD-13.0-RELEASE-arm64-aarch64-RPI.img.xz to an SD card.",
       "url": "https://jaese.github.io/posts/freebsd-on-rpi4/",
       "date_published": "2022-01-04T21:11:23+09:00"
-    }
-  
-  , 
-    {
-      "id": "https://jaese.github.io/posts/revisiting-the-project-bootstrapping/",
-      "title": "Revisiting The Project Bootstrapping",
-      "content_text": "Did you know that AVR is one microcontroller family that can be programmed by bit banging by hand? No computers or USB interfacing required, just plain physical, electrical on-and-offs.\nIt\u0026rsquo;s true. The in-system programming (ISP) interface of AVR is concise enough that you can write to its flash memory an upwards of 10 to 20 instructions one bit at a time, with a reasonable amount of patience. In comparison, the JTAG type interface used by ARM and MIPS chips is too fiddly to program by hand, I discovered.",
-      "url": "https://jaese.github.io/posts/revisiting-the-project-bootstrapping/",
-      "date_published": "2022-01-01T06:47:45+09:00"
     }
   
   ]

@@ -3,7 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Posts</title>
+  <title>Stop Computer Networking</title>
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
@@ -17,9 +17,9 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Posts",
+  "headline": "Stop Computer Networking",
   
-  "datePublished": "0001-01-01T00:00:00Z",
+  "datePublished": "2022-04-05T11:57:18+09:00",
   "dateModified": "2022-04-05T11:57:18+09:00",
   "author": {
     "@type": "Person",
@@ -27,8 +27,15 @@
     "name": "jaese"
   },
   "mainEntityOfPage": { "@type": "Webpage" },
-  "description": "",
+  "description": "While I was following the Kubernetes The Hard Way on the laptop with Vagrant VMs, I was reminded of the conviction that I had been holding: an application generally should not deal with computer networking. That is, it should not concern with host addresses or ports or HTTP protocols or anything. Instead, it should work above a messaging abstraction provided by message brokers like NATS or Kafka or such.\nIf the application requires low network latency such as video streaming, then it would need to deal with networking.",
   "keywords": [
+    
+    
+    "networking"
+    
+    ,
+    
+    "kubernetes"
     
   ]
 }
@@ -80,107 +87,49 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       
 <main>
-  
-  <div>
-    <h1>Posts</h1>
-    
-  </div>
-  
+  <article>
+    <h1>Stop Computer Networking</h1>
+    <div>
+      <time datetime="2022-04-05T11:57:18">2022-04-05T11:57:18</time>
+      <p>tags: [networking kubernetes]</p>
+    </div>
+    <div class="content">
+      
+      
+      <p>While I was following <a href="https://github.com/kelseyhightower/kubernetes-the-hard-way">the Kubernetes The Hard Way</a> on the laptop with Vagrant VMs, I was reminded of the conviction that I had been holding: an application generally should not deal with computer networking. That is, it should not concern with host addresses or ports or HTTP protocols or anything. Instead, it should work above a messaging abstraction provided by message brokers like <a href="https://nats.io">NATS</a> or Kafka or such.</p>
+<p>If the application requires low network latency such as video streaming, then it would need to deal with networking. But for an application that processes JSON messages and operates near the business level, the complexity of dealing with networking is simply unjustified. Ideally, it would only need to know how to connect to a message broker and get all messaging done through it. It should even dispense with DNS. Applications that rely on DNS for service discovery have a tendency of being subtly broken.</p>
+<p>Alas, a saner networking abstraction is not a norm, and that means I have to configure network overlay and DNS server, and go through all their platform-specific details, to have a usable cluster.</p>
 
-  <ul>
+    </div>
+    <style>
+      .content p {
+        line-height: 130%;
+      }
+
+      pre {
+        padding: 1rem;
+      }
+    </style>
+  </article>
   
-    <li>
-      2022-04-05 - 
-      <a href="https://jaese.github.io/posts/stop-computer-networking/">Stop Computer Networking</a>
-    </li>
-  
-    <li>
-      2022-03-07 - 
-      <a href="https://jaese.github.io/posts/thought-two-reasons-why-software-is-difficult-to-use/">Thought: Two Reasons Why Software Is Difficult to Use</a>
-    </li>
-  
-    <li>
-      2022-02-10 - 
-      <a href="https://jaese.github.io/posts/raytracing-ebiten/">Raytracing in One Weekend on Ebiten</a>
-    </li>
-  
-    <li>
-      2022-02-04 - 
-      <a href="https://jaese.github.io/posts/hello-k3s/">Setting up a K3S cluster</a>
-    </li>
-  
-    <li>
-      2022-01-29 - 
-      <a href="https://jaese.github.io/posts/gemini-protocol/">Gemini: new internet protocol</a>
-    </li>
-  
-    <li>
-      2022-01-23 - 
-      <a href="https://jaese.github.io/posts/hello-jax/">JAX API</a>
-    </li>
-  
-    <li>
-      2022-01-15 - 
-      <a href="https://jaese.github.io/posts/home-network-v1/">Home network v1</a>
-    </li>
-  
-    <li>
-      2022-01-12 - 
-      <a href="https://jaese.github.io/posts/cartoons/">A comic strip</a>
-    </li>
-  
-    <li>
-      2022-01-11 - 
-      <a href="https://jaese.github.io/posts/trying-polars/">Trying polars, a fast DataFrame library</a>
-    </li>
-  
-    <li>
-      2022-01-04 - 
-      <a href="https://jaese.github.io/posts/freebsd-on-rpi4/">FreeBSD on RPi 4</a>
-    </li>
-  
-    <li>
-      2022-01-01 - 
-      <a href="https://jaese.github.io/posts/revisiting-the-project-bootstrapping/">Revisiting The Project Bootstrapping</a>
-    </li>
-  
-    <li>
-      2021-12-28 - 
-      <a href="https://jaese.github.io/posts/publishing-jupyter-notebook/">Publishing a Jupyter Notebook</a>
-    </li>
-  
-    <li>
-      2021-12-26 - 
-      <a href="https://jaese.github.io/posts/jwsp-launches/">JWST Launches</a>
-    </li>
-  
-    <li>
-      2021-12-25 - 
-      <a href="https://jaese.github.io/posts/hello-ebiten/">Hello Ebiten</a>
-    </li>
-  
-    <li>
-      2021-12-18 - 
-      <a href="https://jaese.github.io/posts/ray-tracing-in-one-week/">Ray Tracing in One Weekend on WebAssembly</a>
-    </li>
-  
-    <li>
-      2021-11-15 - 
-      <a href="https://jaese.github.io/posts/wasm4/">WASM-4 and Zig</a>
-    </li>
-  
-    <li>
-      2021-11-09 - 
-      <a href="https://jaese.github.io/posts/breath-sensor/">Controlling CO2 sensor and HD44780 LCD display with Raspberry Pi and Go</a>
-    </li>
-  
-    <li>
-      2021-11-05 - 
-      <a href="https://jaese.github.io/posts/hello/">Hello</a>
-    </li>
-  
-  </ul>
 </main>
+
+<script src="https://giscus.app/client.js"
+        data-repo="jaese/jaese.github.io"
+        data-repo-id="R_kgDOGU2PdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOGU2Pdc4CA-sN"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
 
     </div>
   </div>
