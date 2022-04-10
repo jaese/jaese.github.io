@@ -99,6 +99,7 @@
       <p>While I was following <a href="https://github.com/kelseyhightower/kubernetes-the-hard-way">the Kubernetes The Hard Way</a> on the laptop with Vagrant VMs, I was reminded of the conviction that I had been holding: an application generally should not deal with computer networking. That is, it should not concern with host addresses or ports or HTTP protocols or anything. Instead, it should work above a messaging abstraction provided by message brokers like <a href="https://nats.io">NATS</a> or Kafka or such.</p>
 <p>If the application requires low network latency such as video streaming, then it would need to deal with networking. But for an application that processes JSON messages and operates near the business level, the complexity of dealing with networking is simply unjustified. Ideally, it would only need to know how to connect to a message broker and get all messaging done through it. It should even dispense with DNS. Applications that rely on DNS for service discovery have a tendency of being subtly broken.</p>
 <p>Alas, a saner networking abstraction is not a norm, and that means I have to configure network overlay and DNS server, and go through all their platform-specific details, to have a usable cluster.</p>
+<p>By the way, I uploaded the scripts and config files following the Kubernetes The Hard Way to <a href="https://github.com/jaese/jaese-kubernetes-the-hard-way">https://github.com/jaese/jaese-kubernetes-the-hard-way</a></p>
 
     </div>
     <style>
