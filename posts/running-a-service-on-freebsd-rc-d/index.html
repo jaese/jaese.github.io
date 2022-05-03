@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Running a Service on FreeBSD: the rc.d scripting</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+
+  <script src="https://kit.fontawesome.com/b038bb8731.js" crossorigin="anonymous"></script>
+
+  <link rel="alternate" title="JO Jaeyoung" type="application/feed+json" href="https://jaese.github.io/feed.json" />
+
+  <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Running a Service on FreeBSD: the rc.d scripting",
+  
+  "datePublished": "2022-05-04T03:08:43+09:00",
+  "dateModified": "2022-05-04T03:08:43+09:00",
+  "author": {
+    "@type": "Person",
+    "url": "https://jaese.github.io/",
+    "name": "jaese"
+  },
+  "mainEntityOfPage": { "@type": "Webpage" },
+  "description": "Coming from Linux, I thought installing and runnging a service/daemon on FreeBSD was somewhat unintuitive, so I am writing a note.\nI had been using FreeBSD 13.0 running on RPi 4 as a router to my home network since I set it up early this year. FreeBSD had been a solid platform. It was interesting and not-too-frustrating to set up the firewall, dhcpd, and DNS server on FreeBSD because they are well integrated with the system.",
+  "keywords": [
+    
+    
+    "freebsd"
+    
+  ]
+}
+
+</script>
+
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+    }
+
+     
+  </style>
+
+  <div class="wrap pure-g">
+    <nav class="profile pure-u-1 pure-u-md-1-4">
+      <h3><a href="/">JO Jaeyoung<br>조재영</a></h3>
+      <img class="pure-img" style="width:60%" src="/profile.png" />
+
+      <ul>
+        <li><a href="https://jaese.github.io/feed.json"><i class="fas fa-rss-square"></i> JSON Feed</a></li>
+        <li><a href="https://github.com/jaese"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://www.kaggle.com/jaeyoungse"><i class="fab fa-kaggle"></i> Kaggle</a></li>
+        <li><a href="https://www.linkedin.com/in/jaeyoung-jo-64b2a6148/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/jaeyoung.se/"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="mailto:jojaeyoung.se@gmail.com"><i class="fas fa-envelope-square"></i> Email</a></li>
+        <li><a href="https://keybase.io/jaese"><i class="fab fa-keybase"></i> Keybase</a></li>
+        <li><a href="gemini://jaeyoung.se"><i class="fas fa-rocket"></i> Gemini Capsule</a></li>
+      </ul>
+
+      <p>
+        My role model is Iron Man.
+      </p>
+
+      <p class="time">
+        UTC - TAI =<br><a href="https://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat">-37 s</a>
+        <br>
+        <br>
+        TIME_TAI = <span class="time-tai">?</span>
+        <br>
+        (based on browser time)
+      </p>
+
+      <a href="https://fabiensanglard.net/gebbdoom/"><canvas class="doom-fire" width="50" height="50"></canvas></a>
+    </nav>
+    <div class="content pure-u-1 pure-u-md-3-4">
+      
+<main>
+  <article>
+    <h1>Running a Service on FreeBSD: the rc.d scripting</h1>
+    <div>
+      <time datetime="2022-05-04T03:08:43">2022-05-04T03:08:43</time>
+      <p>tags: [freebsd]</p>
+    </div>
+    <div class="content">
+      
+      
+      <p>Coming from Linux, I thought installing and runnging a service/daemon on FreeBSD was somewhat unintuitive, so I am writing a note.</p>
+<p>I had been using FreeBSD 13.0 running on RPi 4 as a router to my home network since I set it up <a href="https://jaese.github.io/posts/home-network-v1/">early this year</a>. FreeBSD had been a solid platform. It was interesting and not-too-frustrating to set up the firewall, dhcpd, and DNS server on FreeBSD because they are well integrated with the system.</p>
+<p>I learned how to run programs in isolation with FreeBSD Jail and <a href="https://github.com/iocage/iocage">iocage</a>, which are the FreeBSD analogs of Docker containers in Linux. I had my simple service running in a Jail, but had been defering configuring it as a system service because it involved learning about <em>the rc.d scripts</em>.</p>
+<p>The rc.d scripts are a part of the FreeBSD init system. An rc.d script corresponds to a systemd unit file, but the facilities are more basic. I wanted to turn my executable that listens on port and outputs log as stderr into a service. On Linux, I&rsquo;d throw down the simplest systemd unit file like this one and call it done:</p>
+<p><code>/etc/systemd/system/gemini-server.service</code></p>
+<pre tabindex="0"><code>[Unit]
+Description=gemini server
+After=network.target
+
+[Service]
+ExecStart=/app/server \
+	-listen-addr=0.0.0.0:1965 \
+	-content-dir=/app/public
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>There was a helpful guide <a href="https://docs.freebsd.org/en/articles/rc-scripting/">Practical rc.d scripting in BSD</a> that covers writing an rc.d script. But it didn&rsquo;t cover two facilities that I needed: daemonizing and redirecting output to syslog. This had me puzzled when testing the script because these two facilities are provided implicitly when writing a systemd service.</p>
+<p>Peeking at <a href="https://github.com/freebsd/freebsd-ports/blob/main/net/nats-server/files/nats.sh.in">other scripts</a> made me realize that <code>/usr/sbin/daemon</code> command was what I needed to daemonize the executable. Conveniently, It also had options to redirect output to syslog. I got the working rc.d script:</p>
+<p><code>/usr/local/etc/rc.d/geminiserver</code></p>
+<pre tabindex="0"><code>#!/bin/sh
+
+. /etc/rc.subr
+
+name=&quot;geminiserver&quot;
+rcvar=&quot;geminiserver_enable&quot;
+
+load_rc_config ${name}
+
+: ${geminiserver_options=&quot;-listen-addr=0.0.0.0:1965 -content-dir=/app/public&quot;}
+
+pidfile=&quot;/var/run/geminiserver.pid&quot;
+procname=&quot;/app/server&quot;
+command=&quot;/usr/sbin/daemon&quot;
+command_args=&quot;-c -S -T ${name} -p ${pidfile} ${procname} ${geminiserver_options}&quot;
+
+run_rc_command &quot;$1&quot;
+</code></pre><p>Bonus: logs are not very useful until they are shipped to somewhere I can process and browse them. When I tried to configure the log collector, I was stopped by the log format that <code>syslogd</code> produced by default:</p>
+<pre tabindex="0"><code>May  1 08:15:32 www1 geminiserver[12159]: {&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;Hello!&quot;,&quot;time&quot;:&quot;2022-05-01T08:15:32Z&quot;
+</code></pre><p>I quickly learned that there are two syslog formats in use, RFC3164 (old) and RFC5424, but this did not fit exactly either of those. But it could be persuaded into one with the flag <code>-o rfc5424</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sysrc syslogd_flags<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-c -ss -O rfc5424&#34;</span>
+service syslogd reload
+</code></pre></div><p>A little daemon.</p>
+<ul>
+<li><a href="https://nostarch.com/pf3">https://nostarch.com/pf3</a> &ldquo;Book of PF, 3rd Edition&rdquo;</li>
+<li><a href="https://mwl.io/nonfiction/os#fmjail">https://mwl.io/nonfiction/os#fmjail</a> &ldquo;FreeBSD Mastery: Jails&rdquo;</li>
+</ul>
+
+    </div>
+    <style>
+      .content p {
+        line-height: 130%;
+      }
+
+      pre {
+        padding: 1rem;
+      }
+    </style>
+  </article>
+  
+</main>
+
+<script src="https://giscus.app/client.js"
+        data-repo="jaese/jaese.github.io"
+        data-repo-id="R_kgDOGU2PdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOGU2Pdc4CA-sN"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </div>
+  </div>
+  <style>
+    nav.profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 200px;
+      margin-right: 15px;
+       
+
+      box-sizing: border-box;
+    }
+
+    nav.profile ul {
+      list-style: none;
+      width: 100%;
+    }
+
+    nav.profile li {
+      line-height: 20px;
+    }
+    nav.profile .fab, .fas {
+      width: 15px;
+    }
+    nav.profile a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    .time {
+      text-align: center;
+    }
+    .time a {
+      font-weight: bold;
+    }
+
+    div.content {
+      max-width: 800px;
+       
+
+      box-sizing: border-box;
+    }
+
+    canvas.doom-fire {
+      object-fit: contain;
+      width: 100px;
+      height: 100px;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+  </style>
+
+  <script type="module">
+    import { renderCanvas } from '/wasm.js';
+
+    renderCanvas('canvas.doom-fire', '/doom_fire.wasm', 50, 50);
+  </script>
+
+  <script type="module">
+    const timeTAIElement = document.querySelector('.time-tai');
+    const utcTAIOffset = -37;
+
+    const updateTime = () => {
+      const local = new Date();
+      const utc = new Date(local.getTime() + local.getTimezoneOffset() * 60 * 1000);
+      const tai = utc.getTime() - (utcTAIOffset * 1000);
+      timeTAIElement.textContent = Math.round(tai / 1000);
+
+      let ms = local.getTime() % 1000;
+      if (ms > 500) {
+        ms -= 1000;
+      };
+      setTimeout(updateTime, 1000 - ms);
+    };
+    updateTime();
+
+  </script>
+</body>
+
+</html>

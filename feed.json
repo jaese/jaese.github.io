@@ -14,6 +14,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/running-a-service-on-freebsd-rc-d/",
+      "title": "Running a Service on FreeBSD: the rc.d scripting",
+      "content_text": "Coming from Linux, I thought installing and runnging a service/daemon on FreeBSD was somewhat unintuitive, so I am writing a note.\nI had been using FreeBSD 13.0 running on RPi 4 as a router to my home network since I set it up early this year. FreeBSD had been a solid platform. It was interesting and not-too-frustrating to set up the firewall, dhcpd, and DNS server on FreeBSD because they are well integrated with the system.",
+      "url": "https://jaese.github.io/posts/running-a-service-on-freebsd-rc-d/",
+      "date_published": "2022-05-04T03:08:43+09:00"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/stop-computer-networking/",
       "title": "Stop Computer Networking",
       "content_text": "While I was following the Kubernetes The Hard Way on the laptop with Vagrant VMs, I was reminded of the conviction that I had been holding: an application generally should not deal with computer networking. That is, it should not concern with host addresses or ports or HTTP protocols or anything. Instead, it should work above a messaging abstraction provided by message brokers like NATS or Kafka or such.\nIf the application requires low network latency such as video streaming, then it would need to deal with networking.",
@@ -91,15 +100,6 @@
       "content_text": "pandas is the de facto standard DataFrame manipulation tool in Python.\nNatually, I want to be comfortable using it but, I think the sheer girth of its API is proving to be a major obstacle. I can\u0026rsquo;t go for long before I have to search usages on Stackoverflow for what should be routine tasks. I don\u0026rsquo;t think I can ever grok its date time API.\nSo, I searched for simpler alternative libraries and found polars.",
       "url": "https://jaese.github.io/posts/trying-polars/",
       "date_published": "2022-01-11T10:43:31+09:00"
-    }
-  
-  , 
-    {
-      "id": "https://jaese.github.io/posts/freebsd-on-rpi4/",
-      "title": "FreeBSD on RPi 4",
-      "content_text": "As of now, the prebuilt SD card image for RPI (3/4) of FreeBSD 13.0 doesn\u0026rsquo;t run out of the box on RPi 4 due to an issue with the bootloader and requires replacing the bootloader binary on the SD card. If you have a Raspberry PI OS installation and want to try FreeBSD on RPi 4, you can follow these steps:\n  Download and flash FreeBSD-13.0-RELEASE-arm64-aarch64-RPI.img.xz to an SD card.",
-      "url": "https://jaese.github.io/posts/freebsd-on-rpi4/",
-      "date_published": "2022-01-04T21:11:23+09:00"
     }
   
   ]
