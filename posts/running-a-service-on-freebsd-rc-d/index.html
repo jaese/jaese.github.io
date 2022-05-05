@@ -92,7 +92,8 @@
     <div class="content">
       
       
-      <p>Coming from Linux, I thought installing and running a service/daemon on FreeBSD was somewhat unintuitive, so I am writing a note.</p>
+      <p><img src="beastie.png" alt="The BSD Daemon"></p>
+<p>Coming from Linux, I thought installing and running a service/daemon on FreeBSD was somewhat unintuitive, so I am writing a note.</p>
 <p>I had been using FreeBSD 13.0 running on RPi 4 as a router to my home network since I set it up <a href="https://jaese.github.io/posts/home-network-v1/">early this year</a>. FreeBSD had been a solid platform. It was interesting and not-too-frustrating to set up the firewall, dhcpd, and DNS server on FreeBSD because they are well integrated with the system.</p>
 <p>I learned how to run programs in isolation with FreeBSD Jail and <a href="https://github.com/iocage/iocage">iocage</a>, which are the FreeBSD analogs of Docker containers in Linux. I had my simple service running in a Jail, but had been defering configuring it as a system service because it involved learning about <em>the rc.d scripts</em>.</p>
 <p>The rc.d scripts are a part of the FreeBSD init system. An rc.d script corresponds to a systemd unit file, but the facilities are more basic. I wanted to turn my executable that listens on port and outputs log as stderr into a service. On Linux, I&rsquo;d throw down the simplest systemd unit file like this one and call it done:</p>
