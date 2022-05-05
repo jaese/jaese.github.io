@@ -13,7 +13,7 @@
       <pubDate>Wed, 04 May 2022 03:08:43 +0900</pubDate>
       
       <guid>https://jaese.github.io/posts/running-a-service-on-freebsd-rc-d/</guid>
-      <description>Coming from Linux, I thought installing and runnging a service/daemon on FreeBSD was somewhat unintuitive, so I am writing a note.
+      <description>Coming from Linux, I thought installing and running a service/daemon on FreeBSD was somewhat unintuitive, so I am writing a note.
 I had been using FreeBSD 13.0 running on RPi 4 as a router to my home network since I set it up early this year. FreeBSD had been a solid platform. It was interesting and not-too-frustrating to set up the firewall, dhcpd, and DNS server on FreeBSD because they are well integrated with the system.</description>
     </item>
     
