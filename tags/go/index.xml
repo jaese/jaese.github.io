@@ -14,7 +14,7 @@
       
       <guid>https://jaese.github.io/posts/raytracing-ebiten/</guid>
       <description> I am going to profile it to figure out why this version is much slower than the Zig version.
- https://raytracing.github.io/books/RayTracingInOneWeekend.html https://ebiten.org  </description>
+https://raytracing.github.io/books/RayTracingInOneWeekend.html https://ebiten.org </description>
     </item>
     
   </channel>

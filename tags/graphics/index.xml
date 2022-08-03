@@ -14,7 +14,7 @@
       
       <guid>https://jaese.github.io/posts/raytracing-ebiten/</guid>
       <description> I am going to profile it to figure out why this version is much slower than the Zig version.
- https://raytracing.github.io/books/RayTracingInOneWeekend.html https://ebiten.org  </description>
+https://raytracing.github.io/books/RayTracingInOneWeekend.html https://ebiten.org </description>
     </item>
     
     <item>
@@ -23,8 +23,8 @@
       <pubDate>Sat, 18 Dec 2021 23:01:01 +0900</pubDate>
       
       <guid>https://jaese.github.io/posts/ray-tracing-in-one-week/</guid>
-      <description>samples: 
-  div.raytracing-content { } canvas { width: 800px; height: 356px; image-rendering: pixelated; image-rendering: crisp-edges; }  import { instantiate } from &#39;/wasm.js&#39;; const width = 320; const height = 180; const samplesElem = document.querySelector(&#39;.samples&#39;); console.log(samplesElem); (async function start() { const memory = new WebAssembly.Memory({initial: 40, maximum: 40}) const importObject = { &#39;env&#39;: { &#39;memory&#39;: memory, }, }; const { instance, module } = await instantiate(&#39;/raytracing.wasm&#39;, importObject); const exports = instance.</description>
+      <description>samples: A partial Ray Tracing in One Weekend running on the browser with WebAssembly, built by Zig.
+Fat pointer interfaces in Zig It is possible to implement the Go style interface values in Zig with the help of c_void pointers. Implementing interface pattern is wordier than in other languages (Go, Python, Rust, &amp;hellip;), but it is refreshing to see the mechanism that is hidden in other languages laid bare when writing in Zig.</description>
     </item>
     
   </channel>

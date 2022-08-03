@@ -100,13 +100,10 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       
 <main>
-  <article>
-    <h1>Setting up a K3S cluster</h1>
-    <div>
+  <article class="content">
+      <h1>Setting up a K3S cluster</h1>
       <time datetime="2022-02-04T00:00:00">2022-02-04T00:00:00</time>
       <p>tags: [kubernetes k3s harbor nginx raspberrypi]</p>
-    </div>
-    <div class="content">
       
       
       <p>I wanted to set up a Kubernetes cluster on my <a href="/posts/home-network-v1/">networking lab</a> that consists of three RPis and a PC, and run some actual workload. I used <a href="https://k3s.io">K3S</a>, a lightweight Kubernetes distribution, because it seemed to be the one to go to for running Kubernetes on RPis, ex. <a href="https://www.youtube.com/watch?v=N4bfNefjBSw">Jeff Geerling&rsquo;s video on installing K3S</a>. For image registry, I tried <a href="https://goharbor.io">Harbor open source registry v2.4.1</a>. The cluster ingress is fronted by a reverse proxy.</p>
@@ -119,10 +116,10 @@
 <p><a href="https://rancher.com/docs/k3s/latest/en/architecture/">The K3S single-server setup</a> is the simplest way to setup a cluster. The amount of simplication it does is phenomenal. It packages up all the functionalities of etcd3, control plane, networking, DNS, and ingress (Traefik) in one binary and I did not have to interact with any of the components to have a working cluster.</p>
 <p>At first, I tried to run a K3S server node on RPi 3 but it did not work well, which I assume is because of the memory constraint. Running K3s agent nodes on RPi 3 instead was not an issue.</p>
 <p>On K3S server node</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo k3s server
-</code></pre></div><p>On K3S agent nodes</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo k3s agent --server https://<span style="color:#e6db74">${</span>SERVER_HOST<span style="color:#e6db74">}</span>:6443 --token <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>NODE_TOKEN<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</code></pre></div><h2 id="install-harbor">Install Harbor</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo k3s server
+</span></span></code></pre></div><p>On K3S agent nodes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo k3s agent --server https://<span style="color:#e6db74">${</span>SERVER_HOST<span style="color:#e6db74">}</span>:6443 --token <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>NODE_TOKEN<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="install-harbor">Install Harbor</h2>
 <figure><img src="./harbor_ui.png"
          alt="Harbor UI" width="100%"/>
 </figure>
@@ -131,27 +128,26 @@
 <p>Since I am running the Harbor instance in the same node as the K3S server, I configure it to listen to port 8443 instead of 443.</p>
 <h3 id="set-up-certs-for-image-registry">Set up certs for image registry</h3>
 <p>I used <a href="https://smallstep.com">smallstep</a> Certificate Manager to provision an internal cert for image registry.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">step ca certificate server --san gauss.lab.jaeyoung.se:8443 server.crt server.key --not-after 31d
-</code></pre></div><p>Install the root CA in each node and configure K3S nodes to use the root CA to pull images.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo cp root_ca.crt /usr/local/share/ca-certificates/root_ca.crt
-sudo update-ca-certificates
-
-mkdir -p /etc/rancher/k3s
-cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/rancher/k3s/registries.yaml
-</span><span style="color:#e6db74">configs:
-</span><span style="color:#e6db74">  &#34;gauss.lab.jaeyoung.se:8443&#34;:
-</span><span style="color:#e6db74">    tls:
-</span><span style="color:#e6db74">      ca_file: /usr/local/share/ca-certificates/root_ca.crt
-</span><span style="color:#e6db74">EOF</span>
-</code></pre></div><p>Ref. <a href="https://rancher.com/docs/k3s/latest/en/installation/private-registry/">https://rancher.com/docs/k3s/latest/en/installation/private-registry/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>step ca certificate server --san gauss.lab.jaeyoung.se:8443 server.crt server.key --not-after 31d
+</span></span></code></pre></div><p>Install the root CA in each node and configure K3S nodes to use the root CA to pull images.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo cp root_ca.crt /usr/local/share/ca-certificates/root_ca.crt
+</span></span><span style="display:flex;"><span>sudo update-ca-certificates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mkdir -p /etc/rancher/k3s
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/rancher/k3s/registries.yaml
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">configs:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;gauss.lab.jaeyoung.se:8443&#34;:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    tls:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      ca_file: /usr/local/share/ca-certificates/root_ca.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><p>Ref. <a href="https://rancher.com/docs/k3s/latest/en/installation/private-registry/">https://rancher.com/docs/k3s/latest/en/installation/private-registry/</a></p>
 <h3 id="run-the-harbor-installer">Run the Harbor installer</h3>
 <p>Make changes to harbor.yml to configure the HTTP port and the storage directory, then Harbor can be installed. It installs as several Docker containers.</p>
 <p>One thing I find really neat is that, since Harbor v2 supports manifest lists, if you build images for both linux/amd64 and linux/arm64, the images will work on both platforms transparently. I use <a href="https://github.com/google/ko">ko</a> to build and push multi-platform images in one command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">KO_DOCKER_REPO<span style="color:#f92672">=</span>gauss.lab.jaeyoung.se:8443/library ko publish --platform<span style="color:#f92672">=</span>linux/amd64,linux/arm64 -P .
-</code></pre></div><h2 id="the-cluster-is-up-and-running">The cluster is up and running</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>KO_DOCKER_REPO<span style="color:#f92672">=</span>gauss.lab.jaeyoung.se:8443/library ko publish --platform<span style="color:#f92672">=</span>linux/amd64,linux/arm64 -P .
+</span></span></code></pre></div><h2 id="the-cluster-is-up-and-running">The cluster is up and running</h2>
 <p>Yay.</p>
 
-    </div>
     <style>
       .content p {
         line-height: 130%;
@@ -159,6 +155,11 @@ cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/rancher/k3s/registries.yam
 
       pre {
         padding: 1rem;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </article>

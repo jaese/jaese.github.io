@@ -6,7 +6,18 @@
     <description>Recent content in networking on JO Jaeyoung | 조재영</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Apr 2022 11:57:18 +0900</lastBuildDate><atom:link href="https://jaese.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 14:12:22 +0900</lastBuildDate><atom:link href="https://jaese.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Minimum Computer Networking for Web Developers</title>
+      <link>https://jaese.github.io/posts/minimum-computer-networking-for-web-developers/</link>
+      <pubDate>Tue, 19 Jul 2022 14:12:22 +0900</pubDate>
+      
+      <guid>https://jaese.github.io/posts/minimum-computer-networking-for-web-developers/</guid>
+      <description>Computers are much more useful when they can communicate with one another. That&amp;rsquo;s why there are suites of communication protocols. The Internet protocol suite, also known as TCP/IP, is the one that&amp;rsquo;s most relevant to web developers.
+Terms
+Computer network A set of computers that communicate with each other. Network node A computer that participates in a computer network. Network interface The point where a computer connects to a network. Usually they are wired/wireless LAN cards attached to a computer.</description>
+    </item>
+    
     <item>
       <title>Stop Computer Networking</title>
       <link>https://jaese.github.io/posts/stop-computer-networking/</link>

@@ -14,6 +14,15 @@
   
   
     {
+      "id": "https://jaese.github.io/posts/minimum-computer-networking-for-web-developers/",
+      "title": "Minimum Computer Networking for Web Developers",
+      "content_text": "Computers are much more useful when they can communicate with one another. That\u0026rsquo;s why there are suites of communication protocols. The Internet protocol suite, also known as TCP/IP, is the one that\u0026rsquo;s most relevant to web developers.\nTerms\nComputer network A set of computers that communicate with each other. Network node A computer that participates in a computer network. Network interface The point where a computer connects to a network. Usually they are wired/wireless LAN cards attached to a computer.",
+      "url": "https://jaese.github.io/posts/minimum-computer-networking-for-web-developers/",
+      "date_published": "2022-07-19T14:12:22+09:00"
+    }
+  
+  , 
+    {
       "id": "https://jaese.github.io/posts/running-a-service-on-freebsd-rc-d/",
       "title": "Running a Service on FreeBSD: the rc.d scripting",
       "content_text": "Coming from Linux, I thought installing and running a service/daemon on FreeBSD was somewhat unintuitive, so I am writing a note.\nI had been using FreeBSD 13.0 running on RPi 4 as a router to my home network since I set it up early this year. FreeBSD had been a solid platform. It was interesting and not-too-frustrating to set up the firewall, dhcpd, and DNS server on FreeBSD because they are well integrated with the system.",
@@ -43,7 +52,7 @@
     {
       "id": "https://jaese.github.io/posts/raytracing-ebiten/",
       "title": "Raytracing in One Weekend on Ebiten",
-      "content_text": " I am going to profile it to figure out why this version is much slower than the Zig version.\n https://raytracing.github.io/books/RayTracingInOneWeekend.html https://ebiten.org  ",
+      "content_text": " I am going to profile it to figure out why this version is much slower than the Zig version.\nhttps://raytracing.github.io/books/RayTracingInOneWeekend.html https://ebiten.org ",
       "url": "https://jaese.github.io/posts/raytracing-ebiten/",
       "date_published": "2022-02-10T00:00:00Z"
     }
@@ -61,7 +70,7 @@
     {
       "id": "https://jaese.github.io/posts/gemini-protocol/",
       "title": "Gemini: new internet protocol",
-      "content_text": "Project Gemini is an early NASA human spacefilght program.\nThe Gemini protocol is a new internet protocol that takes user privacy seriously.\nI came across Gemini when I got distracted and was reading about the Gopher protocol. Gopher was interesting to me because I felt the modern web standards were too complicated. From the app developer\u0026rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders' tastes.",
+      "content_text": "Project Gemini is an early NASA human spacefilght program.\nThe Gemini protocol is a new internet protocol that takes user privacy seriously.\nI came across Gemini when I got distracted and was reading about the Gopher protocol. Gopher was interesting to me because I felt the modern web standards were too complicated. From the app developer\u0026rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders\u0026rsquo; tastes.",
       "url": "https://jaese.github.io/posts/gemini-protocol/",
       "date_published": "2022-01-29T00:00:00Z"
     }
@@ -70,7 +79,7 @@
     {
       "id": "https://jaese.github.io/posts/hello-jax/",
       "title": "JAX API",
-      "content_text": "Google\u0026rsquo;s JAX autograd library is an example of a neat, composable API. The following is all that is needed to plot the gradient field of a function using JAX\u0026rsquo;s grad and vmap functions.\n ",
+      "content_text": "Google\u0026rsquo;s JAX autograd library is an example of a neat, composable API. The following is all that is needed to plot the gradient field of a function using JAX\u0026rsquo;s grad and vmap functions.",
       "url": "https://jaese.github.io/posts/hello-jax/",
       "date_published": "2022-01-23T14:58:44Z"
     }
@@ -91,15 +100,6 @@
       "content_text": "",
       "url": "https://jaese.github.io/posts/cartoons/",
       "date_published": "2022-01-12T08:25:37+09:00"
-    }
-  
-  , 
-    {
-      "id": "https://jaese.github.io/posts/trying-polars/",
-      "title": "Trying polars, a fast DataFrame library",
-      "content_text": "pandas is the de facto standard DataFrame manipulation tool in Python.\nNatually, I want to be comfortable using it but, I think the sheer girth of its API is proving to be a major obstacle. I can\u0026rsquo;t go for long before I have to search usages on Stackoverflow for what should be routine tasks. I don\u0026rsquo;t think I can ever grok its date time API.\nSo, I searched for simpler alternative libraries and found polars.",
-      "url": "https://jaese.github.io/posts/trying-polars/",
-      "date_published": "2022-01-11T10:43:31+09:00"
     }
   
   ]

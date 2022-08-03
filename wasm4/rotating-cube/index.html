@@ -60,13 +60,10 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       
 <main>
-  <article>
-    <h1>Rotating Cube</h1>
-    <div>
+  <article class="content">
+      <h1>Rotating Cube</h1>
       <time datetime="2021-11-17T18:17:32">2021-11-17T18:17:32</time>
       <p>tags: </p>
-    </div>
-    <div class="content">
       
       
       <div id="game"></div>
@@ -93,330 +90,329 @@
 <p><a href="/graphics.wasm">catridge</a></p>
 <h2 id="code-in-zig">Code in Zig</h2>
 <p>main.zig</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zig" data-lang="zig"><span style="color:#75715e">// zig build &amp;&amp; w4 run zig-out/lib/main.wasm --no-open
-</span><span style="color:#75715e">// wasm2wat zig-out/lib/main.wasm -o _local/main.wat
-</span><span style="color:#75715e">//
-</span><span style="color:#75715e">// w4 bundle --html _local/main.html zig-out/lib/main.wasm
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> std <span style="color:#f92672">=</span> @import(<span style="color:#e6db74">&#34;std&#34;</span>);
-<span style="color:#66d9ef">const</span> math <span style="color:#f92672">=</span> std.math;
-<span style="color:#66d9ef">const</span> assert <span style="color:#f92672">=</span> std.debug.assert;
-
-<span style="color:#66d9ef">const</span> jaese <span style="color:#f92672">=</span> @import(<span style="color:#e6db74">&#34;jaese&#34;</span>);
-<span style="color:#66d9ef">const</span> w4 <span style="color:#f92672">=</span> jaese.lib.games.wasm4.w4;
-<span style="color:#66d9ef">const</span> maths <span style="color:#f92672">=</span> jaese.lib.maths;
-<span style="color:#66d9ef">const</span> mat <span style="color:#f92672">=</span> maths.numerical.mat;
-<span style="color:#66d9ef">const</span> floats <span style="color:#f92672">=</span> maths.numerical.floats;
-<span style="color:#66d9ef">const</span> quaternion <span style="color:#f92672">=</span> maths.quaternion;
-
-<span style="color:#66d9ef">var</span> buffer<span style="color:#f92672">:</span> [<span style="color:#ae81ff">4000</span>]<span style="color:#66d9ef">u8</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
-<span style="color:#66d9ef">var</span> fba<span style="color:#f92672">:</span> std.heap.FixedBufferAllocator <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
-<span style="color:#66d9ef">var</span> allocator<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>std.mem.Allocator <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
-
-<span style="color:#66d9ef">const</span> DISTANCE<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
-<span style="color:#66d9ef">const</span> SCREEN<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-<span style="color:#66d9ef">const</span> SCREEN_SIZE<span style="color:#f92672">:</span> <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">160</span>;
-
-<span style="color:#66d9ef">var</span> vertices_arr <span style="color:#f92672">=</span> [_]<span style="color:#66d9ef">f32</span>{
-    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>,
-    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>,
-    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>,
-    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
-    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>,
-    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>,
-    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>,
-    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
-};
-<span style="color:#66d9ef">const</span> vertices<span style="color:#f92672">:</span> mat.Dense <span style="color:#f92672">=</span> mat.Dense.init(
-    <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">3</span>,
-    vertices_arr[<span style="color:#ae81ff">0</span>..],
-);
-<span style="color:#75715e">// var vertices: mat.Dense = undefined;
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> lines <span style="color:#f92672">=</span> [_][<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">usize</span>{
-    .{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>},
-    .{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>},
-    .{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>},
-    .{<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>},
-
-    .{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>},
-    .{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>},
-    .{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>},
-    .{<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>},
-
-    .{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>},
-    .{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>},
-    .{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>},
-    .{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">7</span>},
-};
-
-<span style="color:#66d9ef">const</span> State <span style="color:#f92672">=</span> <span style="color:#66d9ef">struct</span> {
-    theta<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>,
-    axis<span style="color:#f92672">:</span> [<span style="color:#ae81ff">3</span>]<span style="color:#66d9ef">f32</span>,
-    frame_count<span style="color:#f92672">:</span> <span style="color:#66d9ef">u32</span>,
-};
-
-<span style="color:#66d9ef">var</span> state <span style="color:#f92672">=</span> State{
-    .theta <span style="color:#f92672">=</span> @as(<span style="color:#66d9ef">f32</span>, <span style="color:#ae81ff">0</span>),
-    .axis <span style="color:#f92672">=</span> [_]<span style="color:#66d9ef">f32</span>{ <span style="color:#ae81ff">0.26726124</span>, <span style="color:#ae81ff">0.5345225</span> , <span style="color:#ae81ff">0.8017837</span> },
-    .frame_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">fn</span> start() <span style="color:#66d9ef">void</span> {
-    fba <span style="color:#f92672">=</span> std.heap.FixedBufferAllocator.init(<span style="color:#f92672">&amp;</span>buffer);
-    allocator <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>fba.allocator;
-
-    floats.addConst(<span style="color:#f92672">-</span><span style="color:#ae81ff">0.5</span>, <span style="color:#f92672">&amp;</span>vertices_arr);
-}
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">fn</span> update() <span style="color:#66d9ef">void</span> {
-    w4.DRAW_COLORS.<span style="color:#f92672">*</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
-    w4.text(<span style="color:#e6db74">&#34;Hello!&#34;</span>, <span style="color:#ae81ff">55</span>, <span style="color:#ae81ff">80</span>);
-
-    w4.DRAW_COLORS.<span style="color:#f92672">*</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-    drawCube(state.theta, <span style="color:#f92672">&amp;</span>state.axis);
-
-    state.theta <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">*</span> math.pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">100.0</span>;
-    <span style="color:#66d9ef">if</span> (state.theta <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">*</span> math.pi) {
-        state.theta <span style="color:#f92672">-=</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">*</span> math.pi;
-    }
-
-    state.frame_count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
-}
-
-<span style="color:#66d9ef">fn</span> drawCube(theta<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, axis<span style="color:#f92672">:</span> []<span style="color:#66d9ef">f32</span>) <span style="color:#66d9ef">void</span> {
-    <span style="color:#66d9ef">const</span> num_vertices <span style="color:#f92672">=</span> vertices.rows();
-
-    <span style="color:#66d9ef">const</span> rotated_arr <span style="color:#f92672">=</span> allocator.alloc(<span style="color:#66d9ef">f32</span>, num_vertices <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">unreachable</span>;
-    <span style="color:#66d9ef">defer</span> allocator.free(rotated_arr);
-    <span style="color:#66d9ef">const</span> rotated <span style="color:#f92672">=</span> mat.Dense.init(num_vertices, <span style="color:#ae81ff">3</span>, rotated_arr);
-
-    rotate(rotated, vertices, theta, mat.VecDense.init(<span style="color:#ae81ff">3</span>, axis));
-
-    <span style="color:#66d9ef">const</span> z_arr <span style="color:#f92672">=</span> allocator.alloc(<span style="color:#66d9ef">f32</span>, num_vertices) <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">unreachable</span>;
-    <span style="color:#66d9ef">defer</span> allocator.free(z_arr);
-    <span style="color:#66d9ef">const</span> z_vec <span style="color:#f92672">=</span> mat.vecDenseCopyOf(z_arr, rotated.colView(<span style="color:#ae81ff">2</span>));
-
-    floats.addConst(DISTANCE, z_vec.arr);
-    floats.scale(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>SCREEN, z_vec.arr);
-
-    <span style="color:#66d9ef">const</span> view_arr <span style="color:#f92672">=</span> allocator.alloc(<span style="color:#66d9ef">f32</span>, num_vertices <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">unreachable</span>;
-    <span style="color:#66d9ef">defer</span> allocator.free(view_arr);
-    <span style="color:#66d9ef">const</span> view <span style="color:#f92672">=</span> mat.denseCopyOf(view_arr, rotated.slice(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>));
-
-    view.colView(<span style="color:#ae81ff">0</span>).divElemVec(view.colView(<span style="color:#ae81ff">0</span>), z_vec);
-    view.colView(<span style="color:#ae81ff">1</span>).divElemVec(view.colView(<span style="color:#ae81ff">1</span>), z_vec);
-
-    floats.scale(<span style="color:#ae81ff">300</span>, view.arr);
-    floats.addConst(@intToFloat(<span style="color:#66d9ef">f32</span>, SCREEN_SIZE) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>, view.arr);
-
-    <span style="color:#66d9ef">for</span> (lines) <span style="color:#f92672">|</span>line<span style="color:#f92672">|</span> {
-        drawLine(view.at(line[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">0</span>), view.at(line[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">1</span>), view.at(line[<span style="color:#ae81ff">1</span>], <span style="color:#ae81ff">0</span>), view.at(line[<span style="color:#ae81ff">1</span>], <span style="color:#ae81ff">1</span>));
-    }
-}
-
-<span style="color:#75715e">// Params:
-</span><span style="color:#75715e">//  vs: (None, 3) Matrix - vertices
-</span><span style="color:#75715e">//  theta: radians - rotation
-</span><span style="color:#75715e">//  axis: (3) Vec - axis of rotation
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> rotate(dst<span style="color:#f92672">:</span> mat.Dense, vs<span style="color:#f92672">:</span> anytype, theta<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, axis<span style="color:#f92672">:</span> anytype) <span style="color:#66d9ef">void</span> {
-    assert(dst.rows() <span style="color:#f92672">==</span> vs.rows());
-    assert(dst.cols() <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>);
-    assert(vs.cols() <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>);
-
-    <span style="color:#75715e">// q = quaternion.rotation(theta, axis[0], axis[1], axis[2])
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> q <span style="color:#f92672">=</span> quaternion.rotation(theta, axis.atVec(<span style="color:#ae81ff">0</span>), axis.atVec(<span style="color:#ae81ff">1</span>), axis.atVec(<span style="color:#ae81ff">2</span>));
-
-    <span style="color:#75715e">// m = quaternion.mat_left(q)
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> m_arr <span style="color:#f92672">=</span> quaternion.matLeft(q);
-    <span style="color:#66d9ef">const</span> m <span style="color:#f92672">=</span> mat.Dense.init(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>, <span style="color:#f92672">&amp;</span>m_arr);
-
-    <span style="color:#75715e">// m_inv = quaternion.mat_right(quaternion.inverse(q))
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> m_inv_arr <span style="color:#f92672">=</span> quaternion.matRight(quaternion.inverse(q));
-    <span style="color:#66d9ef">const</span> m_inv <span style="color:#f92672">=</span> mat.Dense.init(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>, <span style="color:#f92672">&amp;</span>m_inv_arr);
-
-    <span style="color:#75715e">// x_p = jnp.vstack((jnp.zeros((1, x.shape[0])), x.T))
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> vs_p_arr <span style="color:#f92672">=</span> allocator.alloc(<span style="color:#66d9ef">f32</span>, <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> vs.rows()) <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">unreachable</span>;
-    <span style="color:#66d9ef">defer</span> allocator.free(vs_p_arr);
-    <span style="color:#66d9ef">const</span> vs_p <span style="color:#f92672">=</span> mat.denseStackOf(vs_p_arr, mat.Zeros{ .r <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, .c <span style="color:#f92672">=</span> vs.rows() }, vs.transpose());
-
-    <span style="color:#75715e">// x_p = (m_inv.T @ (m @ x_p))
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> scratch<span style="color:#f92672">:</span> [<span style="color:#ae81ff">4</span>]<span style="color:#66d9ef">f32</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
-    vs_p.mulLeft(<span style="color:#f92672">&amp;</span>scratch, m);
-    vs_p.mulLeft(<span style="color:#f92672">&amp;</span>scratch, m_inv.transpose());
-
-    <span style="color:#75715e">// return x_p[1:, :].T
-</span><span style="color:#75715e"></span>    dst.copy(vs_p.slice(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, vs_p.cols()).transpose());
-}
-
-<span style="color:#66d9ef">fn</span> drawLine(x1<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, y1<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, x2<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, y2<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>) <span style="color:#66d9ef">void</span> {
-    w4.line(@floatToInt(<span style="color:#66d9ef">i32</span>, x1), @floatToInt(<span style="color:#66d9ef">i32</span>, y1), @floatToInt(<span style="color:#66d9ef">i32</span>, x2), @floatToInt(<span style="color:#66d9ef">i32</span>, y2));
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#75715e">// zig build &amp;&amp; w4 run zig-out/lib/main.wasm --no-open
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// wasm2wat zig-out/lib/main.wasm -o _local/main.wat
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// w4 bundle --html _local/main.html zig-out/lib/main.wasm
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> std <span style="color:#f92672">=</span> @import(<span style="color:#e6db74">&#34;std&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> math <span style="color:#f92672">=</span> std.math;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> assert <span style="color:#f92672">=</span> std.debug.assert;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> jaese <span style="color:#f92672">=</span> @import(<span style="color:#e6db74">&#34;jaese&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> w4 <span style="color:#f92672">=</span> jaese.lib.games.wasm4.w4;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> maths <span style="color:#f92672">=</span> jaese.lib.maths;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> mat <span style="color:#f92672">=</span> maths.numerical.mat;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> floats <span style="color:#f92672">=</span> maths.numerical.floats;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> quaternion <span style="color:#f92672">=</span> maths.quaternion;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> buffer<span style="color:#f92672">:</span> [<span style="color:#ae81ff">4000</span>]<span style="color:#66d9ef">u8</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> fba<span style="color:#f92672">:</span> std.heap.FixedBufferAllocator <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> allocator<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>std.mem.Allocator <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> DISTANCE<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> SCREEN<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> SCREEN_SIZE<span style="color:#f92672">:</span> <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">160</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> vertices_arr <span style="color:#f92672">=</span> [_]<span style="color:#66d9ef">f32</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> vertices<span style="color:#f92672">:</span> mat.Dense <span style="color:#f92672">=</span> mat.Dense.init(
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>    vertices_arr[<span style="color:#ae81ff">0</span>..],
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// var vertices: mat.Dense = undefined;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> lines <span style="color:#f92672">=</span> [_][<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">usize</span>{
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>},
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>},
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>},
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>},
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>},
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>},
+</span></span><span style="display:flex;"><span>    .{<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">7</span>},
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> State <span style="color:#f92672">=</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    theta<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>,
+</span></span><span style="display:flex;"><span>    axis<span style="color:#f92672">:</span> [<span style="color:#ae81ff">3</span>]<span style="color:#66d9ef">f32</span>,
+</span></span><span style="display:flex;"><span>    frame_count<span style="color:#f92672">:</span> <span style="color:#66d9ef">u32</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> state <span style="color:#f92672">=</span> State{
+</span></span><span style="display:flex;"><span>    .theta <span style="color:#f92672">=</span> @as(<span style="color:#66d9ef">f32</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>    .axis <span style="color:#f92672">=</span> [_]<span style="color:#66d9ef">f32</span>{ <span style="color:#ae81ff">0.26726124</span>, <span style="color:#ae81ff">0.5345225</span> , <span style="color:#ae81ff">0.8017837</span> },
+</span></span><span style="display:flex;"><span>    .frame_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">fn</span> start() <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>    fba <span style="color:#f92672">=</span> std.heap.FixedBufferAllocator.init(<span style="color:#f92672">&amp;</span>buffer);
+</span></span><span style="display:flex;"><span>    allocator <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>fba.allocator;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    floats.addConst(<span style="color:#f92672">-</span><span style="color:#ae81ff">0.5</span>, <span style="color:#f92672">&amp;</span>vertices_arr);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">fn</span> update() <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>    w4.DRAW_COLORS.<span style="color:#f92672">*</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    w4.text(<span style="color:#e6db74">&#34;Hello!&#34;</span>, <span style="color:#ae81ff">55</span>, <span style="color:#ae81ff">80</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    w4.DRAW_COLORS.<span style="color:#f92672">*</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    drawCube(state.theta, <span style="color:#f92672">&amp;</span>state.axis);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    state.theta <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">*</span> math.pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">100.0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (state.theta <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">*</span> math.pi) {
+</span></span><span style="display:flex;"><span>        state.theta <span style="color:#f92672">-=</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">*</span> math.pi;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    state.frame_count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> drawCube(theta<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, axis<span style="color:#f92672">:</span> []<span style="color:#66d9ef">f32</span>) <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> num_vertices <span style="color:#f92672">=</span> vertices.rows();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> rotated_arr <span style="color:#f92672">=</span> allocator.alloc(<span style="color:#66d9ef">f32</span>, num_vertices <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">unreachable</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> allocator.free(rotated_arr);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> rotated <span style="color:#f92672">=</span> mat.Dense.init(num_vertices, <span style="color:#ae81ff">3</span>, rotated_arr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    rotate(rotated, vertices, theta, mat.VecDense.init(<span style="color:#ae81ff">3</span>, axis));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> z_arr <span style="color:#f92672">=</span> allocator.alloc(<span style="color:#66d9ef">f32</span>, num_vertices) <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">unreachable</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> allocator.free(z_arr);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> z_vec <span style="color:#f92672">=</span> mat.vecDenseCopyOf(z_arr, rotated.colView(<span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    floats.addConst(DISTANCE, z_vec.arr);
+</span></span><span style="display:flex;"><span>    floats.scale(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>SCREEN, z_vec.arr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> view_arr <span style="color:#f92672">=</span> allocator.alloc(<span style="color:#66d9ef">f32</span>, num_vertices <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">unreachable</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> allocator.free(view_arr);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> view <span style="color:#f92672">=</span> mat.denseCopyOf(view_arr, rotated.slice(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    view.colView(<span style="color:#ae81ff">0</span>).divElemVec(view.colView(<span style="color:#ae81ff">0</span>), z_vec);
+</span></span><span style="display:flex;"><span>    view.colView(<span style="color:#ae81ff">1</span>).divElemVec(view.colView(<span style="color:#ae81ff">1</span>), z_vec);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    floats.scale(<span style="color:#ae81ff">300</span>, view.arr);
+</span></span><span style="display:flex;"><span>    floats.addConst(@intToFloat(<span style="color:#66d9ef">f32</span>, SCREEN_SIZE) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>, view.arr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (lines) <span style="color:#f92672">|</span>line<span style="color:#f92672">|</span> {
+</span></span><span style="display:flex;"><span>        drawLine(view.at(line[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">0</span>), view.at(line[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">1</span>), view.at(line[<span style="color:#ae81ff">1</span>], <span style="color:#ae81ff">0</span>), view.at(line[<span style="color:#ae81ff">1</span>], <span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Params:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  vs: (None, 3) Matrix - vertices
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  theta: radians - rotation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  axis: (3) Vec - axis of rotation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> rotate(dst<span style="color:#f92672">:</span> mat.Dense, vs<span style="color:#f92672">:</span> anytype, theta<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, axis<span style="color:#f92672">:</span> anytype) <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>    assert(dst.rows() <span style="color:#f92672">==</span> vs.rows());
+</span></span><span style="display:flex;"><span>    assert(dst.cols() <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>    assert(vs.cols() <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// q = quaternion.rotation(theta, axis[0], axis[1], axis[2])
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> q <span style="color:#f92672">=</span> quaternion.rotation(theta, axis.atVec(<span style="color:#ae81ff">0</span>), axis.atVec(<span style="color:#ae81ff">1</span>), axis.atVec(<span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// m = quaternion.mat_left(q)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> m_arr <span style="color:#f92672">=</span> quaternion.matLeft(q);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> m <span style="color:#f92672">=</span> mat.Dense.init(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>, <span style="color:#f92672">&amp;</span>m_arr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// m_inv = quaternion.mat_right(quaternion.inverse(q))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> m_inv_arr <span style="color:#f92672">=</span> quaternion.matRight(quaternion.inverse(q));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> m_inv <span style="color:#f92672">=</span> mat.Dense.init(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>, <span style="color:#f92672">&amp;</span>m_inv_arr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// x_p = jnp.vstack((jnp.zeros((1, x.shape[0])), x.T))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> vs_p_arr <span style="color:#f92672">=</span> allocator.alloc(<span style="color:#66d9ef">f32</span>, <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> vs.rows()) <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">unreachable</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> allocator.free(vs_p_arr);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> vs_p <span style="color:#f92672">=</span> mat.denseStackOf(vs_p_arr, mat.Zeros{ .r <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, .c <span style="color:#f92672">=</span> vs.rows() }, vs.transpose());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// x_p = (m_inv.T @ (m @ x_p))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> scratch<span style="color:#f92672">:</span> [<span style="color:#ae81ff">4</span>]<span style="color:#66d9ef">f32</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+</span></span><span style="display:flex;"><span>    vs_p.mulLeft(<span style="color:#f92672">&amp;</span>scratch, m);
+</span></span><span style="display:flex;"><span>    vs_p.mulLeft(<span style="color:#f92672">&amp;</span>scratch, m_inv.transpose());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// return x_p[1:, :].T
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    dst.copy(vs_p.slice(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, vs_p.cols()).transpose());
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> drawLine(x1<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, y1<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, x2<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>, y2<span style="color:#f92672">:</span> <span style="color:#66d9ef">f32</span>) <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>    w4.line(@floatToInt(<span style="color:#66d9ef">i32</span>, x1), @floatToInt(<span style="color:#66d9ef">i32</span>, y1), @floatToInt(<span style="color:#66d9ef">i32</span>, x2), @floatToInt(<span style="color:#66d9ef">i32</span>, y2));
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 
-    </div>
     <style>
       .content p {
         line-height: 130%;
@@ -424,6 +420,11 @@
 
       pre {
         padding: 1rem;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </article>

@@ -29,7 +29,7 @@
     "name": "jaese"
   },
   "mainEntityOfPage": { "@type": "Webpage" },
-  "description": "Project Gemini is an early NASA human spacefilght program.\nThe Gemini protocol is a new internet protocol that takes user privacy seriously.\nI came across Gemini when I got distracted and was reading about the Gopher protocol. Gopher was interesting to me because I felt the modern web standards were too complicated. From the app developer\u0026rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders' tastes.",
+  "description": "Project Gemini is an early NASA human spacefilght program.\nThe Gemini protocol is a new internet protocol that takes user privacy seriously.\nI came across Gemini when I got distracted and was reading about the Gopher protocol. Gopher was interesting to me because I felt the modern web standards were too complicated. From the app developer\u0026rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders\u0026rsquo; tastes.",
   "keywords": [
     
     
@@ -90,13 +90,10 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       
 <main>
-  <article>
-    <h1>Gemini: new internet protocol</h1>
-    <div>
+  <article class="content">
+      <h1>Gemini: new internet protocol</h1>
       <time datetime="2022-01-29T00:00:00">2022-01-29T00:00:00</time>
       <p>tags: [gemini privacy]</p>
-    </div>
-    <div class="content">
       
         
         
@@ -107,7 +104,7 @@
       
       <p>Project Gemini is an early NASA human spacefilght program.</p>
 <p><a href="https://gemini.circumlunar.space">The Gemini protocol</a> is a new internet protocol that takes user privacy seriously.</p>
-<p>I came across Gemini when I got distracted and was reading about <a href="https://en.wikipedia.org/wiki/Gopher_(protocol)">the Gopher protocol</a>. Gopher was interesting to me because I felt the modern web standards were too complicated. From the app developer&rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders' tastes. It is not that the web standards are bad; I believe the complexity is proportional to how powerful the web platform is. But when all I want to do is publish some tidbits on a personal website, all its complexity is simply unnecessary.</p>
+<p>I came across Gemini when I got distracted and was reading about <a href="https://en.wikipedia.org/wiki/Gopher_(protocol)">the Gopher protocol</a>. Gopher was interesting to me because I felt the modern web standards were too complicated. From the app developer&rsquo;s perspective, there are so many things you have to be aware of in order to have a website that uses good practices and also meets stakeholders&rsquo; tastes. It is not that the web standards are bad; I believe the complexity is proportional to how powerful the web platform is. But when all I want to do is publish some tidbits on a personal website, all its complexity is simply unnecessary.</p>
 <p>Years ago I looked at the Gopher protocol. It was quite idiosyncratic, which was understandable for such early technology. The text format was not aesthetically pleasing to my &lsquo;modern&rsquo; senses. So I gave it a pass.</p>
 <p>The Gemini protocol is a modern evolution of Gopher, called &lsquo;Souped-Up Gopher&rsquo;, with aim of user privacy in the age of ubiquitous user tracking. But I am more interested in how simple <a href="https://gemini.circumlunar.space/docs/specification.gmi">the protocol spec</a> is. A functional Gemini server can be written in about 100 lines of Go code. I am sold.</p>
 <h2 id="into-geminispace">Into Geminispace</h2>
@@ -149,7 +146,6 @@
 <p>I agree with the points made in <a href="https://taoofmac.com/space/blog/2022/01/17/0800">this blog post</a>. The lack of <code>Content-Length</code> is strange. It is helpful to know how much content you expect to receive from the receiving end, if only to avoid receiving more than you have space for and crashing.</p>
 <p>I may keep maintaining my capsule, because the tech is so simple the upkeep is minimal. I may implement dynamic/interactive content that I think is interesting. Viewership-wise it does not matter which protocol it is in, nobody reads my blog anyways.</p>
 
-    </div>
     <style>
       .content p {
         line-height: 130%;
@@ -157,6 +153,11 @@
 
       pre {
         padding: 1rem;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </article>

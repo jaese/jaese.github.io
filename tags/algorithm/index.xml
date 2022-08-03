@@ -13,7 +13,7 @@
       <pubDate>Thu, 03 Mar 2022 00:00:00 +0900</pubDate>
       
       <guid>https://jaese.github.io/ebiten/raytracing-in-one-weekend/</guid>
-      <description>pan: arrow keys rotate: mouse drag zoom: mouse wheel  Kinda slow.</description>
+      <description>pan: arrow keys rotate: mouse drag zoom: mouse wheel Kinda slow.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <guid>https://jaese.github.io/ebiten/shortest-path/</guid>
       <description>Click on empty region with alt/option key to create a node.
 Click two nodes in sequence to create a weighted (distance) edge between the nodes.
-Press &amp;rsquo;s&#39; key to perform shortest path search.</description>
+Press &amp;rsquo;s&amp;rsquo; key to perform shortest path search.</description>
     </item>
     
   </channel>

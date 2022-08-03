@@ -13,8 +13,7 @@
       <pubDate>Sun, 23 Jan 2022 14:58:44 +0000</pubDate>
       
       <guid>https://jaese.github.io/posts/hello-jax/</guid>
-      <description>Google&amp;rsquo;s JAX autograd library is an example of a neat, composable API. The following is all that is needed to plot the gradient field of a function using JAX&amp;rsquo;s grad and vmap functions.
- </description>
+      <description>Google&amp;rsquo;s JAX autograd library is an example of a neat, composable API. The following is all that is needed to plot the gradient field of a function using JAX&amp;rsquo;s grad and vmap functions.</description>
     </item>
     
     <item>

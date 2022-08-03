@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minimum Computer Networking for Web Developers</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+
+  <script src="https://kit.fontawesome.com/b038bb8731.js" crossorigin="anonymous"></script>
+
+  <link rel="alternate" title="JO Jaeyoung" type="application/feed+json" href="https://jaese.github.io/feed.json" />
+
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Minimum Computer Networking for Web Developers",
+  
+  "datePublished": "2022-07-19T14:12:22+09:00",
+  "dateModified": "2022-07-19T14:12:22+09:00",
+  "author": {
+    "@type": "Person",
+    "url": "https://jaese.github.io/",
+    "name": "jaese"
+  },
+  "mainEntityOfPage": { "@type": "Webpage" },
+  "description": "Computers are much more useful when they can communicate with one another. That\u0026rsquo;s why there are suites of communication protocols. The Internet protocol suite, also known as TCP/IP, is the one that\u0026rsquo;s most relevant to web developers.\nTerms\nComputer network A set of computers that communicate with each other. Network node A computer that participates in a computer network. Network interface The point where a computer connects to a network. Usually they are wired/wireless LAN cards attached to a computer.",
+  "keywords": [
+    
+    
+    "networking"
+    
+  ]
+}
+</script>
+
+
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+    }
+
+     
+  </style>
+
+  <div class="wrap pure-g">
+    <nav class="profile pure-u-1 pure-u-md-1-4">
+      <h3><a href="/">JO Jaeyoung<br>조재영</a></h3>
+      <img class="pure-img" style="width:60%" src="/profile.png" />
+
+      <ul>
+        <li><a href="/resume.pdf"><i class="fa fa-file-text-o"></i> CV</a></li>
+        <li><a href="https://jaese.github.io/feed.json"><i class="fas fa-rss-square"></i> JSON Feed</a></li>
+        <li><a href="https://github.com/jaese"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://www.kaggle.com/jaeyoungse"><i class="fab fa-kaggle"></i> Kaggle</a></li>
+        <li><a href="https://www.linkedin.com/in/jaeyoung-jo-64b2a6148/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/jaeyoung.se/"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="mailto:jojaeyoung.se@gmail.com"><i class="fas fa-envelope-square"></i> Email</a></li>
+        <li><a href="https://keybase.io/jaese"><i class="fab fa-keybase"></i> Keybase</a></li>
+        <li><a href="gemini://jaeyoung.se"><i class="fas fa-rocket"></i> Gemini Capsule</a></li>
+      </ul>
+
+      <p>
+        My role model is Iron Man.
+      </p>
+
+      <p class="time">
+        UTC - TAI =<br><a href="https://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat">-37 s</a>
+        <br>
+        <br>
+        TIME_TAI = <span class="time-tai">?</span>
+        <br>
+        (based on browser time)
+      </p>
+
+      
+    </nav>
+    <div class="content pure-u-1 pure-u-md-3-4">
+      
+<main>
+  <article class="content">
+      <h1>Minimum Computer Networking for Web Developers</h1>
+      <time datetime="2022-07-19T14:12:22">2022-07-19T14:12:22</time>
+      <p>tags: [networking]</p>
+      
+      
+      <p>Computers are much more useful when they can communicate with one another. That&rsquo;s why there are suites of communication protocols. The Internet protocol suite, also known as TCP/IP, is the one that&rsquo;s most relevant to web developers.</p>
+<p>Terms</p>
+<dl>
+<dt>Computer network</dt>
+<dd>A set of computers that communicate with each other.</dd>
+<dt>Network node</dt>
+<dd>A computer that participates in a computer network.</dd>
+<dt>Network interface</dt>
+<dd>The point where a computer connects to a network.
+Usually they are wired/wireless LAN cards attached to a computer.</dd>
+<dt>Local area network (LAN)</dt>
+<dd>A computer network that is bounded by location.
+Ex. home network or office networks.
+Bigger networks such as wide area networks (WANs) and the Internet are made up by interconnected LANs.</dd>
+</dl>
+<p><img src="LAN_WAN_scheme.svg" alt="Wide area networks">
+Gateway_firewall.svg: Harald Mühlböck, derivative work: Ggia, CC BY-SA 3.0 <a href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>, via Wikimedia Commons</p>
+<dl>
+<dt>Packet</dt>
+<dd>A unit of data transmitted across network is called packet.
+A packet comprises of a control header and a payload.</dd>
+</dl>
+<p>In computer networking, <strong>encapsulation</strong> means that the packet of a high-level protocol is handled as an opaque data on the lower level protocol, and wrapped around with a control header to form a lower-level packet, and so on.</p>
+<p><img src="UDP_encapsulation.svg" alt="UDP encapsulation">
+en:User:Cburnett original work, colorization by en:User:Kbrose, CC BY-SA 3.0 <a href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>, via Wikimedia Commons</p>
+<h2 id="the-osi-model">The OSI Model</h2>
+<p>The OSI model is a reference model that dividies the functions of networking systems into 7 layers. The layers of the OSI model do not exactly map to the actual protocols of TCP/IP, but it is widely when describing network protocols.</p>
+<ol>
+<li>Physical</li>
+<li>Data Link</li>
+<li>Network (commonly referred as Layer 3 or L3)</li>
+<li>Transport (L4)</li>
+<li>Session</li>
+<li>Presentation</li>
+<li>Application (L7)</li>
+</ol>
+<p><img src="IP_stack_connections.svg" alt="IP stack connections"></p>
+<p>en:User:Kbrose, CC BY-SA 3.0 <a href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>, via Wikimedia Commons</p>
+<h3 id="physical-layer-l1">Physical layer (L1)</h3>
+<p>Twisted pair cables and optical cables, and radio waves for the case of Wi-Fi belong to this layer. The physical layer is closely related to the data link layer.</p>
+<h3 id="data-link-layer-l2">Data link layer (L2)</h3>
+<p>The data link layer transfers data between nodes across the phyical layer. The packets of the data link layer are called frames or data frames.</p>
+<dl>
+<dt>Ethernet</dt>
+<dd>Ethernet is the a widely used data link layer protocol. It is commonly used to create LANs.</dd>
+</dl>
+<p><code>ifconfig</code> command can be used to show the hardware addresses (MAC address) of network interfaces. (<code>ether 41:ca:c7:d4:46:ec</code> here)</p>
+<pre tabindex="0"><code>$ ifconfig en7
+en7: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+  options=6467&lt;RXCSUM,TXCSUM,VLAN_MTU,TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM&gt;
+  ether 41:ca:c7:d4:46:ec
+  inet6 fe80::bb:54ae:1c0d:a7a2%en7 prefixlen 64 secured scopeid 0xc
+  inet 192.168.111.2 netmask 0xffffff00 broadcast 192.168.111.255
+  nd6 options=201&lt;PERFORMNUD,DAD&gt;
+  media: autoselect (1000baseT &lt;full-duplex&gt;)
+  status: active
+</code></pre><p>On Linux, <code>ip link</code> command also can be used.</p>
+<pre tabindex="0"><code>$ ip link show enp0s31f6
+2: enp0s31f6: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 41:ca:c7:d4:46:ec brd ff:ff:ff:ff:ff:ff
+</code></pre><h3 id="network-layer-l3">Network layer (L3)</h3>
+<p>The Internet Protocol (IP) of the TCP/IP model belongs in this layer. The network layer is responsible for transfering packets between nodes in different networks, using the <strong>IP addresses</strong> in the case of TCP/IP. (internetworking)</p>
+<p><img src="network_layer.png" alt="Illustration depicting a packet being transfered between two networks using IP addresses"></p>
+<dl>
+<dt>IP address</dt>
+<dd>A label used to locate a network interface, analoguous to a physical address of a house. ex. &lsquo;192.0.2.1&rsquo;</dd>
+<dt>Subnet</dt>
+<dd>A logical subdivision of an IP address space, specified by an address prefix. For an example, the subnet 192.0.2.0/24 contains the addresses from 192.0.2.0 to 192.0.2.255. In TCP/IP, usually one subnet is assigned to one network.</dd>
+</dl>
+<p>You can check which subnet an interface is assigned with using <code>ifconfig</code> or <code>ip addr</code> commands (subnet 172.17.0.0/16 here):</p>
+<pre tabindex="0"><code># ip addr show eth0
+39: eth0@if40: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+</code></pre><dl>
+<dt>Gateway</dt>
+<dd>A network node that transfers packets from one network to another network. This job is usually done by dedicated devices called routers. In a home environment, the home router works as an Internet gateway.</dd>
+<dt>Routing table</dt>
+<dd>A list of rules that a system consults to determine where to send the given packet next. Routing table is important for systems that are connected to multiple networks.</dd>
+<dt>Default gateway</dt>
+<dd>In a routing table, an entry to the default gateway is usually present. It is used when no other routing rule matches the given packet. In a home environment, the default gateway is usually the router that connects to the Internet.</dd>
+</dl>
+<p>You can view a system&rsquo;s routing table with <code>netstat -r</code> or <code>ip route</code> commands. Here, you can see that the default gateway is set to 192.168.111.1.</p>
+<pre tabindex="0"><code>$ netstat -r -f inet
+Routing tables
+
+Internet:
+Destination        Gateway            Flags        Netif Expire
+default            192.168.111.1      UGScg          en7
+default            192.168.111.1      UGScIg         en0
+127                localhost          UCS            lo0
+localhost          localhost          UH             lo0
+169.254            link#12            UCS            en7      !
+169.254            link#10            UCSI           en0      !
+...
+</code></pre><p>The same infomation can be seen in the Network settings window on Mac.</p>
+<p><img src="network_preferences_tcp_ip.png" alt="Network settings window on Mac"></p>
+<p>You can check if a host is reachable with the <code>ping</code> command.</p>
+<pre tabindex="0"><code>$ ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: icmp_seq=0 ttl=111 time=35.812 ms
+</code></pre><p>You can check which nodes a packet goes through along the route to destination with <code>traceroute</code> command.</p>
+<pre tabindex="0"><code>$ traceroute -n 8.8.8.8
+traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
+ 1  192.168.1.1  0.907 ms  0.823 ms  0.785 ms
+ 2  * * *
+ 3  27.1.253.41  1.164 ms  1.165 ms  1.192 ms
+ 4  172.22.28.165  1.605 ms  1.724 ms 172.22.28.161  1.563 ms
+ 5  172.20.4.13  13.586 ms  13.567 ms  13.526 ms
+ 6  192.145.251.137  2.136 ms  1.948 ms  3.305 ms
+ 7  4.69.218.122  31.788 ms  33.830 ms  33.725 ms
+ 8  72.14.202.202  33.881 ms  33.467 ms  33.457 ms
+ 9  * * *
+10  8.8.8.8  33.072 ms  31.852 ms  31.452 ms
+</code></pre><h4 id="address-resolution-protocol-arp">Address resolution protocol (ARP)</h4>
+<p>ARP is a protocol positioned between the data link layer and the IP layer. It is used to map IP addresses to physical addresses (MAC) in order to transfer packets within a network.</p>
+<p><code>arp -n</code> command to show the mappings cached by the computer.</p>
+<pre tabindex="0"><code>$ arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+169.254.169.254                  (incomplete)                              enp0s31f6
+192.168.111.252          ether   9d:e9:38:b4:72:73   C                     enp0s31f6
+192.168.111.87           ether   c9:0c:c7:bd:1d:a7   C                     enp0s31f6
+192.168.111.241          ether   d8:9e:42:db:2d:e9   C                     enp0s31f6
+172.17.0.3                       (incomplete)                              docker0
+192.168.111.125          ether   c6:cd:f8:25:02:28   C                     enp0s31f6
+...
+</code></pre><h4 id="dynamic-host-configuration-protocol-dhcp">Dynamic Host Configuration Protocol (DHCP)</h4>
+<p>In order for a computer to participate in a TCP/IP network, it needs to know the subnet and gateway of the network and also has to be assigned an appropriate IP address. (And it also needs other settings like domain name and name servers.) DHCP is a protocol that lets those settings configured automatically when computer connects to the network. It is a client-server architecture and DHCP server is set up by network admins.</p>
+<p><code>dhclient</code> command can be used to manually invoke the DHCP client.</p>
+<pre tabindex="0"><code>% sudo dhclient cpsw0
+DHCPREQUEST on cpsw0 to 255.255.255.255 port 67
+DHCPACK from 192.168.200.254
+bound to 192.168.200.103 -- renewal in 1800 seconds.
+</code></pre><p>Check the logs from the DHCP client:</p>
+<pre tabindex="0"><code>$ journalctl | grep -i dhcp
+Jan 28 12:21:55 raspberrypi systemd[1]: Starting DHCP Client Daemon...
+Jan 28 12:21:56 raspberrypi dhcpcd[492]: dev: loaded udev
+Jan 28 12:21:56 raspberrypi dhcpcd[492]: forked to background, child pid 538
+...
+</code></pre><h3 id="transport-layer-l4">Transport layer (L4)</h3>
+<p>The transport layer allows end-to-end communications between programs running in different hosts. The TCP (Transmission Control Protocol) is one of the main transport layer protocols of TCP/IP. Many internet application protocols, such as web, email, telnet, and SSH, are based on TCP.</p>
+<p><img src="tcp.png" alt="Illustration of the TCP protocol"></p>
+<h4 id="transmission-control-protocol-tcp">Transmission Control Protocol (TCP)</h4>
+<p>TCP is connection-oriented. Different ends of TCP connections within a host are distinguished by 16-bit port numbers.</p>
+<p>The <code>netcat</code> utility can be used to test TCP connections.</p>
+<pre tabindex="0"><code># Listen on port number 1234 on the loopback device.
+$ nc -l 127.0.0.1 1234
+
+# From another terminal, connect to port number 1234 and send data.
+$ nc 127.0.0.1 1234
+hello
+</code></pre><p>Test an HTTP server with <code>netcat</code>:</p>
+<pre tabindex="0"><code>$ nc -C api.ipify.org 80
+GET / HTTP/1.1
+Host: api.ipify.org
+
+HTTP/1.1 200 OK
+Server: Cowboy
+Connection: keep-alive
+Content-Type: text/plain
+Vary: Origin
+Date: Thu, 07 Jul 2022 16:44:34 GMT
+Content-Length: 12
+Via: 1.1 vegur
+
+103.102.166.224
+</code></pre><h4 id="transport-layer-security-tls-and-public-key-infrastructures-pkis">Transport Layer Security (TLS) and Public Key Infrastructures (PKIs)</h4>
+<p>A subject for a whole other article.</p>
+<h3 id="application-layer-l7">Application layer (L7)</h3>
+<p>The highest layer in the OSI model, the protocols of the appliation layer are those of user-facing applications. The most prominent one is HTTP.</p>
+<h4 id="hypertext-transfer-protocol-http">Hypertext Transfer Protocol (HTTP)</h4>
+<p>HTTP is for requesting and transfering web documents and other data between clients (usually web browsers) and servers. If you are a web developer, it is worthwhile to know its basics. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">https://developer.mozilla.org/en-US/docs/Web/HTTP</a> is a good source to learn HTTP and other web technologies.</p>
+<h2 id="localhost-and-loopback-interfaces">&rsquo;localhost&rsquo; and loopback interfaces</h2>
+<p><img src="loopback_interface.png" alt="Illustration of loopback interface"></p>
+<p>TCP/IP is for communications between different computers, but often times a program needs to connect to another program running on the same host. <strong>The loopback network interface</strong> is a network interface that exists only virtually in a system and is used for programs to connect to services on the same host. It can be referred as 127.0.0.1 or &rsquo;localhost'.</p>
+<p>It has name &rsquo;lo&rsquo; or &rsquo;lo0&rsquo; when looked up by <code>ifconfig</code>:</p>
+<pre tabindex="0"><code># ifconfig lo
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+</code></pre><h2 id="domain-name-system-dns">Domain Name System (DNS)</h2>
+<p>In order to connect to a host using TCP/IP, you need its IP address. But IP addresses are not easy for humans to remember. That is why we have Domain Name System (DNS). The DNS system provides mapping from human-friendly domain names to IP addresses, analoguous to a phone book.</p>
+<p>Because it is impractical to browse the web without working DNS, when DHCP configures the network settings of a computer it also configures the DNS servers.</p>
+<p>On Linux, you can view the system DNS servers from <code>/etc/resolv.conf</code> file:</p>
+<pre tabindex="0"><code>$ cat /etc/resolv.conf
+...
+nameserver 8.8.8.8
+...
+</code></pre><p>You can use <code>dig</code> or <code>drill</code> command to directly query DNS servers:</p>
+<pre tabindex="0"><code>$ dig +short google.com
+142.250.206.238
+
+# Specify the DNS server to query instead of using the system DNS servers:
+$ dig +short google.com @8.8.8.8
+142.250.207.110
+</code></pre><p>End.</p>
+
+    <style>
+      .content p {
+        line-height: 130%;
+      }
+
+      pre {
+        padding: 1rem;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </article>
+  
+</main>
+
+<script src="https://giscus.app/client.js"
+        data-repo="jaese/jaese.github.io"
+        data-repo-id="R_kgDOGU2PdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOGU2Pdc4CA-sN"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+    </div>
+  </div>
+  <style>
+    nav.profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 200px;
+       
+
+      box-sizing: border-box;
+    }
+
+    nav.profile ul {
+      list-style: none;
+      width: 100%;
+    }
+
+    nav.profile li {
+      line-height: 20px;
+    }
+    nav.profile .fab, .fas {
+      width: 15px;
+    }
+    nav.profile a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    .time {
+      text-align: center;
+    }
+    .time a {
+      font-weight: bold;
+    }
+
+    div.content {
+      max-width: 800px;
+       
+
+      padding: 0 0.5rem;
+
+      box-sizing: border-box;
+    }
+
+ 
+  </style>
+
+
+
+  <script type="module">
+    const timeTAIElement = document.querySelector('.time-tai');
+    const utcTAIOffset = -37;
+
+    const updateTime = () => {
+      const local = new Date();
+      const utc = new Date(local.getTime() + local.getTimezoneOffset() * 60 * 1000);
+      const tai = utc.getTime() - (utcTAIOffset * 1000);
+      timeTAIElement.textContent = Math.round(tai / 1000);
+
+      let ms = local.getTime() % 1000;
+      if (ms > 500) {
+        ms -= 1000;
+      };
+      
+    };
+    updateTime();
+
+  </script>
+</body>
+
+</html>

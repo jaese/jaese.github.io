@@ -94,13 +94,10 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       
 <main>
-  <article>
-    <h1>Home network v1</h1>
-    <div>
+  <article class="content">
+      <h1>Home network v1</h1>
       <time datetime="2022-01-15T15:15:59">2022-01-15T15:15:59</time>
       <p>tags: [networking freebsd raspberrypi]</p>
-    </div>
-    <div class="content">
       
         
         
@@ -144,73 +141,72 @@ Mine are &lsquo;genet0&rsquo; for WAN and &lsquo;ue0&rsquo; for LAN.</p>
 <p>All firewall configuration I need can be done with <a href="https://docs.freebsd.org/en/books/handbook/firewalls/#firewalls-pf">PF</a> on FreeBSD.
 Configuring NAT and whitelisting ports is a breeze.</p>
 <p>/etc/pf.conf</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ext_if<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;genet0&#34;</span>
-int_if<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ue0&#34;</span>
-
-set skip on lo0
-
-scrub in
-
-nat on $ext_if inet from ! <span style="color:#f92672">(</span>$ext_if<span style="color:#f92672">)</span> to any -&gt; <span style="color:#f92672">(</span>$ext_if<span style="color:#f92672">)</span>
-
-block all
-
-tcp_services <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{ ssh, smtp, domain, www, pop3, auth, https, pop3s, openvpn, bootps, 8080 }&#34;</span>
-udp_services <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{ domain, openvpn, bootps }&#34;</span>
-pass out on $ext_if proto tcp to port $tcp_services
-<span style="color:#75715e"># This works even though UDP is a stateless protocol thanks to the PF stateful magic.</span>
-pass out on $ext_if proto udp to port $udp_services
-
-pass on $int_if proto <span style="color:#f92672">{</span> tcp, udp <span style="color:#f92672">}</span>
-
-icmp_types <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{ echoreq, unreach }&#34;</span>
-icmp6_types <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{ echoreq, unreach, timex, paramprob }&#34;</span>
-pass inet proto icmp icmp-type $icmp_types
-pass inet6 proto icmp6 icmp6-type $icmp6_types
-</code></pre></div><h3 id="routing">Routing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ext_if<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;genet0&#34;</span>
+</span></span><span style="display:flex;"><span>int_if<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ue0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>set skip on lo0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scrub in
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nat on $ext_if inet from ! <span style="color:#f92672">(</span>$ext_if<span style="color:#f92672">)</span> to any -&gt; <span style="color:#f92672">(</span>$ext_if<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>block all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tcp_services <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{ ssh, smtp, domain, www, pop3, auth, https, pop3s, openvpn, bootps, 8080 }&#34;</span>
+</span></span><span style="display:flex;"><span>udp_services <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{ domain, openvpn, bootps }&#34;</span>
+</span></span><span style="display:flex;"><span>pass out on $ext_if proto tcp to port $tcp_services
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This works even though UDP is a stateless protocol thanks to the PF stateful magic.</span>
+</span></span><span style="display:flex;"><span>pass out on $ext_if proto udp to port $udp_services
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pass on $int_if proto <span style="color:#f92672">{</span> tcp, udp <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>icmp_types <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{ echoreq, unreach }&#34;</span>
+</span></span><span style="display:flex;"><span>icmp6_types <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{ echoreq, unreach, timex, paramprob }&#34;</span>
+</span></span><span style="display:flex;"><span>pass inet proto icmp icmp-type $icmp_types
+</span></span><span style="display:flex;"><span>pass inet6 proto icmp6 icmp6-type $icmp6_types
+</span></span></code></pre></div><h3 id="routing">Routing</h3>
 <p>Once firewall is in place, I can configure routing.</p>
 <p>Enable gateway:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ doas sysrc gateway_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
-$ doas sysctl net.inet.ip.forwarding<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-
-$ doas sysrc ipv6_gateway_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
-$ doas sysctl net.inet6.ip6.forwarding<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</code></pre></div><p>Configure the LAN (192.168.1.1/24):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ doas sysrc ifconfig_ue0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inet 192.168.1.1/24&#34;</span>
-$ doas route add -net 192.168.1.0/24 192.168.1.1
-</code></pre></div><p>Install and configure <a href="https://www.freshports.org/net/dhcpd">dhcpd</a> on the LAN interface.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ doas sysrc dhcpd_flags<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ue0&#34;</span>
-$ doas sysrc dhcpd_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
-</code></pre></div><p>/usr/local/etc/dhcpd.conf to give out the IP address range 192.168.1.10 ~ 192.168.1.20.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">option domain-name-servers 8.8.8.8;
-
-option subnet-mask 255.255.255.0;
-default-lease-time 600;
-max-lease-time 7200;
-
-subnet 192.168.1.0 netmask 255.255.255.0 <span style="color:#f92672">{</span>
-  range 192.168.1.10 192.168.1.20;
-  option broadcast-address 192.168.1.255;
-  option routers 192.168.1.1;
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Now I have a RPi gigabit router. I can see the network stats with <code>systat -ifstat 1</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">                    /0   /1   /2   /3   /4   /5   /6   /7   /8   /9   /10
-     Load Average   <span style="color:#f92672">||</span>|
-
-      Interface           Traffic               Peak                Total
-            ue0  in      1.954 KB/s          2.460 KB/s          662.076 MB
-                 out     2.983 KB/s          3.425 KB/s            2.180 GB
-
-         genet0  in      3.899 KB/s          3.899 KB/s            2.208 GB
-                 out     1.832 KB/s          2.019 KB/s          657.620 MB
-</code></pre></div><h2 id="performance">Performance</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ doas sysrc gateway_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
+</span></span><span style="display:flex;"><span>$ doas sysctl net.inet.ip.forwarding<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ doas sysrc ipv6_gateway_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
+</span></span><span style="display:flex;"><span>$ doas sysctl net.inet6.ip6.forwarding<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Configure the LAN (192.168.1.1/24):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ doas sysrc ifconfig_ue0<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inet 192.168.1.1/24&#34;</span>
+</span></span><span style="display:flex;"><span>$ doas route add -net 192.168.1.0/24 192.168.1.1
+</span></span></code></pre></div><p>Install and configure <a href="https://www.freshports.org/net/dhcpd">dhcpd</a> on the LAN interface.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ doas sysrc dhcpd_flags<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ue0&#34;</span>
+</span></span><span style="display:flex;"><span>$ doas sysrc dhcpd_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>
+</span></span></code></pre></div><p>/usr/local/etc/dhcpd.conf to give out the IP address range 192.168.1.10 ~ 192.168.1.20.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>option domain-name-servers 8.8.8.8;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>option subnet-mask 255.255.255.0;
+</span></span><span style="display:flex;"><span>default-lease-time 600;
+</span></span><span style="display:flex;"><span>max-lease-time 7200;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>subnet 192.168.1.0 netmask 255.255.255.0 <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  range 192.168.1.10 192.168.1.20;
+</span></span><span style="display:flex;"><span>  option broadcast-address 192.168.1.255;
+</span></span><span style="display:flex;"><span>  option routers 192.168.1.1;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Now I have a RPi gigabit router. I can see the network stats with <code>systat -ifstat 1</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>                    /0   /1   /2   /3   /4   /5   /6   /7   /8   /9   /10
+</span></span><span style="display:flex;"><span>     Load Average   <span style="color:#f92672">||</span>|
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      Interface           Traffic               Peak                Total
+</span></span><span style="display:flex;"><span>            ue0  in      1.954 KB/s          2.460 KB/s          662.076 MB
+</span></span><span style="display:flex;"><span>                 out     2.983 KB/s          3.425 KB/s            2.180 GB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>         genet0  in      3.899 KB/s          3.899 KB/s            2.208 GB
+</span></span><span style="display:flex;"><span>                 out     1.832 KB/s          2.019 KB/s          657.620 MB
+</span></span></code></pre></div><h2 id="performance">Performance</h2>
 <p>I tested and compared the internet speeds between the Gigabit router and the RPi4 router, using <a href="https://www.google.com/search?q=internet+speed+test">the Google internet speed test</a>.
 The download/upload speeds of the the RPi router are about 10% slower. For my use, it is not significant.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>With RPis, I can play with multiple devices easily without having to procure a rack of servers and setting up a KVM switch.
 In the future, I want to create a <a href="https://k3s.io">k3s</a> cluster using RPis and try running real workloads.</p>
 
-    </div>
     <style>
       .content p {
         line-height: 130%;
@@ -218,6 +214,11 @@ In the future, I want to create a <a href="https://k3s.io">k3s</a> cluster using
 
       pre {
         padding: 1rem;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </article>

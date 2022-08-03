@@ -13,7 +13,7 @@
       <pubDate>Sun, 06 Mar 2022 00:00:00 +0900</pubDate>
       
       <guid>https://jaese.github.io/ebiten/taylor-series/</guid>
-      <description>Taylor Series of order 5 around 0   The derivatives at 0 of exp(x): [1, 1, 1, 1, 1, &amp;hellip;] The derivatives at 0 of sin(x): [0, 1, 0, -1, 1, &amp;hellip;] The derivatives at 0 of cos(x): [1, 0, -1, 0, 1, &amp;hellip;] sinh(x): [0, 1, 0, 1, 0, &amp;hellip;] cosh(x): [1, 0, 1, 0, 1, &amp;hellip;]  </description>
+      <description>Taylor Series of order 5 around 0 The derivatives at 0 of exp(x): [1, 1, 1, 1, 1, &amp;hellip;] The derivatives at 0 of sin(x): [0, 1, 0, -1, 1, &amp;hellip;] The derivatives at 0 of cos(x): [1, 0, -1, 0, 1, &amp;hellip;] sinh(x): [0, 1, 0, 1, 0, &amp;hellip;] cosh(x): [1, 0, 1, 0, 1, &amp;hellip;] </description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Thu, 03 Mar 2022 00:00:00 +0900</pubDate>
       
       <guid>https://jaese.github.io/ebiten/raytracing-in-one-weekend/</guid>
-      <description>pan: arrow keys rotate: mouse drag zoom: mouse wheel  Kinda slow.</description>
+      <description>pan: arrow keys rotate: mouse drag zoom: mouse wheel Kinda slow.</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@
       
       <guid>https://jaese.github.io/posts/raytracing-ebiten/</guid>
       <description> I am going to profile it to figure out why this version is much slower than the Zig version.
- https://raytracing.github.io/books/RayTracingInOneWeekend.html https://ebiten.org  </description>
+https://raytracing.github.io/books/RayTracingInOneWeekend.html https://ebiten.org </description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@
       <pubDate>Sun, 06 Feb 2022 00:38:38 +0900</pubDate>
       
       <guid>https://jaese.github.io/ebiten/pancho/</guid>
-      <description>Play  Description Pancho&amp;rsquo;s Adventures is an epic high-fantasy game that follows the exploits of the eponymous hero Pancho.
+      <description>Play Description Pancho&amp;rsquo;s Adventures is an epic high-fantasy game that follows the exploits of the eponymous hero Pancho.
 https://ebiten.org</description>
     </item>
     

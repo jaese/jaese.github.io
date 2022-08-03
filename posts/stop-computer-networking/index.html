@@ -88,13 +88,10 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       
 <main>
-  <article>
-    <h1>Stop Computer Networking</h1>
-    <div>
+  <article class="content">
+      <h1>Stop Computer Networking</h1>
       <time datetime="2022-04-05T11:57:18">2022-04-05T11:57:18</time>
       <p>tags: [networking kubernetes]</p>
-    </div>
-    <div class="content">
       
       
       <p>While I was following <a href="https://github.com/kelseyhightower/kubernetes-the-hard-way">the Kubernetes The Hard Way</a> on the laptop with Vagrant VMs, I was reminded of the conviction that I had been holding: an application generally should not deal with computer networking. That is, it should not concern with host addresses or ports or HTTP protocols or anything. Instead, it should work above a messaging abstraction provided by message brokers like <a href="https://nats.io">NATS</a> or Kafka or such.</p>
@@ -102,7 +99,6 @@
 <p>Alas, a saner networking abstraction is not a norm, and that means I have to configure network overlay and DNS server, and go through all their platform-specific details, to have a usable cluster.</p>
 <p>By the way, I uploaded the scripts and config files following the Kubernetes The Hard Way to <a href="https://github.com/jaese/jaese-kubernetes-the-hard-way">https://github.com/jaese/jaese-kubernetes-the-hard-way</a></p>
 
-    </div>
     <style>
       .content p {
         line-height: 130%;
@@ -110,6 +106,11 @@
 
       pre {
         padding: 1rem;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </article>

@@ -29,7 +29,7 @@
     "name": "jaese"
   },
   "mainEntityOfPage": { "@type": "Webpage" },
-  "description": "As of now, the prebuilt SD card image for RPI (3/4) of FreeBSD 13.0 doesn\u0026rsquo;t run out of the box on RPi 4 due to an issue with the bootloader and requires replacing the bootloader binary on the SD card. If you have a Raspberry PI OS installation and want to try FreeBSD on RPi 4, you can follow these steps:\n  Download and flash FreeBSD-13.0-RELEASE-arm64-aarch64-RPI.img.xz to an SD card.",
+  "description": "As of now, the prebuilt SD card image for RPI (3/4) of FreeBSD 13.0 doesn\u0026rsquo;t run out of the box on RPi 4 due to an issue with the bootloader and requires replacing the bootloader binary on the SD card. If you have a Raspberry PI OS installation and want to try FreeBSD on RPi 4, you can follow these steps:\nDownload and flash FreeBSD-13.0-RELEASE-arm64-aarch64-RPI.img.xz to an SD card.\nBuild U-Boot from recent checkout.",
   "keywords": [
     
     
@@ -90,13 +90,10 @@
     <div class="content pure-u-1 pure-u-md-3-4">
       
 <main>
-  <article>
-    <h1>FreeBSD on RPi 4</h1>
-    <div>
+  <article class="content">
+      <h1>FreeBSD on RPi 4</h1>
       <time datetime="2022-01-04T21:11:23">2022-01-04T21:11:23</time>
       <p>tags: [freebsd raspberrypi]</p>
-    </div>
-    <div class="content">
       
         
         
@@ -112,39 +109,38 @@
 <p>Build U-Boot from recent checkout. <a href="https://u-boot.readthedocs.io/en/latest/build/index.html">Ref</a></p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Install prerequisite packages</span>
-sudo apt-get install <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  gcc <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  gcc-aarch64-linux-gnu <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  bc bison build-essential <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  device-tree-compiler <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  dfu-util <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  efitools <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  flex
-
-git clone https://source.denx.de/u-boot/u-boot.git
-cd u-boot
-git checkout v2021.04
-make rpi_4_defconfig
-CROSS_COMPILE<span style="color:#f92672">=</span>aarch64-linux-gnu- make -j4
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Install prerequisite packages</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  gcc <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  gcc-aarch64-linux-gnu <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  bc bison build-essential <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  device-tree-compiler <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  dfu-util <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  efitools <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  flex
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git clone https://source.denx.de/u-boot/u-boot.git
+</span></span><span style="display:flex;"><span>cd u-boot
+</span></span><span style="display:flex;"><span>git checkout v2021.04
+</span></span><span style="display:flex;"><span>make rpi_4_defconfig
+</span></span><span style="display:flex;"><span>CROSS_COMPILE<span style="color:#f92672">=</span>aarch64-linux-gnu- make -j4
+</span></span></code></pre></div><ol start="3">
 <li>Mount the boot partition of the SD card and copy u-boot.bin built from previous step.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo mount /dev/sda1 /mnt
-sudo cp u-boot.bin /mnt/u-boot.bin
-sudo umount /mnt
-</code></pre></div><p><strong>EDIT:</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo mount /dev/sda1 /mnt
+</span></span><span style="display:flex;"><span>sudo cp u-boot.bin /mnt/u-boot.bin
+</span></span><span style="display:flex;"><span>sudo umount /mnt
+</span></span></code></pre></div><p><strong>EDIT:</strong>
 The system booted this way recognizes only one CPU core out of the 4 cores available on the chip, for reason beyond my knowledge.
 So once booted, replace u-boot.bin on the SD card with the one from the sysutils/u-boot-rpi4 package, and then reboot.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pkg install sysutils/u-boot-rpi4
-cp /usr/local/share/u-boot/u-boot-rpi4/u-boot.bin /boot/msdos/u-boot.bin
-</code></pre></div><p>Refs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install sysutils/u-boot-rpi4
+</span></span><span style="display:flex;"><span>cp /usr/local/share/u-boot/u-boot-rpi4/u-boot.bin /boot/msdos/u-boot.bin
+</span></span></code></pre></div><p>Refs.</p>
 <ul>
 <li><a href="https://lists.freebsd.org/pipermail/freebsd-arm/2020-August/022162.html">current best practice to start FreeBSD / Raspberry Pi 4</a></li>
 <li><a href="https://wiki.freebsd.org/arm/Raspberry%20Pi#RPI4">arm/Raspberry Pi</a></li>
 </ul>
 
-    </div>
     <style>
       .content p {
         line-height: 130%;
@@ -152,6 +148,11 @@ cp /usr/local/share/u-boot/u-boot-rpi4/u-boot.bin /boot/msdos/u-boot.bin
 
       pre {
         padding: 1rem;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </article>
